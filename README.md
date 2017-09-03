@@ -4,6 +4,8 @@
  a. Estrellas de Neutrones
  b. Materia Nuclear y Materia de Estrellas de Neutrones
  c. Modelos Teóricos: Campo medio, MD y otros
+ d. Termodinámica de los sistemas con fuerzas competitivas (frustrado)
+ e. LAMMPS etc (GPU+)
 2. Término de Coulomb en NSM https://arxiv.org/pdf/1311.5923.pdf
 3. Transiciones de fase intra pasta https://arxiv.org/pdf/1406.1550.pdf
 4. Rango muy largo y opacidad: Nuevas pastas
