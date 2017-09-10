@@ -14,6 +14,36 @@ A densidades de sub-saturación esta competencia es responsable por las fases de
 Incrementar el valor de $\lambda$ comenzando desde $0\,\text{fm}$, apuntamos a explorar la transición de las pastas artificiales en las que se produce una estructura por celda hacia las pastas más realistas que tienen múltiples estructuras en cada celda de simulación.
 Más aún, esto nos permite estudiar las implicancias físicas del valor arbitrario y utilizado tradicionalmente de $\lambda=10\,\text{fm}$.
 
+\section{Introducción}
+
+En las estrellas de neutrones, además de los protones y neutrones, existe un gas de electrones que permea todo el espacio.
+Este gas de electrones apantalla la interacción electrostática de rango largo entre los protones.
+Este efecto de apantallamiento es usualmente modelado con la aproximación de Thomas-Fermi, de acuerdo a la cual la interacción entre protones es un optencial del tipo Yukawa con una longitud de apantallamiento $\lambda$:
+
+\begin{equation*}
+ V_{TF}(r) = \text{q}^2\frac{e^{-r/\lambda}}{r}
+\end{equation*}
+
+De acuerdo a cálculos de Teoría Cuántica de Campos~\cite[pp. 175-180]{fetter}, la longitud de apantallamiento a las densidades de interés es $\lambda\approx100\,\text{fm}$. 
+Para simulaciones numéricas una interacción de rango tan largo implica un problema ya que, para realizar simulaciones correctas, el dominio de la simulación debería ser mayor que la longitud de los potenciales de interacción.
+El valor correcto de $\lambda$ requeriría trabajar con $\approx 10^6$ partículas, y sería muy complicado de realizar computacionalmente.
+Al enfrentar este inconveniente, distintos autores~\cite{maru2012,horo_lambda} decidieron trabajar con un valor mucho menor $\lambda=10\,\text{fm}$, con la esperanza de retener los principales aspectos cualitativos y fenomenológicos del sistema (interacciones competitivas de distinto rango) al trabajar con sistemas más pequeños.
+Incluso si fueran capaces de producir estructura del tipo pasta, la elección particular del valor para la longitud de apantallamiento es arbitraria y basada casi únicamente end etalles computacionales.
+Notablemente, este valor de longitud de apantallamiento fue utilizado consecutivamente por los autores desde ese momento~\cite{26,horo_lambda,Dor12}.
+En este capítulo nos centraremos en el estudio de las consecuencias física de esta elección arbitraria.
+
+El rol de la longitud de apantallamiento ha sido apenas explorado en otros modelos.
+Por ejemplo, en un estudio del 2003~\cite{30}, el efecto de apantallamiento de un gas de electrones en estructuras nucleares fue investigado utilizando un modelo estático de gota líquida.
+En este estudio se encontró que el principal efecto del gas apantallante fue extender el ragno de densidades en las que las burbujas y los fragmentos aparecían, y reducir el ragno de estabilidad de fases homogéneas.
+A pesar de que la relevancia del apantallamiento resultó menor, el estudio, al ser estático, no incluía ningún efeco dinámico.
+
+Otro estudio, del 2005~\cite{Maruyama-2005}, utilizó una funcional densidad para investigar el apantallamiento de la carga en estructuras nucleares a densidades menores a la nuclear, pero a temperatura cero; en particular se compararon casos con y sin apantallamiento.
+Los resultados principales del estudio fueron perfiles de densidad de nucleones utilizadeos para cuantificar el ordenamiento de las densidades de carga de protones y electrones.
+Nuevamente, hallaron que las regiones de densidad en las que existe la pasta se amplían cuando se considera el apantallamiento de Coulomb, especialmente debido al reordenamiento de los protones; los autores remarcan la importancia de extender este estudio a temperaturas finitas y con modelos dinámicos.
+
+Más recientemente, algunos trabajos~\cite{horo13,nos13} comenzaron a estudiar el efecto que tiene la interacción de Coulomb en la formación de pasta utilizando modelos dinámicos.
+Los hallazgos principales fueron que la pasta artificial, de una estructura por celda (\emph{pseudo-pasta}), podía existir incluso en ausencia de interacción de Coulomb, y que existía debido a las condiciones periódicas de contorno y el tamaño finito~\cite{binder}.
+
 \section{Longitud de apantallamiento ``crítica''}\label{lambda_c}
 
 Una forma de analizar la naturaleza de la pasta obtenida es a través de la presión de las distintas configuraciones.

@@ -1,9 +1,44 @@
-En este capítulo tratamos las distintas escalas de longitud dentro de
-la dinamica de los nucleones en condiciones acordes a las de la corteza de las estrellas de neutrones, estudiando materia simétrica en isospín (igual cantidad de protones y neutrones) a densidades menores a la de saturación para 5000 partículas.
+En este capítulo tratamos las distintas escalas de longitud dentro de la dinamica de los nucleones en condiciones acordes a las de la corteza de las estrellas de neutrones, estudiando materia simétrica en isospín (igual cantidad de protones y neutrones) a densidades menores a la de saturación para 5000 partículas.
 Variando la temperatura encontramos una tranisición de fase sólido-líquido que se puede caracterizar también como una transición morfológica.
 Para temperaturas más altas que la de la transición de fase estudiamos la opacidad de los neutrinos y encontramos que en la fase líquida el \emph{scattering} de los neutrinos de bajo momento se mantiene elevado, incluso con morfologías que son significativamente diferentes a las de la pasta nuclear tradicional.
-\section{Transición de fase}
-\label{phase_transition}
+
+
+\section{Introducción}
+
+En este capítulo utilizamos distintas herramientas morfológicas y termodinámicas para caracterizar la materia de estrellas de neutrones simétrica.
+
+\subsection{Herramientas Morfológicas}
+
+Una de las herramientas morfológicas que utilizamos son los funcionales de Minkowski.
+Las medidas morfológicas de un cuerpo convexo $K \in \mathcal{R}$ se definen como funcionales $\varphi: \mathcal{R} \rightarrow \mathbb{R}$ que satisfacen tres propiedades:
+
+\begin{description}
+  \item{Invariancia de movimiento:} $\varphi(K) = \varphi(g(K))$, donde $g(K)$ implica cualquier tipo de traslación y rotación del cuerpo $K$.
+  \item{Aditividad:} $\varphi(K_1 \cup K_2) = \varphi(K_1) + \varphi(K_2) - \varphi(K_1 \cap K_2)$.
+  \item{Continuidad:} $\lim_{n\rightarrow\infty}\varphi(K_n) = \varphi(K)$ si $\lim_{n\rightarrow\infty}K_n = K$, donde ${K_n}$ es un conjunto de cuerpos convexos.
+\end{description}
+
+El teorema de Hadwiger dice que para un sistema de dimensión $d$ hay sólo $d+1$ funcionales independientes que satisfacen las propiedades mencionadas: las funcionales de Minkowski. En el espacio tridimensional, las funcionales de Minkowski están asociadas al volumen, el área, la curvatura media y el número de Euler. A pesar de que no necesariamente las estructuras obtenidas en este trabajo sean convexas (es decir, las funcionales de Minkowski no las definen unívocamente), utilizamos estas medidas para caracterizarlas.
+
+Además de las funcionales de Minkowski, utilizamos la función distribución de pares, usualmente denominada $g(r)$, que se define a partir de un histograma de todas las distancias entre pares de partículas.
+Este histograma luego se normaliza con respecto al del gas ideal, donde las distancias están completamente descorrelacionadas.
+Para tres dimensiones, esta nurmoalización es la densidad multiplicada por el volumen de un cascarón esférico.
+
+\subsection{Herramientas Termodinámicas}
+
+Además de las clásicas señales termodinámicas para las transiciones de fase de primer o segundo orden, utilizamos el coeficiente de Lindemann.
+El coeficiente de Lindemann se basa en la idea del desorden de las partículas, y es utilizado especialmente para estudiar transiciones de tipo sólido-líquido en sistemas infinitos, como los cristales.
+Se define a partir de la desviación estándar de las posiciones de las partículas, $\Delta
+r_i^2$:
+
+\begin{equation*}
+\Delta_L = \frac{\sqrt{\sum_i\langle\Delta r_i^2/N\rangle}}{a}
+\end{equation*}
+donde $a$ es la constante de red del cristal y $N$ el número total de partículas.
+En nuestro caso, escogenos $a=(V/N)^{1/3}$, la longitud característica del sistema.
+
+
+\section{Transición de fase}\label{phase_transition}
 \subsection{Transición de fase termodinámica}
 
 La figura~\ref{fig:energy} presenta la energía como función de la temperatura (curva calórica) para distintas densidades.
