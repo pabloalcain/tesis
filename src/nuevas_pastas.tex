@@ -1,6 +1,10 @@
 En este capítulo desarrollamos un estudio sistemático de la opacidad de neutrinos para distintas condiciones termodinámicas para evaluar el impacto que tiene la estructura que se forma.
-Estudiamos la dinámica de la opacidad de neutrinos de la materia heterogénea a distintas condiciones termodinámicas para distintas densidades, fracciones de protones y temperatura, calculando la opacidad del muy largo rango y la distribución de fragmentos.
+Estudiamos la opacidad de neutrinos de la materia heterogénea a distintas condiciones termodinámicas para distintas densidades, fracciones de protones y temperatura, calculando la opacidad del muy largo rango y la distribución de fragmentos.
 La opacidad de los neutrinos es de crucial importancia para la evolución térmica de las supernovas y el scattering de neutrinos.
+
+\section{Introducción}\label{sc:intro}
+\todo[inline]{Acá va la introducción a los reconocedores de fragmentos.
+Además, tendría que haber un apéndice a posteriori.}
 
 \section{Clusters}\label{sc:clusters}
 
@@ -77,7 +81,7 @@ Todos los fragmentos más grandes contienen más del $50\%$ de la masa total del
 \section{Opacidad de neutrinos}\label{sc:opacity}
 
 Las figuras~\ref{fig:gr_sq} y~\ref{fig:gr_sq_gnocchi} muestran la función distribución de pares y el factor de estructura \todo[inline]{ver apéndice para una explicación detallada del cálculo} para las fases de \emph{lasagna} y \emph{gnocchi} --- ver epígrafe para más detalles.
-En la funcióñ de distribución de pares podemos identificar (marcado con $\color{green} \blacktriangledown$) el pico que pertenece a la estructura cristalina de los neutrones dentro de la pasta (correlación con los vecinos más cercanos) y también una interacción de muy largo rango (marcada con una línea discontinua $\color{red}-\,-$.);
+En la función de distribución de pares podemos identificar (marcado con $\color{green} \blacktriangledown$) el pico que pertenece a la estructura cristalina de los neutrones dentro de la pasta (correlación con los vecinos más cercanos) y también una correlación de muy largo rango (marcada con una línea discontinua $\color{red}-\,-$.);
 este rango es el que genera el pico para los bajos momentos en el factor de estructura, relacionado con las estructuras de tipo pasta.
 El factor de estructura muestra un pico en $q_\text{peak} = 0.43\,\text{fm}^{-1}$ para la \emph{lasagna} y $q_\text{peak} = 0.37\,\text{fm}^{-1}$ para los \emph{gnocchi}, con un ancho de alrededor de
 $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda en las que la estructura es considerablemente opaca.
@@ -189,7 +193,7 @@ La opacidad del sistema decrece a medida que se reduce la fracción de protones 
 Cuando hay sólo un proton por neutrón ($x = 0.5$), la estructura de neutrones sigue casi idénticamente la de los protones.
 Sin embargo, a medida que la proporción de neutrones aumenta, la estructura de neutrones se difumina y su correlación de muy largo rango empieza a desaparecer.
 Este efecto puede verse en la distribución de fragmentos para $x = 0.2$, donde tenemos muchos neutrones aislados, que forman el gas de neutrones.
-Estas características afacetan las inhomogeneidades que aparecen en $x = 0.5$, suprimiendo su opacidad de muy largo rango.
+Estas características afectan las inhomogeneidades que aparecen en $x = 0.5$, suprimiendo su opacidad de muy largo rango.
 
 \begin{figure*}  \centering
   \begin{subfigure}[h!]{0.4\columnwidth}
@@ -232,12 +236,12 @@ A medida que disminuye la densidad, nos movemos hacia la fase de \emph{gnocchi},
 Ene ste caso, la máxima opacidad se mueve a energías menores.
 Como podemos ver en la figura~\ref{fig:absorption}, este aumento en la opacidad no sólo se produce cuando las heterogeneidades forman parte de las comúnmente conocidas como pasta nuclear, sino también cuando son bastante diferentes (la \emph{pasta nuclear generalizada} que podemos ver en la figura~\ref{fig:morpho}).
 
-Esperamos que estos resultados sean cualitativamente correctos, pero que dependan cuantitativamente del modelo escogido para describir la materia rica en neutrones.
+Es de esperar que estos resultados sean cualitativamente correctos, pero que dependan cuantitativamente del modelo escogido para describir la materia rica en neutrones.
 El modelo que estamos utilizando en este trabajo fue puesto a prueba extensivamente en colisiones y en física de iones pesados; es por esta razón que lo escogimos para describir cuantitativamente la materia rica de neutrones.
 
-Los modelos hidrodinámicos para la materia rica en neutrones~\cite{ruffert_coalescing_1995, mezzacappa_investigation_1998, geppert_temperature_2004, woosley_physics_2005, liebendorfer_supernova_2005} pueden sugerir fracciones de protones, densidades y temperaturas para distintas condiciones (supernovas, proto-estrellas de neutrones, estrellas de neutrones).
+\todo[inline]{Los modelos hidrodinámicos para la materia rica en neutrones~\cite{ruffert_coalescing_1995, mezzacappa_investigation_1998, geppert_temperature_2004, woosley_physics_2005, liebendorfer_supernova_2005} pueden sugerir fracciones de protones, densidades y temperaturas para distintas condiciones (supernovas, proto-estrellas de neutrones, estrellas de neutrones).}
 De este trabajo podemos encontrar, para este modelo específico, la opacidad a los neutrinos para distintas condiciones termodinámicas.
-Consecuentemente, combinando estos dos resultados con mediciones eventuales de la opacidad de los neutrinos en estrellas de neutrones, podemos comprobar la validez de distintos modelos nuclears y, en consecuencia, avanzar hacia la ecuación de estado de la materia nuclear.
+Consecuentemente, combinando estos dos resultados con mediciones eventuales de la opacidad de los neutrinos en estrellas de neutrones, podemos comprobar la validez de distintos modelos nucleares y, en consecuencia, avanzar hacia la ecuación de estado de la materia nuclear.
 
 \section{El cálculo del factor de estructura}
 
@@ -273,7 +277,7 @@ Podemos expandir la amplitud de scattering y utilizar $|z|^2 = z\cdot z^*$  y, s
   &= 1 + \frac{2}{N}\sum_{i < j}\cos{\mathbf{Q}\cdot\mathbf{R}_{ij}}
 \end{align*}
 
-Usualmente estamos interesados en el \emph{promedio de polvo} del factor de estructura: es decir, el factor de estructura promediado para todas las posibles orientaciones del vector de difracción (ya que en un polvo tenemos muchas estrucutras orientadas al azar).
+Usualmente estamos interesados en el conocido como \emph{promedio de polvo} del factor de estructura: es decir, el factor de estructura promediado para todas las posibles orientaciones del vector de difracción (ya que en un polvo tenemos muchas estrucutras orientadas al azar).
 Calculamos entonces
 
 \begin{equation*}

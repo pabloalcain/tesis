@@ -7,7 +7,7 @@ Estudiando la topología de los estados de equilibrio, antes de la expansión, r
 Identificamos distintos regímenes de fragmentación, dependiendo de la temperatura inicial y la velocidad de expansión.
 En particular, para los ya mencionados \emph{pregnocchi}, una nube de neutrones rodea a los fragmentos a lo largo de los comienzos de la expansión, resultando en sistemas con configuraciones compatibles con la emergencia del \emph{r-proccess}.
 
-Mostramos que una identificación adecuada de la distribución de fragmentos depende del algoritmo de reconocimiento de fragmentose scogido, y que el Algoritmo de Reconocimiento Temprano de Fragmentos (ECRA) fue el más estable.
+Mostramos que una identificación adecuada de la distribución de fragmentos depende del algoritmo de reconocimiento de fragmentos escogido, y que el Algoritmo de Reconocimiento Temprano de Fragmentos (ECRA) fue el más estable.
 Este enfoque nos permitió identificar la dinámica de la formación de fragmentos.
 Estos cálculos pueden ser el comienzo de una comparación entre los experimentos de fragmentación terrestres y los estudios de estrellas de neutrones.
 \section{Dependencia de la configuración con el potencial}
@@ -51,8 +51,8 @@ Estos cálculos pueden ser el comienzo de una comparación entre los experimento
 \label{fig:x04_potentials}
 \end{figure*}
 
-Distintos modelos de interacción resultan en distintas ecuaciones de estado y, en consecuencia, distintas configuraciones.
-Para comarar, mostramos en la figura~\ref{fig:x01_potentials} distintas imágenes para los tres modelos estudiados: \emph{CMD medium}, \emph{New medium} y \emph{SSP}.
+Distintos modelos de interacción resultan en distintas ecuaciones de estado y, en consecuencia, distintas distribuciones espaciales.
+Para comparar, mostramos en la figura~\ref{fig:x01_potentials} distintas imágenes para los tres modelos estudiados: \emph{CMD medium}, \emph{New medium} y \emph{SSP}.
 Estas estructuras son cercanas al estado fundamental, con temperatura muy baja ($T = 0.1\,\text{MeV}$), densidad $\rho = 0.05\,\text{fm}^{-3}$ y una fracción de protones de $x = 0.1$.
 Las diferencias son notorias: mientras que el potencial \emph{CMD medium} no tienen ninguna estructura identificable, \emph{New medium} y \emph{SSP} muestran claramenta aglomeraciones de protones (debido a la interacción atractiva que median los neutrones) embebidos en un \emph{mar de neutrones}.
 Esta estructura la llamaremos \emph{pre-gnocchi}.
@@ -62,8 +62,8 @@ Para comparar los potenciales en otra configuración, mostramos en la figura~\re
 Estas estructuras son cercanas al estado fundamental, con temperatura muy baja ($T = 0.1\,\text{MeV}$), densidad $\rho = 0.05\,\text{fm}^{-3}$ y una fracción de protones de $x = 0.4$.
 
 \section{Distribución Asintótica de Masas}
-Cuando el sistema se expande, la estructura se parte en fragmentos finitos
-Para tiempos suficientemente largos, estos fragmentos permanecen estables, ya que no interactúan entre sí.
+Cuando el sistema se expande, la estructura se parte en fragmentos finitos.
+Para tiempos suficientemente largos, estos fragmentos permanecen estables, ya que no interactúan entre sí y se han desexcitado por emisión de partículas.
 Llamaremos a estos ``fragmentos asintóticos''.
 
 Expandimos distintas configuraciones iniciales con el modelo \emph{New medium} para encontrar la distribución asintótica de masas.
@@ -111,11 +111,11 @@ Ahora nos centramos en el análisis de algunos ejemplos de la evolución del sis
 Tomaemos primero la expansión del sistema con $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.5\,\text{MeV}$.
 Mostramos en las primeras dos columnas de la tabla~\ref{tbl:expansion} los estados iniciales y asintótico con la expansión rápida y lenta para la \emph{lasagna}.
 Mientras que la condición inicial es un cluster infinito, en el régimen asintótico tenemos una distribución de fragmentos con muchos fragmentos finitos.
-Es intereasnte notar que la expansión rápida se parece a una fractura mecánica, en la que los fragemtnos se forman dentro de cada hoja de la \emph{lasagna}, mientras que la expansión lenta parece más una expansión térmica en la que el sistema asintótico pierde todo tipo de similaridad con la estructura original.
+Es intereasnte notar que la expansión rápida se parece a una fractura mecánica, en la que los fragmentos se forman dentro de cada hoja de la \emph{lasagna}, mientras que la expansión lenta parece más una expansión térmica en la que el sistema asintótico pierde todo tipo de similaridad con la estructura original.
 Los fragmentos se parten en muchos porque su tamaño tan grande no puede soportar la energía asociada con la expansión del sistema.
 
 Un escenario muy interesante es la expansión del sistema con baja fracción de protones: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
-En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$.
+En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$. \todo[inline]{Es como supernova?}
 
 A diferencia del escenario anterior, aquí hay una clara estructura de protones: los fragmentos existen desde el comienzo, immersos en un mar de neutrones.
 Pueden ser identificados visualmente si dibujamos los protones con un tamaño mucho mayor que el de los neutrones, como se ve en este conjunto de figuras.
@@ -141,8 +141,8 @@ Sin emgargo, este efecto solo no explica el cambio de tamaño: mientras que la c
 \label{fig:mst_pregnocchi}
 \end{figure}
 
-Para analizar esto, estudaimos la distribución con el algoritmo MST aplicado a los protones solos, mostrados en la figura~\ref{fig:mst_pregnocchi}.
-De acuerdo a esta figura, vemos que la distribución de fragmentos ed los protones no cambió sustancialemte (sólo un cluster de protones se rompió) y, efectivamente, el fragmento más grande tiene 32 protones.
+Para analizar esto, estudiamos la distribución con el algoritmo MST aplicado a los protones solos, mostrados en la figura~\ref{fig:mst_pregnocchi}.
+De acuerdo a esta figura, vemos que la distribución de fragmentos de los protones no cambió sustancialemte (sólo un cluster de protones se rompió) y, efectivamente, el fragmento más grande tiene 32 protones.
 ¿Qué tipo de resultados se obtienen del algoritmo ECRA, teóricamente más sólido?
 En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-BFM dio buenos resultados, e identifica los preclusters adecuadamente, incluso encontrando el fragmento que se rompió.
 
@@ -157,7 +157,7 @@ MSTE y ECRA son los algoritmos ya descritos, mientras que MSTEpC es el algoritmo
 En la figura~\ref{fig:lm_pre} mostramos la evolución del tamaño del fragmento más grande para las etapas iniciales de la evolución para los tres reconocedores de fragmentos: MSTE, MSTpC y ECRA.\@
 La figura muestra que el fragmento ECRA se estabiliza rápido y se mantiene relativamente estable, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes que los ECRA y se estabilizan más lentamente.
 También es interesante notar que el fragmento MSTpC comienza con alrededor de 100 neutrones más que el fragmento ECRA correspondiente, lo que implica que el fragmento de ECRA está en un ambiente muy rico en neutrones.
-Esta situación hace que el \emph{r-process} sea más probable.
+Esta situación sugiere que existe la posibilidad del \emph{r-process}, a diferencia de cálculos anteriores~\cite{caplan_pasta_2015}.
 
 Por el otro lado, en la expansión de la estructura de \emph{lasagna}, ninguno de los algoritmos reconocedores de fragmentos identifican fragmentos en tiempos muy tempranos de la evolución (ver figura~\ref{fig:lm_las}).
 En esta etapa hay un fragmento muy grande (que, de hecho, es infinito).
