@@ -1,0 +1,23 @@
+Un simple ejemplo puede ser estudiado para ver si los clusters MSTE son estables o no.
+Consideremos una simple interacción del tipo pozo de potencial, en la que
+\begin{equation}
+V_{ij}(r) =
+\begin{cases}
+-V_0 &\text{if } r \leq a\\[2ex]
+0 &\text{if } r > a.
+\end{cases}
+\end{equation}
+
+Estudiemos ahora un conjunto de partículas de masa $m$ con posiciones $r_i = i\,a$ (con $i \in \mathcal{Z}$) tal que todas las partícuals están a distancia $a$ de sus vecinos más cercanos.
+Si la velocidad es $v_i = i\,v$, cada parícula va a estar unida energéticamente con sus vecinos siempre que $v \leq \sqrt{2\,V_0/m}$.
+Para $2n+1$ partículas, con $-n \leq i \leq n$, la energía cinética del sistema será
+\begin{align}
+  K_{\text{CM}} &= \sum_{i=-n}^n \frac{1}{2} m\, i^2 v^2\\
+  &= \frac{n^3}{3}\,m\,v^2 + \mathcal{O}(n^2)
+\end{align}
+
+La energía potencial, sin embargo, es
+\begin{align}
+  V_{\text{CM}} &= \sum_{i=-n}^n -i V_0\\
+  &= - 2\,n^2\,V_0
+\end{align}

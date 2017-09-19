@@ -14,8 +14,8 @@
 \usepackage{geometry}
 \graphicspath{{./fig/}}
 %\def\input@path{{./src/}}
-
 \bibliographystyle{apsrev4-1}
+%\bibliographystyle{revtex}
 \begin{document}
 
 \title{Dependencia en el isospin de la ecuación de estado de la materia nuclear}
@@ -51,9 +51,22 @@
 \label{ch:dinamica}
 \input{src/dinamica.tex}
 
-\appendix{Funcionales de Minkowski}
+\chapter[Conclusiones]{Conclusiones y Perspectiva de Trabajo Futuro}
+\label{ch:conclusiones}
+\input{src/conclusiones.tex}
+
+\appendix
+\chapter{Funcionales de Minkowski}
 \label{ap:minkowski}
 \input{src/minkowski.tex}
+
+\chapter{Sobre la estabilidad de los fragmentos MSTE}
+\label{ap:mste}
+\input{src/mste.tex}
+
+\chapter{Cálculo del factor de estructura}
+\label{ap:sq}
+\input{src/sq.tex}
 
 \bibliography{nuclear}
 
