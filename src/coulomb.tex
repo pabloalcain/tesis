@@ -1,13 +1,13 @@
 En este capítulo estudiamos el rol de la interacción de Coulomb en la dinámica de los nucleones en las condiciones de la corteza de las estrellas de neutrones.
-Estudiamos la materia simétrica en sisospin a densidades de sub-saturación y temperaturas bajas.
+Estudiamos la materia simétrica en isospin a densidades de sub-saturación y temperaturas bajas.
 La interacción electrostática entre protones es incluida como un potencial de Coulomb apantallado, en el espíritu de la aproximación de Thomas-Fermi, pero variando artificialmente la longitud de apantallamiento para estudiar su efecto en la formación de las estructuras nuclears no homogéneas conocidas como ``pasta nuclear''.
 A medida que aumenta la longitud de apantallamiento, podemos ver una transición de un régimen de una pasta por celda (debido exclusivamente a efectos de tamaño finito) a un régimen en el que aparecen múltiples pastas por celda.
 Esta diferencia cualitativa en la estructura de la materia de estrellas de neutrones a bajas temperaturas muestra que se debe tomar especial cuidado cuando la longitud de apantallamiento es estimada para simulaciones numéricas.
 
 Como observamos en trabajos previos~\cite{schneider_nuclear_2013,gimenez_molinelli_simulations_2014}, en ausencia de la interacción de Coulomb (equivalente a $\lambda=0$), estructuras tipo pastas pueden ser observadas, aunque sólo una por celda.
 Estas \emph{pseudo-pastas} también tienen formas de esferas, tubos, placas, anti-tubos y anti-esferas, exactamente como la pasta con la interacción de Coulomb.
-La mayor diferencia e sque, sin la interacción de Coulomb, encontramos siempre una estructura por celda, lo que nos hace pensar que la estructura está relacionada con la condición periódica de contorno impuesta en la caja,
-La \emph{pseudo-pasta} esite debido a efectos de tamaño finito y, si la caja no existiera, la solución sería una gota infinita.
+La mayor diferencia es que, sin la interacción de Coulomb, encontramos siempre una estructura por celda, lo que nos hace pensar que la estructura está relacionada con la condición periódica de contorno impuesta en la caja,
+La \emph{pseudo-pasta} existe debido a efectos de tamaño finito y, si la caja no existiera, la solución sería una gota infinita.
 Notamos, sin embargo, que cuando existe la interacción de Coulomb, la competencia entre interacciones opuestas genera una longitud característica, ya no relacionada con el tamaño de la caja.
 A densidades de sub-saturación esta competencia es responsable por las fases de pasta, y en el límite de densidades muy bajas le da forma a los nucleos a los que estamos acostumbrados.
 
@@ -18,7 +18,7 @@ Más aún, esto nos permite estudiar las implicancias físicas del valor arbitra
 
 En las estrellas de neutrones, además de los protones y neutrones, existe un gas de electrones que permea todo el espacio.
 Este gas de electrones apantalla la interacción electrostática de rango largo entre los protones.
-Este efecto de apantallamiento es usualmente modelado con la aproximación de Thomas-Fermi, de acuerdo a la cual la interacción entre protones es un optencial del tipo Yukawa con una longitud de apantallamiento $\lambda$:
+Este efecto de apantallamiento es usualmente modelado con la aproximación de Thomas-Fermi, de acuerdo a la cual la interacción entre protones es un potencial del tipo Yukawa con una longitud de apantallamiento $\lambda$, conocida como longitud de Debye:
 
 \begin{equation*}
  V_{TF}(r) = \text{q}^2\frac{e^{-r/\lambda}}{r}
@@ -69,28 +69,28 @@ Sin embargo, la forma de las estructuras, caracterizadas a través de las funcio
 
 \begin{figure}[h!]  \centering
 \centering
-\includegraphics[width=0.4\columnwidth]{coulomb/pre.pdf}
+\includegraphics[width=0.7\columnwidth]{coulomb/pre.pdf}
 \caption{Presión como función del apantallamiento $\lambda$ para distintas densidades.
-  Podemos ver que para $\lambda<10\,\text{fm}$ la presión es negativa, sugiriendo que las condiciones periódicas de contorno están afectando la morfología de la solución.}
+  Podemos ver que para $\lambda<10\,\text{fm}$ la presión es negativa, sugiriendo que las condiciones periódicas de contorno están afectando la topología de la solución.}
 \label{fig:pre}
 \end{figure}
 
-Para clasificar las estructuras de bajas temperaturas ($T=0.001\,\text{MeV}$) para cada valor de $\lambda$, estudiamos su morfología con las herramientas de análisis para la distribución espacial de partículas: las funcionales de Minkowski.
+Para clasificar las estructuras de bajas temperaturas ($T=0.001\,\text{MeV}$) para cada valor de $\lambda$, estudiamos su topología con las herramientas de análisis para la distribución espacial de partículas: las funcionales de Minkowski.
 En las figuras~\ref{fig:minkowski} podemos ver la superficie, ancho medio y número de Euler para los estados hallados y su dependencia con $\lambda$ para distintas densidades.
 
 \begin{figure}[h!]  %figure 5 \centering
 \centering
-\begin{subfigure}[h!]{0.4\columnwidth}
+\begin{subfigure}[h!]{0.45\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/sup.pdf}
   \caption{Superficie}
 \end{subfigure}
-\begin{subfigure}[h!]{0.4\columnwidth}
+\begin{subfigure}[h!]{0.45\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cur.pdf}
   \caption{Ancho medio}
 \end{subfigure}
-\begin{subfigure}[h!]{0.4\columnwidth}
+\begin{subfigure}[h!]{0.45\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/eul.pdf}
   \caption{Número de Euler}
@@ -128,49 +128,49 @@ Para este modelo de interacción nuclear y Coulomb, parece que el valor usual de
 
 \begin{figure}
 \centering
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou0-d0-03.png}
   \caption{$\rho=0.03\,\text{fm}^{-3}$, $\lambda=0\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou10-d0-03.png}
   \caption{$\rho=0.03\,\text{fm}^{-3}$, $\lambda=10\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou20-d0-03.png}
   \caption{$\rho=0.03\,\text{fm}^{-3}$, $\lambda=20\,\text{fm}$}
 \end{subfigure}
 
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou0-d0-05.png}
   \caption{$\rho=0.05\,\text{fm}^{-3}$, $\lambda=0\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou10-d0-05.png}
   \caption{$\rho=0.05\,\text{fm}^{-3}$, $\lambda=10\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou20-d0-05.png}
   \caption{$\rho=0.05\,\text{fm}^{-3}$, $\lambda=20\,\text{fm}$}
 \end{subfigure}
 
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou0-d0-08.png}
   \caption{$\rho=0.08\,\text{fm}^{-3}$, $\lambda=0\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou10-d0-08.png}
   \caption{$\rho=0.08\,\text{fm}^{-3}$, $\lambda=10\,\text{fm}$}
 \end{subfigure}
-\begin{subfigure}[h!]{0.5\columnwidth}
+\begin{subfigure}[h!]{0.3\columnwidth}
   \centering
   \includegraphics[width=\columnwidth]{coulomb/cou20-d0-08.png}
   \caption{$\rho=0.08\,\text{fm}^{-3}$, $\lambda=20\,\text{fm}$}
@@ -208,12 +208,12 @@ Esto muestra que la estructura de rango corto está gobernada por el potencial n
 Para la densidad $\rho=0.005\,\text{fm}^{-3}$, para longitudes de apantallamiento $\lambda<10\,\text{fm}$, hay un solo \emph{gnocchi}.
 Sin embargo, cuando aumentamos de $\lambda=15\,\text{fm}$ a $\lambda=20\,\text{fm}$ para $\rho=0.005\,\text{fm}^{-3}$, aunque cualitativamente vemos el mismo comportamiento (ambos muestran \emph{gnocchi}), el tamaño promedio de los fragmentos es diferente para estos dos valores, de ahí la diferencia observada en las funcionales de Minkowski.
 Para estudiar este resultado, graficamos el tamaño de los \emph{gnocchi} como función de $\lambda$ en la figura~\ref{fig:gnocchi_mass}.
-Vemos que, cuanod tenemos en cuenta la varianza en la distribución de masa, se mantiene estable para $\lambda\geq20\,\text{fm}$.
+Vemos que, cuando tenemos en cuenta la varianza en la distribución de masa, se mantiene estable para $\lambda\geq20\,\text{fm}$.
 El error relativo promedio del gráfico es $e\approx8\%$.
 
 \begin{figure}[h] %figure 3
 \centering
-\includegraphics[width=\columnwidth]{coulomb/gnocchi_mass}
+\includegraphics[width=0.7\columnwidth]{coulomb/gnocchi_mass}
 \caption{Tamaño promedio de los \emph{gnocchi} dependiendo de la longitud de apantallamiento.}
 \label{fig:gnocchi_mass}
 \end{figure}
@@ -266,6 +266,6 @@ Es recién para $\lambda=20\,\text{fm}$ que la morfología de las estructuras se
 Más aún, las estructuras en este régimen son las pastas usuales.
 
 Debido a esto, creemos que se tiene que tomar extrema precaución cuando se elige un valor arbitrario de $\lambda$, ya que aunque algunos resultados a $\lambda=10\,\text{fm}$ pueden ser como la pasta sperada, los resultados obtenidos para esa elección particular de $\lambda$ pueden ser cualitativamente diferente de aquellos en la correcta aproximación de Thomas-Fermi.
-En conclusión, encontramos que la elección de un buen valor para $\lambda$ que vuelve al sistema computable computacionalmente y puede adecuadamente recuperar la física de la aproximación de Thomas-Fremi no es una tarea trivial, y se necesita un estudio riguroso antes de escogerlo.
+En conclusión, encontramos que la elección de un buen valor para $\lambda$ que vuelve al sistema computable computacionalmente y puede adecuadamente recuperar la física de la aproximación de Thomas-Fermi no es una tarea trivial, y se necesita un estudio riguroso antes de escogerlo.
 Un buen valor de $\lambda$ debe cumplir $\lambda>\lambda_c$, que depende del modelo utilizado para la interacción nuclear.
 
