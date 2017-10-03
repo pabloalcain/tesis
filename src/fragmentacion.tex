@@ -1,6 +1,10 @@
 Las estrellas de neutrones son sistemas astronómicos con nucleones sometidos a condiciones extremas.
-Debido a la repulsión de Coulomb entre protones el sistema tiene inhomogeneidades en su estructura.
+Debido a la combinación entre la atracción nuclear y la repulsión de Coulomb entre protones el sistema tiene inhomogeneidades en su estructura.
 Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la distribución de fragmentos depende de las condiciones termodinámicas (temperatura, fracción de protones, \ldots) y la velocidad de expansión.
+
+Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
+Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
+Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
 
 El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}.
 Esta expansión se parece a la evolución de las colisiones de estrellas de neutrones.
@@ -8,7 +12,7 @@ A partir de una configuración de equilibrio, expandimos el sistema homogéneame
 Estudiamos, con cuatro algoritmos reconocedores de fragmentos distintos, la distribución de fragmentos a lo largo de esta expansión y la dinámica de la formación de fragmentos.
 
 Encontramos los típicos regímenes de la distribución de fragmentos de una expansión: U-shaped, ley de potencias y exponencial.
-Otra característica de nuestro cálculo es que, ya que la interacción entre protones es repulsiva de largo rango, no siempre tenemos un fragmento infinoto.
+Otra característica de nuestro cálculo es que, ya que la interacción entre protones es repulsiva de largo rango, no siempre tenemos un fragmento infinito.
 Como es de esperar, cuanto más rápida es la velocidad e expansión, más rápido desaparece el fragmento infinito.
 
 Desarrollamos una herramienta basada en análisis de grafos para la identificación del fragmento infinito y encontramos una transición de distribución de fragmentos de U-shaped a exponencial a medida que aumenta la velocidad de expansión.
@@ -22,18 +26,18 @@ Este enfoque nos permitió identificar la dinámica de la formación de fragment
 Estos cálculos pueden ser el comienzo de una comparación entre los experimentos de fragmentación terrestres y los estudios de estrellas de neutrones.
 
 \section{Introducción}
-En configuraciones típicas tenemos no sólo la estructura conocida como pasta nuclear, sino también un gas de nucleones en que aquélla está embebida.
-Para caracterizar adecuadamente las fases de pastam debenis saber cuáles partículas pertenecen a las fases de pasta y cuáles al gas.
+En configuraciones típicas tenemos no sólo la estructura conocida como pasta nuclear, sino también, para ciertos valores de la fracción de protones $x$, un gas de nucleones en que aquélla está embebida.
+Para caracterizar adecuadamente las fases de pasta debemos saber cuáles partículas pertenecen a las fases de pasta y cuáles al gas.
 Así, lo que debemos es encontrar los fragmentos que se forman a lo largo de la simulación.
 
 Uno de los algoritmos para identificar la formación de fragmentos es el conocido como Minimum Spanning Tree (MST).
-En el algoritmo MST dos partículas pertenecen al mismo cluster $\{C^{\text{MST}}_n\}$ si la distancia entre ellas es menor que una distancia de corte$r_{cut}$:
+En el algoritmo MST dos partículas pertenecen al mismo cluster $\{C^{\text{MST}}_n\}$ si la distancia entre ellas es menor que una distancia de corte $r_{cut}$:
 \begin{equation*}
   i \in C^{\text{MST}}_n \Leftrightarrow \exists j \in C_n \mid
   r_{ij} < r_{cut}
 \end{equation*}
 
-Esta definición de fragmentos funciona adecuadamente para sistemas sin energía cinética, y está basada en la cola atractiva de la interacción nuclear.
+Esta definición de fragmentos funciona adecuadamente para sistemas sin energía cinética y baja densidad (en general, sistemas fríos y diluidos), y está basada en la cola atractiva de la interacción nuclear.
 Sin embargo, si el sistema tiene una temperatura mayor a cero, podemos tener una situación en la que dos partículas están más cerca que la distancia de corte, pero con una energía cinética relativa tan grande que van a separarse indefectiblemente.
 
 Para tratar situaciones de temperatura mayores a cero, tenemos que tener en cuenta el momento relativo entre las partículas.
@@ -100,6 +104,8 @@ Por ejemplo, el ciclo  E--E--S tiene paredes E y S, de modo que $I = M_E + M_S =
 Para el ciclo E--W, $I = M_E + M_W = 0$, y el ciclo es finito.
 
 \section{Expansión}\label{sc:expansion}
+La simulación de la colisión de dos estrellas de neutrones es impracticable computacionalmente con este nivel de detalle, ya que implicaría resolver aproximadamente $10^{30}$ veces la celda de simulación que utilizamos.
+En vez de simular la colisión de las estrellas, emulamos su comportamiento realizando expansiones locales de sistemas infinitos.
 Para expandir la materia rica en neutrones que simula un sistema infinito con condiciones periódicas de contorno, seguimos el método del \emph{big bang microscópico}, explicado por Holian y Grady en Ref.~\cite{holian_fragmentation_1988} y usado por la expansión de sistemas infinitos previamente~\cite{dorso_onset_1996}.
 Consiste en una expansión de la celda de simulación a un ritmo isotrópico y constante $\dot{\eta}$:
 \begin{equation}
@@ -187,17 +193,26 @@ Es interesante notar que a diferencia de casos típicos de estudios de fragmento
 
 \section{Dependencia de la configuración con el potencial}
 
+\begin{figure} \centering
+  \includegraphics[width=0.7\columnwidth]{fragmentacion/binding}
+  \caption{Energía de unión para las distintas parametrizaciones y datos experimentales.
+    Podemos observar que las tres parametrizaciones reproducen cualitativamente el comportamiento de la energía de ligadura.}
+  \label{fig:binding}
+\end{figure}
+La forma característica de la energía de unión para los núcleos terrestres puede reproducirse con varios modelos de interacción entre las partículas.
+En la figura~\ref{fig:binding} observamos la energía de unión para tres potenciales distintos: \emph{CMD medium}, \emph{Simple Semiclassical Potential} y \emph{New Medium}, una parametrización inspirada en los potenciales de Pandharipande~\cite{akmal_equation_1998} pero con parámetros distintos.
+
 \begin{figure*}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/pregnocchi_med.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/pregnocchi_med.png}
     \caption{CMD medium}
   \end{subfigure}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/pregnocchi_newmed.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/pregnocchi_newmed.png}
     \caption{New medium}
   \end{subfigure}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/pregnocchi_horo.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/pregnocchi_horo.png}
     \caption{SSP}
   \end{subfigure}
   \caption{Imágenes de configuraciones para distintas parametrizaciones de la interacción nuclear, todas con las mismas condiciones termodinámicas: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
@@ -209,15 +224,15 @@ Es interesante notar que a diferencia de casos típicos de estudios de fragmento
 
 \begin{figure*}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/jungle_gym.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/jungle_gym.png}
     \caption{Medium}
   \end{subfigure}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/lasagna_newmed.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/lasagna_newmed.png}
     \caption{New medium}
   \end{subfigure}
   \begin{subfigure}{.3\linewidth}
-    \includegraphics[width=\columnwidth]{dinamica/lasagna_horo.png}
+    \includegraphics[width=\columnwidth]{fragmentacion/lasagna_horo.png}
     \caption{SSP}
   \end{subfigure}
   \caption{Imágenes de configuraciones para distintas parametrizaciones de la interacción nuclear, todas con las mismas condiciones termodinámicas: $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
@@ -226,7 +241,8 @@ Es interesante notar que a diferencia de casos típicos de estudios de fragmento
 \label{fig:x04_potentials}
 \end{figure*}
 
-Distintos modelos de interacción resultan en distintas ecuaciones de estado y, en consecuencia, distintas distribuciones espaciales.
+
+Estos distintos modelos de interacción resultan en distintas ecuaciones de estado y, en consecuencia, distintas distribuciones espaciales.
 Para comparar, mostramos en la figura~\ref{fig:x01_potentials} distintas imágenes para los tres modelos estudiados: \emph{CMD medium}, \emph{New medium} y \emph{SSP}.
 Estas estructuras son cercanas al estado fundamental, con temperatura muy baja ($T = 0.1\,\text{MeV}$), densidad $\rho = 0.05\,\text{fm}^{-3}$ y una fracción de protones de $x = 0.1$.
 Las diferencias son notorias: mientras que el potencial \emph{CMD medium} no tienen ninguna estructura identificable, \emph{New medium} y \emph{SSP} muestran claramenta aglomeraciones de protones (debido a la interacción atractiva que median los neutrones) embebidos en un \emph{mar de neutrones}.
@@ -250,20 +266,20 @@ Un comportamiento similar se puede ver en la figura~\ref{fig:asymp_las}, donde e
 Otra característica relevante de la distribución asintótica de masas (que no se muestra en la figura debido a limitaciones de escala) es que la expansión rápida tiene una fracción no despreciable de neutrones sueltos (cerca del $4\%$) mientras que la expansión lenta presenta muy pocos ($0.1\%$).
 
 \begin{figure}[h]
-  \includegraphics[width=0.8\columnwidth]{dinamica/pregnocchi}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/pregnocchi}
   \caption{Distribución asintótica de masas para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ y dos velocidades de expansión distintas: \emph{rápida} $\dot{\eta} = 0.01\,\text{c/fm}$ y \emph{lenta} $\dot{\eta} = 0.0001\,\text{c/fm}$.}
 \label{fig:asymp_preg}
 \end{figure}
 
 \begin{figure}[h]
-  \includegraphics[width=0.8\columnwidth]{dinamica/lasagna}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/lasagna}
   \caption{Distribución asintótica de masas para $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$ y dos velocidades de expansión distintas: \emph{rápida} $\dot{\eta} = 0.01\,\text{c/fm}$ y \emph{lenta} $\dot{\eta} = 0.0001\,\text{c/fm}$.}
 \label{fig:asymp_las}
 \end{figure}
 
 
 \section{Formación de fragmentos}
-\newcommand{\tabfig}[1]{\includegraphics[width=0.25\linewidth]{dinamica/#1}}
+\newcommand{\tabfig}[1]{\includegraphics[width=0.25\linewidth]{fragmentacion/#1}}
 
 \begin{table*}
   \centering
@@ -305,13 +321,13 @@ Sin emgargo, este efecto solo no explica el cambio de tamaño: mientras que la c
 ¿Se rompió un cluster mientras el sistema se expandía?
 
 \begin{figure}
-  \includegraphics[width=0.8\columnwidth]{dinamica/mste}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/mste}
   \caption{Distribución asintótica e inicial de masas para un sistema con $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$, para una expansión lenta ($\dot{\eta} = 0.0001\text{c/fm}$), con el algoritmo de reconocimiento MSTE.}
 \label{fig:mste_pregnocchi}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.8\columnwidth]{dinamica/mst_nube}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/mst_nube}
   \caption{Distribución asintótica e inicial de masas para un sistema con $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$, para una expansión lenta ($\dot{\eta} = 0.0001\text{c/fm}$), con el algoritmo de reconocimiento MST para protones.}
 \label{fig:mst_pregnocchi}
 \end{figure}
@@ -322,7 +338,7 @@ De acuerdo a esta figura, vemos que la distribución de fragmentos de los proton
 En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-BFM dio buenos resultados, e identifica los preclusters adecuadamente, incluso encontrando el fragmento que se rompió.
 
 \begin{figure}
-  \includegraphics[width=0.8\columnwidth]{dinamica/ecra}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/ecra}
   \caption{Distribución asintótica e inicial de masas para un sistema con $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$, para una expansión lenta ($\dot{\eta} = 0.0001\text{c/fm}$), con el algoritmo de reconocimiento ECRA. Al comprarar con la figura~\ref{fig:mst_pregnocchi}, notar la diferencia de escalas en el eje $y$.}
 \label{fig:ecra_pregnocchi}
 \end{figure}
@@ -342,14 +358,14 @@ Esto muestra que el algoritmo de ECRA es además más versátil para estudiar la
 También es interesante notar (no se muestra en las figuras) que la fracción de protones $x$ de estos fragmentos es relativamente estable para el algoritmo ECRA, mientras que los otros dos resultan en una fracción de protones que decae monótonamente con el tiempo.
 
 \begin{figure}[H]  \centering
-  \includegraphics[width=0.8\columnwidth]{dinamica/lm_pre}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/lm_pre}
   \caption{Masa del fragmento más grande para MSTE, MSTpC y ECRA para las etapas iniciales de la evolución, para la configuración \emph{pre-gnocchi}.
     Se puede observar que el fragmento de ECRA se mantiene relativamente estable y se estabiliza rápidamente, mientras que los otros dos algoritmos ersultan en fragmentos que son siempre más grandes y tardan más en estabilizarse.}
 \label{fig:lm_pre}
 \end{figure}
 
 \begin{figure}[H]  \centering
-  \includegraphics[width=0.8\columnwidth]{dinamica/lm_las}
+  \includegraphics[width=0.8\columnwidth]{fragmentacion/lm_las}
   \caption{Masa del fragmento más grande para MSTE, MSTpC y ECRA para las etapas iniciales de la evolución, para la configuración \emph{lasagna}.
     Aquí se puede notar que, como en el caso anterior, el algoritmo ECRA reconoce la fractura del fragmento infinito muy tempranamente.
     En el régimen asintótico (por tiempos muy largos, no se muestra en las figuras) estos tres algoritmos dan los mismos resultados.}
