@@ -19,7 +19,7 @@ Desarrollamos una herramienta basada en análisis de grafos para la identificaci
 
 Estudiando la topología de los estados de equilibrio, antes de la expansión, reprodujimos las pastas usuales y, además, una nueva fase que hemos llamado \emph{pregnocchi}, que consiste de agregados de protones embebidos en un  \emph{mar de neutrones}.
 Identificamos distintos regímenes de fragmentación, dependiendo de la temperatura inicial y la velocidad de expansión.
-En particular, para los ya mencionados \emph{pregnocchi}, una nube de neutrones rodea a los fragmentos a lo largo de los comienzos de la expansión, resultando en sistemas con configuraciones compatibles con la emergencia del \emph{r-proccess}.
+En particular, para los ya mencionados \emph{pregnocchi}, una nube de neutrones rodea a los fragmentos a lo largo de los comienzos de la expansión, resultando en sistemas con configuraciones compatibles con la emergencia del \emph{r-process}.
 
 Mostramos que una identificación adecuada de la distribución de fragmentos depende del algoritmo de reconocimiento de fragmentos escogido, y que el Algoritmo de Reconocimiento Temprano de Fragmentos (ECRA) fue el más estable.
 Este enfoque nos permitió identificar la dinámica de la formación de fragmentos.
@@ -50,7 +50,7 @@ donde $K^{CM}_i$ es la energía cinética relativa al centro de masa del fragmen
 El conjunto de fragmentos $\{C_n\}$ es, entonces, el que minimiza la suma de todas las energías de los fragmentos $E_{\text{partición}} =
 \sum_n \epsilon_n$.
 
-El algoritmo ECRA puede ser utilizado facilmente para sistemas pequeños~\cite{dorso_fluctuation_1994}, pero al ser una optimización combinatoria, no puede ser utilizado en sistemas grandes.
+El algoritmo ECRA puede ser utilizado fácilmente para sistemas pequeños~\cite{dorso_fluctuation_1994}, pero al ser una optimización combinatoria, no puede ser utilizado en sistemas grandes.
 Mientras que encontrar fragmentos ECRA es muy costoso computacionalmente, utilizar simplemente fragmentos MST resulta en fragmentos excesivamente grandes.
 Una alternativa es el algoritmo Minimum Spanning Tree Energy (MSTE)~\cite{dorso_topological_2012}.
 Este algoritmo es una modificación de MST, considerando la energía cinética.
@@ -76,7 +76,7 @@ En la figura~\ref{fig:scheme_clusters} podemos ver una representación esquemát
 Para hallar las conexiones entre estos fragmentos a través de los contornos, dibujamos un grafo de los fragmentos, donde los conectamos dependiendo de si se conectan o no a través de una pared, y etiquetamos dicha conexión con la etiqueta de la pared.
 Por ejemplo, comenzamos con el fragmento 1.
 Se conecta con el fragmento 2 a través de la pared E, por lo que agregamos una conexión $1\rightarrow2$ etiquetada como E.
-Simétricamente, agragamos una conexión $2\rightarrow1$ etiquetada W.
+Simétricamente, agregamos una conexión $2\rightarrow1$ etiquetada W.
 Ahora vamos por el par 1-3.
 Se conecta a través de la pared S, por lo que agregamos $1\rightarrow3$ con la etiqueta S y $3\rightarrow1$ con la etiqueta N.
 El fragmento 1 no se conecta con los 4, 5 o 6, por lo que éstas son las únicas conexiones que tenemos para dicho fragmento.
@@ -84,7 +84,7 @@ Una vez que hayamos hecho eso, obtenemos el grafo de la figura~\ref{fig:graph_cl
 
 \begin{figure}  \centering
   \includegraphics[width=0.45\columnwidth]{fragmentacion/graph_clusters}
-  \caption{Grafo de los fragmentos con conexiones etiquetadas por la etiquieta de la pared a través de la cual se conectan.
+  \caption{Grafo de los fragmentos con conexiones etiquetadas por la etiqueta de la pared a través de la cual se conectan.
     El grafo puede ser dividido en dos subgrafos que no se conectan entre ellos: 1--2--3--4 y 5--6.
     Cada uno de estos subgrafos es un fragmento al considerar las condiciones periódicas de contorno.}
 \label{fig:graph_clusters}
@@ -93,7 +93,7 @@ Una vez que hayamos hecho eso, obtenemos el grafo de la figura~\ref{fig:graph_cl
 Ahora nos preguntamos si estos subgrafos representan un fragmento infinito o no.
 Para tener un fragmento infinito necesitamos un ciclo cerrado (lo opuesto no es cierto: tener un circuito cerrado no es suficiente para tener un fragmento infinito, como podemos ver en el subgrafo 5--6), de modo que primero identificamos ciclos y los marcamos como candidatos para fragmentos infinitos.
 Cada conexión agrega un ciclo (ya que las conexiones de los fragmentos son ida y vuelta), pero sabemos de inspeccionar la figura~\ref{fig:graph_clusters} que el fragmento 1--2--3 es infinito.
-La clave para identificar en los grafos los framentos infinitos es identificar, en el grafo, qué hace al fragmento 1--2--3 infinito.
+La clave para identificar en los grafos los fragmentos infinitos es identificar, en el grafo, qué hace al fragmento 1--2--3 infinito.
 La característica fundamental del fragmento 1--2--3 es que su ciclo 1--2--3--1 puede ser circulado a través de las paredes E--E--S, mientras que el 5--6 puede ser circulado sólo a través de E--W.
 Ahora, para que el fragmento sea infinito, necesitamos que se extienda infinitamente en, al menos, una dirección.
 De este modo, una vez que tenemos la lista de paredes del ciclo, creamos una magnitud $I$ asociada a cada ciclo, que se crea de la siguiente manera.
@@ -124,7 +124,7 @@ Esta prescripción para la expansión es matemáticamente equivalente a la ley d
 Es interesante notar que la expansión con esta prescripción es (para el sistema infinito simulado) adiabática: del momento inicial en adelante, no se agrega más energía al sistema.
 
 \section{Fragmento infinito}
-En la figura~\ref{fig:morpho} mostramos los estados inicial y final de la expansión de la celda principial de $N=11000$ partículas para velocidades de expansión muy bajas.
+En la figura~\ref{fig:morpho} mostramos los estados inicial y final de la expansión de la celda principal de $N=11000$ partículas para velocidades de expansión muy bajas.
 Podemos ver que, más allá de que la configuración inicial muestra una distribución de partículas compacta, la configuración final consiste de \emph{gnocchi} (casi esféricos) con una masa de alrededor de 80 partículas.
 
 \begin{figure} \centering
@@ -144,7 +144,7 @@ Podemos ver que, más allá de que la configuración inicial muestra una distrib
 \end{figure}
 
 En la figura~\ref{fig:infinite} mostramos la fracción de partículas en la celda principal que forman parte de un cluster infinito (\emph{Fracción de Fragmento Infinito}, FFI).
-Podemos ver fácilmente que en las primeras etapas de la evolución, como la temperatura es baja, la mayor parte del sistema en la celda principal pertenence al fragmento infinito.
+Podemos ver fácilmente que en las primeras etapas de la evolución, como la temperatura es baja, la mayor parte del sistema en la celda principal pertenece al fragmento infinito.
 Sin embargo, a medida que evoluciona el sistema de acuerdo a la velocidad de expansión, la FFI disminuye y llega a cero rápidamente, implicando que no hay fragmentos infinitos en el sistema.
 
 \begin{figure}
@@ -216,7 +216,7 @@ En la figura~\ref{fig:binding} observamos la energía de unión para tres potenc
     \caption{SSP}
   \end{subfigure}
   \caption{Imágenes de configuraciones para distintas parametrizaciones de la interacción nuclear, todas con las mismas condiciones termodinámicas: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
-    Las diferencias cualitativas entre el potencial tipo medio de CMD y las otras dos paramtrizaciones (New Medium y SSP) son evidentes.
+    Las diferencias cualitativas entre el potencial tipo medio de CMD y las otras dos parametrizaciones (New Medium y SSP) son evidentes.
     Llamamos estas estructuras que aparecen en New Medium y SSP \emph{pregnocchi}.
     Para facilitar la identificación de la estructura de protones, los neutrones están representados por puntos muy pequeños comparados con los protones.}
 \label{fig:x01_potentials}
@@ -236,7 +236,7 @@ En la figura~\ref{fig:binding} observamos la energía de unión para tres potenc
     \caption{SSP}
   \end{subfigure}
   \caption{Imágenes de configuraciones para distintas parametrizaciones de la interacción nuclear, todas con las mismas condiciones termodinámicas: $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
-    Las diferencias cualitativas entre el potencial tipo medio de CMD y las otras dos paramtrizaciones (New Medium y SSP) son evidentes.
+    Las diferencias cualitativas entre el potencial tipo medio de CMD y las otras dos parametrizaciones (New Medium y SSP) son evidentes.
     Mientras que el potencial CMD muestra una estructura de tipo \emph{jungle gym}, tanto New Medium como SSP muestra \emph{lasagna} que son ligeramente diferentes entre sí.}
 \label{fig:x04_potentials}
 \end{figure*}
@@ -245,7 +245,7 @@ En la figura~\ref{fig:binding} observamos la energía de unión para tres potenc
 Estos distintos modelos de interacción resultan en distintas ecuaciones de estado y, en consecuencia, distintas distribuciones espaciales.
 Para comparar, mostramos en la figura~\ref{fig:x01_potentials} distintas imágenes para los tres modelos estudiados: \emph{CMD medium}, \emph{New medium} y \emph{SSP}.
 Estas estructuras son cercanas al estado fundamental, con temperatura muy baja ($T = 0.1\,\text{MeV}$), densidad $\rho = 0.05\,\text{fm}^{-3}$ y una fracción de protones de $x = 0.1$.
-Las diferencias son notorias: mientras que el potencial \emph{CMD medium} no tienen ninguna estructura identificable, \emph{New medium} y \emph{SSP} muestran claramenta aglomeraciones de protones (debido a la interacción atractiva que median los neutrones) embebidos en un \emph{mar de neutrones}.
+Las diferencias son notorias: mientras que el potencial \emph{CMD medium} no tienen ninguna estructura identificable, \emph{New medium} y \emph{SSP} muestran claramente aglomeraciones de protones (debido a la interacción atractiva que median los neutrones) embebidos en un \emph{mar de neutrones}.
 Esta estructura la llamaremos \emph{pre-gnocchi}.
 Esta es la primera vez que se observa este tipo de estructuras, y es también una muy interesante diferencia \emph{cualitativa} observadas entre parametrizaciones de la ecuación de estado.
 
@@ -258,7 +258,7 @@ Para tiempos suficientemente largos, estos fragmentos permanecen estables, ya qu
 Llamaremos a estos ``fragmentos asintóticos''.
 
 Expandimos distintas configuraciones iniciales con el modelo \emph{New medium} para encontrar la distribución asintótica de masas.
-Como primer ejemplo, mostramos en la figura~\ref{fig:asymp_preg} la distribucióñ asintótica de masas (calculada con el algoritmo MSTE) para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ para dos velocidades de expansión: \emph{rápida} ($\dot{\eta} = 0.01\,\text{c/fm}$)y \emph{lenta} ($\dot{\eta} = 0.0001\,\text{c/fm}$)
+Como primer ejemplo, mostramos en la figura~\ref{fig:asymp_preg} la distribución asintótica de masas (calculada con el algoritmo MSTE) para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ para dos velocidades de expansión: \emph{rápida} ($\dot{\eta} = 0.01\,\text{c/fm}$)y \emph{lenta} ($\dot{\eta} = 0.0001\,\text{c/fm}$)
 Podemos ver aquí que la expansión lenta permite la existencia de fragmentos con masa de hasta 60 (20 de los cuales son protones) mientras que la expansión rápida produce fragmentos más pequeños de hasta 20 (6 protones).
 Este comportamiento es esperado, ya que cuanto más rápida la expansión, mayor la energía de excitación que se le agrega al sistema.
 En consecuencia, una expansión más rápida debería romper fragmentos que, de otro modo, serían estables.
@@ -299,25 +299,25 @@ Otra característica relevante de la distribución asintótica de masas (que no 
 \end{table*}
 
 Ahora nos centramos en el análisis de algunos ejemplos de la evolución del sistema en el tiempo: cuándo y cómo se forman los fragmentos asintóticos.
-Tomaemos primero la expansión del sistema con $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.5\,\text{MeV}$.
+Tomemos primero la expansión del sistema con $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.5\,\text{MeV}$.
 Mostramos en las primeras dos columnas de la tabla~\ref{tbl:expansion} los estados iniciales y asintótico con la expansión rápida y lenta para la \emph{lasagna}.
 Mientras que la condición inicial es un cluster infinito, en el régimen asintótico tenemos una distribución de fragmentos con muchos fragmentos finitos.
-Es intereasnte notar que la expansión rápida se parece a una fractura mecánica, en la que los fragmentos se forman dentro de cada hoja de la \emph{lasagna}, mientras que la expansión lenta parece más una expansión térmica en la que el sistema asintótico pierde todo tipo de similaridad con la estructura original.
+Es interesante notar que la expansión rápida se parece a una fractura mecánica, en la que los fragmentos se forman dentro de cada hoja de la \emph{lasagna}, mientras que la expansión lenta parece más una expansión térmica en la que el sistema asintótico pierde todo tipo de similitud con la estructura original.
 Los fragmentos se parten en muchos porque su tamaño tan grande no puede soportar la energía asociada con la expansión del sistema.
 
 Un escenario muy interesante es la expansión del sistema con baja fracción de protones: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
 En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$. \todo[inline]{Es como supernova?}
 
-A diferencia del escenario anterior, aquí hay una clara estructura de protones: los fragmentos existen desde el comienzo, immersos en un mar de neutrones.
+A diferencia del escenario anterior, aquí hay una clara estructura de protones: los fragmentos existen desde el comienzo, inmersos en un mar de neutrones.
 Pueden ser identificados visualmente si dibujamos los protones con un tamaño mucho mayor que el de los neutrones, como se ve en este conjunto de figuras.
 A medida que el sistema se expande, se modifica.
 Esto genera la siguiente pregunta: ¿la distribución de fragmentos se modifica sustancialmente?
-La respuesta a esta pregunta requiere de un análisis profundo de la evolución temporal de la distribucióñ de fragmentos, y no podemos confiar en una inspección visual; necesitamos usar algoritmos de reconocimiento de fragmentos.
+La respuesta a esta pregunta requiere de un análisis profundo de la evolución temporal de la distribución de fragmentos, y no podemos confiar en una inspección visual; necesitamos usar algoritmos de reconocimiento de fragmentos.
 Este tipo de análisis ha sido realizado previamente para sistemas finitos, por ejemplo en Ref.~\cite{dorso_fluctuation_1994, strachan_fragment_1997}.
 En la figura~\ref{fig:mste_pregnocchi} mostramos las configuraciones iniciales y final con el algoritmo de MSTE.\@
 Podemos notar que la distribución de clusters cambia radicalmente en ambos aspectos: el tamaño y la fracción de protones.
 El cambio en la fracción de protones es de esperar ya que, a medida que el sistema se expande, menos neutrones están en el rango del fragmento de protones.
-Sin emgargo, este efecto solo no explica el cambio de tamaño: mientras que la condición inicial muestra un fragmento de hasta 80 protones, el fragmento más grande de la distribución asintótica tiene aproximadamente 30 protones.
+Sin embargo, este efecto solo no explica el cambio de tamaño: mientras que la condición inicial muestra un fragmento de hasta 80 protones, el fragmento más grande de la distribución asintótica tiene aproximadamente 30 protones.
 ¿Se rompió un cluster mientras el sistema se expandía?
 
 \begin{figure}
@@ -333,18 +333,18 @@ Sin emgargo, este efecto solo no explica el cambio de tamaño: mientras que la c
 \end{figure}
 
 Para analizar esto, estudiamos la distribución con el algoritmo MST aplicado a los protones solos, mostrados en la figura~\ref{fig:mst_pregnocchi}.
-De acuerdo a esta figura, vemos que la distribución de fragmentos de los protones no cambió sustancialemte (sólo un cluster de protones se rompió) y, efectivamente, el fragmento más grande tiene 32 protones.
+De acuerdo a esta figura, vemos que la distribución de fragmentos de los protones no cambió sustancialmente (sólo un cluster de protones se rompió) y, efectivamente, el fragmento más grande tiene 32 protones.
 ¿Qué tipo de resultados se obtienen del algoritmo ECRA, teóricamente más sólido?
-En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-BFM dio buenos resultados, e identifica los preclusters adecuadamente, incluso encontrando el fragmento que se rompió.
+En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-BFM dio buenos resultados, e identifica los pre-clusters adecuadamente, incluso encontrando el fragmento que se rompió.
 
 \begin{figure}
   \includegraphics[width=0.8\columnwidth]{fragmentacion/ecra}
-  \caption{Distribución asintótica e inicial de masas para un sistema con $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$, para una expansión lenta ($\dot{\eta} = 0.0001\text{c/fm}$), con el algoritmo de reconocimiento ECRA. Al comprarar con la figura~\ref{fig:mst_pregnocchi}, notar la diferencia de escalas en el eje $y$.}
+  \caption{Distribución asintótica e inicial de masas para un sistema con $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$, para una expansión lenta ($\dot{\eta} = 0.0001\text{c/fm}$), con el algoritmo de reconocimiento ECRA. Al comparar con la figura~\ref{fig:mst_pregnocchi}, notar la diferencia de escalas en el eje $y$.}
 \label{fig:ecra_pregnocchi}
 \end{figure}
 
-Con estos resultados en mente, utilizamos tres herramientas para el reconocimiento de fragmentos: MSTE, ECRA and MSTpC.
-MSTE y ECRA son los algoritmos ya descritos, mientras que MSTEpC es el algoritmo de MST sobre protones con la nube de neutrones que están cerca de cada cluster MST.\@
+Con estos resultados en mente, utilizamos tres herramientas para el reconocimiento de fragmentos: MSTE, ECRA y MSTpC.
+MSTE y ECRA son los algoritmos ya descritos, mientras que MSTpC es el algoritmo de MST sobre protones con la nube de neutrones que están cerca de cada cluster MST.\@
 En la figura~\ref{fig:lm_pre} mostramos la evolución del tamaño del fragmento más grande para las etapas iniciales de la evolución para los tres reconocedores de fragmentos: MSTE, MSTpC y ECRA.\@
 La figura muestra que el fragmento ECRA se estabiliza rápido y se mantiene relativamente estable, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes que los ECRA y se estabilizan más lentamente.
 También es interesante notar que el fragmento MSTpC comienza con alrededor de 100 neutrones más que el fragmento ECRA correspondiente, lo que implica que el fragmento de ECRA está en un ambiente muy rico en neutrones.
@@ -352,7 +352,7 @@ Esta situación sugiere que existe la posibilidad del \emph{r-process}, a difere
 
 Por el otro lado, en la expansión de la estructura de \emph{lasagna}, ninguno de los algoritmos reconocedores de fragmentos identifican fragmentos en tiempos muy tempranos de la evolución (ver figura~\ref{fig:lm_las}).
 En esta etapa hay un fragmento muy grande (que, de hecho, es infinito).
-De cualquier modo, el análisis de ECRA muesra que este fragmento se parte tempranoamente en muchos fragmentos y, como resultado, la masas del fragmento más grande decrece drásticamente con el tiempo.
+De cualquier modo, el análisis de ECRA muestra que este fragmento se parte tempranamente en muchos fragmentos y, como resultado, la masas del fragmento más grande decrece drásticamente con el tiempo.
 Es interesante notar que, a diferencia de los \emph{pregnocchi}, en este caso el algoritmo MSTpC es el que más tiempo toma para identificar que el fragmento infinito se parte.
 Esto muestra que el algoritmo de ECRA es además más versátil para estudiar la formación temprana de fragmentos.
 También es interesante notar (no se muestra en las figuras) que la fracción de protones $x$ de estos fragmentos es relativamente estable para el algoritmo ECRA, mientras que los otros dos resultan en una fracción de protones que decae monótonamente con el tiempo.
@@ -360,7 +360,7 @@ También es interesante notar (no se muestra en las figuras) que la fracción de
 \begin{figure}[H]  \centering
   \includegraphics[width=0.8\columnwidth]{fragmentacion/lm_pre}
   \caption{Masa del fragmento más grande para MSTE, MSTpC y ECRA para las etapas iniciales de la evolución, para la configuración \emph{pre-gnocchi}.
-    Se puede observar que el fragmento de ECRA se mantiene relativamente estable y se estabiliza rápidamente, mientras que los otros dos algoritmos ersultan en fragmentos que son siempre más grandes y tardan más en estabilizarse.}
+    Se puede observar que el fragmento de ECRA se mantiene relativamente estable y se estabiliza rápidamente, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes y tardan más en estabilizarse.}
 \label{fig:lm_pre}
 \end{figure}
 
@@ -376,7 +376,7 @@ También es interesante notar (no se muestra en las figuras) que la fracción de
 \section{Conclusiones}\label{sc:conc}
 
 
-Desarrollamos experimentos numéricos de sistemas expandidos homogéneamente  y, para analizar la estructura del sistema en función del tiempo, desarrollamos una herramienta basada en análisis de grafos para identificar fragmentos infinitos para cualquier tipo de fragmentos aditivios.
+Desarrollamos experimentos numéricos de sistemas expandidos homogéneamente  y, para analizar la estructura del sistema en función del tiempo, desarrollamos una herramienta basada en análisis de grafos para identificar fragmentos infinitos para cualquier tipo de fragmentos aditivos.
 Una vez que esta formalismo fue aplicado a las simulaciones mencionadas, pudimos identificar la región en la que se da una distribución de fragmentos de tipo ley de potencias.
 Esta distribución tiene formas desde U-shaped hasta decaimiento exponencial.
 
@@ -388,9 +388,14 @@ Esta estructura consiste en agregados de protones formados por la mediación del
 
 También analizamos la expansión de materia rica en neutrones infinita descripta a través del modelo del pequeño big bang.
 Mostramos que, en general, la identificación adecuada de la estructura depende mucho del algoritmo escogido, siendo ECRA y MSTpC los más adecuados para encontrar las estructuras y ECRA el más estable.
-Este enfoque, combinado con distintos algoritmos reconocedores de fragmentos, nos perimitió identificar la dinámica de la formación de fragmentos.
+Este enfoque, combinado con distintos algoritmos reconocedores de fragmentos, nos permitió identificar la dinámica de la formación de fragmentos.
 El estado asintóticos mostró una alta dependencia con la velocidad de expansión, tanto en la distribución de masa como en la distribución espacial de los fragmentos: para velocidades suficientemente altas, la expansión era similar a una \emph{fractura mecánica}, donde la distribución espacial estaba altamente correlacionada con el estado original.
 Sin embargo, para velocidades más bajas, la expansión era una \emph{expansión térmica}, en la que el estado asintótico era relativamente homogéneo.
 Los fragmentos formados en la expansión más lenta eran mucho más grandes que los formados en la expansión rápida.
 Un análisis cuidadoso de la dinámica de formación de fragmentos mostró que se formaron muy temprano en la expansión.
-En particular, la novedosa estructura que llamamos \emph{pregnocchi} es de considerable relevancia, ya que de acuerdo al análsis de ECRA estos agregados preexistentes evolucionan en una nube de neutrones, resultando en configuraciones en las que el \emph{r-proccess} se puede desarrollar.
+En particular, la novedosa estructura que llamamos \emph{pregnocchi}
+es de considerable relevancia, ya que de acuerdo al análisis de ECRA
+estos agregados preexistentes evolucionan en una nube de neutrones,
+resultando en configuraciones en las que el \emph{r-process} se puede
+desarrollar.
+%  LocalWords:  process

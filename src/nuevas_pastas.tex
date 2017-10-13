@@ -10,12 +10,12 @@ Este fenómeno se espera que tenga impacto para la opacidad de neutrinos en cier
 La sección eficaz de \emph{scattering} está relacionada con el factor de estructura a través de
 
 \begin{equation}
- \sigma_{\text{total}} = \sigma_{\text{free neutron}} \times S(q)
+ \sigma_{\text{total}} = \sigma_{\text{neutrón libre}} \times S(q)
 \end{equation}
 
 La sección eficaz de un neutrón libre es:
 \begin{equation}
-\sigma_{\text{free neutron}} = \frac{G_F^2E_\nu^2}{6\pi}
+\sigma_{\text{neutrón libre}} = \frac{G_F^2E_\nu^2}{6\pi}
 \end{equation}
 con $G_F$ la constante de acoplamiento de Fermi y $E_\nu$ la energía del neutrino.
 Con esto en mente, la sección eficaz del sistema resulta:
@@ -25,7 +25,7 @@ Con esto en mente, la sección eficaz del sistema resulta:
 \end{equation}
 Ya que la masa del neutrino ($m_\nu \approx 10^{-2}\,\text{eV}$) es despreciable para energías en el rango de los MeV, la relación entre la energía y el número de onda es $E_\nu = \hbar q$.
 
-Para hallar la opacidad de la materia heterogénea, calculamos el factor de estructura del sistema para un amplio rango de longitudes de onda de interés relacionadas con la estructura de la psta, y luego buscamos el máximo.
+Para hallar la opacidad de la materia heterogénea, calculamos el factor de estructura del sistema para un amplio rango de longitudes de onda de interés relacionadas con la estructura de la pasta, y luego buscamos el máximo.
 Para tener una idea de la distribución de la masa del sistema, calculamos también la función distribución de pares de los neutrones $g_{nn}(r)$, que esta relacionada con el número promedio de neutrones a una distancia $r$ de un neutrón, en una cáscara de ancho $\text{d}r$:
 
 \begin{equation}
@@ -40,7 +40,7 @@ Esta expresión es para el promedio sobre todas las orientaciones de $S(q)$, ya 
 
 \section{Fragmentos}\label{sc:clusters}
 
-\begin{figure}[H]  \centering
+\begin{figure}[h!]  \centering
   \begin{subfigure}[h!]{0.40\columnwidth}
     \includegraphics[width=\columnwidth]{nuevas_pastas/x04-d005-T05.png}
     \caption{$x=0.4,\, T=0.5\,\text{MeV}$}
@@ -115,7 +115,7 @@ Todos los fragmentos más grandes contienen más del $50\%$ de la masa total del
 Las figuras~\ref{fig:gr_sq} y~\ref{fig:gr_sq_gnocchi} muestran la función distribución de pares y el factor de estructura (ver apéndice para una explicación detallada del cálculo) para las fases de \emph{lasagna} y \emph{gnocchi}.
 En la función de distribución de pares podemos identificar (marcado con $\color{green} \blacktriangledown$) el pico que pertenece a la estructura cristalina de los neutrones dentro de la pasta (correlación con los vecinos más cercanos) y también una correlación de muy largo rango (marcada con una línea discontinua $\color{red}-\,-$.);
 este rango es el que genera el pico para los bajos momentos en el factor de estructura, relacionado con las estructuras de tipo pasta.
-El factor de estructura muestra un pico en $q_\text{peak} = 0.43\,\text{fm}^{-1}$ para la \emph{lasagna} y $q_\text{peak} = 0.37\,\text{fm}^{-1}$ para los \emph{gnocchi}, con un ancho de alrededor de
+El factor de estructura muestra un pico en $q_\text{pico} = 0.43\,\text{fm}^{-1}$ para la \emph{lasagna} y $q_\text{pico} = 0.37\,\text{fm}^{-1}$ para los \emph{gnocchi}, con un ancho de alrededor de
 $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda en las que la estructura es considerablemente opaca.
 
 \begin{figure}  \centering
@@ -133,7 +133,7 @@ $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda 
   \end{subfigure}
   \caption{\ref{sfig:gr} Función de distribución de pares y ~\ref{sfig:ssf} factor de estructura para un sistema con fracción de protones $x=0.4$, densidad $\rho=0.04\,\text{fm}^{-3}$ y temperatura $T=0.5\,\text{MeV}$.
     El primer pico en $g(r)$, debido a las estructuras cristalinas, está marcado con $\color{green} \blacktriangledown$, mientras que el rango muy largo está marcado con una línea discontinua $\color{red}-\,-$.
-    En el factor de estructura podemos ver el pico en $q_\text{peak} = 0.43\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
+    En el factor de estructura podemos ver el pico en $q_\text{pico} = 0.43\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
     Las ``ondas'' para los bajos momentos se deben a efectos de tamaño finito.}
   \label{fig:gr_sq}
 \end{figure}
@@ -153,7 +153,7 @@ $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda 
   \end{subfigure}
   \caption{~\ref{sfig:gr_gnocchi} Función de distribución de pares y~\ref{sfig:ssf} factor de estructura para un sistema con fracción de protones $x=0.4$, densidad $\rho=0.01\,\text{fm}^{-3}$ y temperatura $T=0.5\,\text{MeV}$.
     Como en la figura~\ref{fig:gr_sq}, podemos ver la estructura cristalina y de pasta en la función de distribución de pares, así como el pico de la pasta en el factor de estructura.
-    Este pico está localizado en $q_\text{peak} = 0.37\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
+    Este pico está localizado en $q_\text{pico} = 0.37\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
     Las ``ondas'' para los bajos momentos se deben a efectos de tamaño finito.}
   \label{fig:gr_sq_gnocchi}
 \end{figure}
@@ -171,7 +171,7 @@ En cambio, las temperaturas bajas deben ser obtenidas a partir de temperaturas a
 
 La figura~\ref{fig:low_t} muestra la longitud de onda y la altura del \emph{pico de opacidad} para la temperatura más baja estudiada en este trabajo ($T = 0.5\,\text{MeV}$) como función de la densidad.
 Podemos observar que la longitud de onda decrece a medida que aumenta la densidad, implicando que la longitud de correlación de la estructura es cada vez menor.
-Esto es de esperar, ya que cuanto mayor la densidad, más cercanas están las estrucutras.
+Esto es de esperar, ya que cuanto mayor la densidad, más cercanas están las estructuras.
 Sin embargo, queremos enfatizar en que la estructura cambia con la densidad no sólo con transiciones en la morfología (por ejemplo de \emph{spaghetti} a \emph{lasagna}) sino también, por ejemplo, con fragmentos de \emph{gnocchi} que tienen distintos tamaños para distintas densidades.
 Esta combinación entre el cambio de estructuras y el cambio de la distribución espacial para cada estructura resulta en la figura ~\ref{sfig:wl}.
 Podemos ver que la longitud de onda para máxima opacidad cambia rápidamente para densidades bajas (los \emph{gnocchi}), pero tiende a estabilizarse para las otras pastas.
@@ -222,7 +222,7 @@ En la figura~\ref{fig:absorption} mostramos el \emph{pico de opacidad} para las 
 Podemos ver que a medida que decrece la fracción de protones, también decrece la opacidad.
 Para cada fracción de protones estudiada, la altura del pico de opacidad decae rápidamente para temperaturas mayores a $T=0.8\,\text{MeV}$, y es aproximadamente $1/4$ de la altura del pico de opacidad para $T=0.5\,\text{MeV}$.
 La opacidad del sistema decrece a medida que se reduce la fracción de protones porque la estructura del sistema se debe a la interacción de rango largo de Coulomb entre protones.
-Cuando hay sólo un proton por neutrón ($x = 0.5$), la estructura de neutrones sigue casi idénticamente la de los protones.
+Cuando hay sólo un protón por neutrón ($x = 0.5$), la estructura de neutrones sigue casi idénticamente la de los protones.
 Sin embargo, a medida que la proporción de neutrones aumenta, la estructura de neutrones se difumina y su correlación de muy largo rango empieza a desaparecer.
 Este efecto puede verse en la distribución de fragmentos para $x = 0.2$, donde tenemos muchos neutrones aislados, que forman el gas de neutrones.
 Estas características afectan las inhomogeneidades que aparecen en $x = 0.5$, suprimiendo su opacidad de muy largo rango.
@@ -262,10 +262,10 @@ La razón por la que la opacidad se deprime drásticamente a medida que la tempe
 \section{Conclusiones}\label{sc:conc}
 
 La materia rica en neutrones desarrolla estructuras no homogéneas (usualmente conocidas como pasta nuclear) que alteran considerablemente su opacidad a neutrinos.
-Analizando el comportamiento del factur de estructura de neutrón-neutrón y la función de distribución de pares para un gran rango de densidades, temperaturas y fracción de protones, podemos calcular la longitud de onda para la cual se produce el máximo \emph{scattering}.
+Analizando el comportamiento del factor de estructura de neutrón-neutrón y la función de distribución de pares para un gran rango de densidades, temperaturas y fracción de protones, podemos calcular la longitud de onda para la cual se produce el máximo \emph{scattering}.
 Vimos que para altas densidades, donde esperamos que aparezcan fragmentos muy grandes (\emph{spaghetti} u \emph{lasagna}), la longitud de onda del pico de opacidad se mantiene relativamente constante, y la máxima opacidad se obtiene para neutrinos muy energéticos ($E_\nu \approx 80\,\text{MeV}$, típicos de una muy inicial etapa de evolución de las proto-estrellas de neutrones).
 A medida que disminuye la densidad, nos movemos hacia la fase de \emph{gnocchi}, en la cual los fragmentos son de tamaño finito.
-Ene ste caso, la máxima opacidad se mueve a energías menores.
+Ene este caso, la máxima opacidad se mueve a energías menores.
 Como podemos ver en la figura~\ref{fig:absorption}, este aumento en la opacidad no sólo se produce cuando las heterogeneidades forman parte de las comúnmente conocidas como pasta nuclear, sino también cuando son bastante diferentes (la \emph{pasta nuclear generalizada} que podemos ver en la figura~\ref{fig:morpho}).
 También es relevante recordar que la opacidad no se produce para una longitud de onda en particular, sino que para un espectro bastante amplio de ellas.
 
@@ -275,3 +275,5 @@ El modelo que estamos utilizando en este trabajo fue puesto a prueba extensivame
 Los modelos hidrodinámicos para la materia rica en neutrones~\cite{ruffert_coalescing_1995, mezzacappa_investigation_1998, geppert_temperature_2004, woosley_physics_2005, liebendorfer_supernova_2005} pueden sugerir fracciones de protones, densidades y temperaturas para distintas condiciones (supernovas, proto-estrellas de neutrones, estrellas de neutrones).
 De este trabajo podemos encontrar, para este modelo específico, la opacidad a los neutrinos para distintas condiciones termodinámicas.
 Consecuentemente, combinando estos dos resultados con mediciones eventuales de la opacidad de los neutrinos en estrellas de neutrones, podemos comprobar la validez de distintos modelos nucleares y, en consecuencia, avanzar hacia la ecuación de estado de la materia nuclear.
+
+%  LocalWords:  Ref Fermi eV MeV text

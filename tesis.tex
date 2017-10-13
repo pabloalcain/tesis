@@ -1,31 +1,36 @@
 \documentclass[12pt]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[english, spanish]{babel}
-%\usepackage{dblfloatfix}
 \usepackage{booktabs}
 \usepackage{todonotes}
-\linespread{1.3}
 \usepackage{tikz}
 \usepackage{paralist}
-\usepackage{subcaption} \usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{graphicx}
 \usepackage{amsmath} \usepackage{amssymb}
 \usepackage{xcolor}
-\usepackage{natbib}
-\usepackage{geometry}
-\usepackage{hyperref}
-\graphicspath{{./fig/}}
-%\def\input@path{{./src/}}
-%\bibliographystyle{apsrev4-1}
-%\bibliographystyle{revtex}
-\bibliographystyle{alpha}
-\begin{document}
+\usepackage{caption}
+\captionsetup{font=scriptsize}
+\captionsetup[sub]{font=scriptsize}
 
+%\usepackage{geometry}
+\usepackage{hyperref}
+\input{lgorg/structure}
+%\usepackage{kpfonts}
+\usepackage{subcaption}
+\graphicspath{{./fig/}}
+\linespread{1.3}
+\usepackage{natbib}
+\bibliographystyle{alpha}
 \title{Dependencia en el isospin de la ecuación de estado de la materia nuclear}
 
 \author{P. N. Alcain and C. O. Dorso}
 
 \date{\today}
+\begin{document}
+
 \maketitle
+\chapterimage{chapter_head_2.pdf}
 \tableofcontents
 
 \chapter[Introducción]{Introducción}
@@ -33,23 +38,23 @@
 \input{src/introduccion.tex}
 
 
-\chapter[Efecto de Coulomb]{Término de Coulomb en materia de estrellas de neutrones}
+\chapter[Efecto de Coulomb]{Interacción de Coulomb}
 \label{ch:coulomb}
 \input{src/coulomb.tex}
 
-\chapter[Transiciones de fase]{Más allá de la pasta nuclear: transiciones de fase y opacidad de neutrinos de nuevas pastas}
+\chapter[Transiciones de fase]{Transiciones de fase}
 \label{ch:transicion}
 \input{src/transicion.tex}
 
-\chapter[Nuevas pastas]{Rango muy largo y opacidad: nuevas pastas}
+\chapter[Nuevas pastas]{Nuevas Pastas}
 \label{ch:nuevas_pastas}
 \input{src/nuevas_pastas.tex}
 
-\chapter[Fragmentación]{Fragmentación de materia de estrellas de neutrones}
+\chapter[Fragmentación]{Fragmentación}
 \label{ch:fragmentacion}
 \input{src/fragmentacion.tex}
 
-\chapter[Conclusiones]{Conclusiones y Perspectiva de Trabajo Futuro}
+\chapter[Conclusiones y Perspectiva]{Conclusiones y Perspectiva}
 \label{ch:conclusiones}
 \input{src/conclusiones.tex}
 
@@ -58,7 +63,7 @@
 \label{ap:minkowski}
 \input{src/minkowski.tex}
 
-\chapter{Sobre la estabilidad de los fragmentos MSTE}
+\chapter{Estabilidad de los fragmentos MSTE}
 \label{ap:mste}
 \input{src/mste.tex}
 

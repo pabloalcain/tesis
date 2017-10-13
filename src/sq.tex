@@ -7,7 +7,7 @@ El factor de estructura de un sistema se define como la \emph{amplitud de scatte
 \end{equation}
 
 con $\mathbf{Q}$ el vector de difracción o transferencia de momento.
-$\mathbf{R}_i$ es la posición de la partícula $i$, y $\langle b\rangle$ es el promeedio de la amplitud de scattering de cada partícula en el vacío $b_i$.
+$\mathbf{R}_i$ es la posición de la partícula $i$, y $\langle b\rangle$ es el promedio de la amplitud de scattering de cada partícula en el vacío $b_i$.
 A partir de este momento, vamos a considerar que todas las partículas son de la misma especie, $b_i = b$.
 
 A partir de $\Psi(\mathbf{Q})$ definimos $S(\mathbf{Q})$ como
@@ -30,7 +30,7 @@ Podemos expandir la amplitud de scattering y utilizar $|z|^2 = z\cdot z^*$  y, s
   &= 1 + \frac{2}{N}\sum_{i < j}\cos{\mathbf{Q}\cdot\mathbf{R}_{ij}}
 \end{align*}
 
-Usualmente estamos interesados en el conocido como \emph{promedio de polvo} del factor de estructura: es decir, el factor de estructura promediado para todas las posibles orientaciones del vector de difracción (ya que en un polvo tenemos muchas estrucutras orientadas al azar).
+Usualmente estamos interesados en el conocido como \emph{promedio de polvo} del factor de estructura: es decir, el factor de estructura promediado para todas las posibles orientaciones del vector de difracción (ya que en un polvo tenemos muchas estructuras orientadas al azar).
 Calculamos entonces
 
 \begin{equation*}
@@ -50,9 +50,9 @@ Esta integral puede ser calculada fácilmente si colocamos el eje $z$ en la dire
 
 Esta es la famosa fórmula de Debye y, como es el promedio de una cantidad que es siempre positiva, debe ser siempre positiva.
 
-Uno de los problemas más usuales cuando modelamos y estudiamos sitemas en simulaciones computacionales es que no tenemos \emph{realmente} sistemas infinitos.
+Uno de los problemas más usuales cuando modelamos y estudiamos sistemas en simulaciones computacionales es que no tenemos \emph{realmente} sistemas infinitos.
 Usamos, para emular el comportamiento de sistemas infinitos, condiciones periódicas de contorno (CPC).
-Con las condiciones periódicas de contorno utilizamos la convención de la mínima imagen: de todas las posiciones posibles a través de los contornos para las partículas $i$ and $j$, escogemos el par más cercano.
+Con las condiciones periódicas de contorno utilizamos la convención de la mínima imagen: de todas las posiciones posibles a través de los contornos para las partículas $i$ y $j$, escogemos el par más cercano.
 Utilizando este método para un caso de prueba muy simple (una red cúbica simple tridimensional con 4x4x4=64 partículas) calculamos el factor de estructura que se puede ver en la figura~\ref{fig:ssf_comp}.
 
 \begin{figure}
@@ -63,18 +63,18 @@ Utilizando este método para un caso de prueba muy simple (una red cúbica simpl
   \label{fig:ssf_comp}
 \end{figure}
 
-Podemos ver que el factor de estructura calculado con CPC genera valures negativos, a pesar de que estos valores deberían estar prohibidos.
-La razón por la que esto sucede es la convención de mínima imagen: la distancia entre los pares ahroa no es siempre $r_{ij} = r_j - r_i$, sino que depende de si utilizamos las particulas originales o sus imágenes.
-En consecuencia, este ``nuevo'' factor de estrucutra no es el producto de dos complejos conjugados\footnote{Más aún, ahora la parte imaginaria de $S(Q)$ ya no es}.
+Podemos ver que el factor de estructura calculado con CPC genera valores negativos, a pesar de que estos valores deberían estar prohibidos.
+La razón por la que esto sucede es la convención de mínima imagen: la distancia entre los pares ahora no es siempre $r_{ij} = r_j - r_i$, sino que depende de si utilizamos las partículas originales o sus imágenes.
+En consecuencia, este ``nuevo'' factor de estructura no es el producto de dos complejos conjugados\footnote{Más aún, ahora la parte imaginaria de $S(Q)$ ya no es}.
 Para explorar el efecto que tiene la convención de la mínima imagen tiene en el factor de estructura, mostramos una comparación del factor de estructura con y sin condiciones de contorno (es decir, con los 64 átomos en el vacío) en la figura~\ref{fig:ssf_comp}.
 
 Esto muestra que el factor de estructura, cuando utilizamos su definición, \emph{sin la convención de la mínima imagen}, es (como era de esperar) siempre positivo.
 
 La pregunta persiste: ¿cómo podemos simular un medio infinito cuando calculamos factores de estructura?
-La primera respuesta es que no es obvio que esto pueda ayudar en un medio realmente infinito, ya que las imágenes periódicas de la celda estarían alineadas en un crista lq ue puede interferir con la estructura dentro de la celda (la que queremos estudiar).
+La primera respuesta es que no es obvio que esto pueda ayudar en un medio realmente infinito, ya que las imágenes periódicas de la celda estarían alineadas en un cristal que puede interferir con la estructura dentro de la celda (la que queremos estudiar).
 Sin embargo, unas pocas réplicas podrían ser suficientes para borrar considerablemente los efectos de tamaño finito.
 Una posibilidad es replicar explícitamente la caja, creando las partículas en las celdas vecinas, multiplicando las originales,
-Esto, sin embargo, implica un calculo mucho más difícil, ya que la suma para calcular la función de distribución de pares es sobre $N^2$ particles, y replciarla sólo una celda a la derecha y a la izquierda en cada dirección implicaría un tiempo computacional de  $(3^3\cdot N)^2 \approx 700\cdot N^2$.
+Esto, sin embargo, implica un calculo mucho más difícil, ya que la suma para calcular la función de distribución de pares es sobre $N^2$ partículas, y replicarla sólo una celda a la derecha y a la izquierda en cada dirección implicaría un tiempo computacional de  $(3^3\cdot N)^2 \approx 700\cdot N^2$.
 En general, la complejidad $\mathcal{O}(N^2)$ hace que el cálculo del factor de estructura sea muy costoso para sistemas grandes.
 
 Hay una alternativa para agregar las condiciones de contorno.
@@ -96,11 +96,11 @@ Multiplicando por el conjugado, obtenemos el factor de estructura
   S(\mathbf{Q}) &= \left|\sum_i
     \text{e}^{i\mathbf{Q}\cdot\mathbf{R}_i}\right|^2 \left|\sum_j
     \text{e}^{i\mathbf{Q}\cdot\mathbf{\Delta L}_j}\right|^2\\
-  &= S_{\text{cell}}(\mathbf{Q})\,S_{\text{PBC}}(\mathbf{Q})
+  &= S_{\text{celda}}(\mathbf{Q})\,S_{\text{CPC}}(\mathbf{Q})
 \end{align}
 
-La ventaja de este cálculo es que es lineal en la suma del número de partículas y el número de répicas que consideremos, $\mathcal{O}(N+M)$, mucho menor que el previo $\mathcal{O}(N^2M^2)$.
-En consecuencia, si queremos concentranos en una región de $\mathbf{Q}$, este nuevo enfoque será útil\footnote{Consideremos que con este método necesitamos $\mathcal{O}(N+M)$ cálulos para cada $\mathbf{Q}$, así que no podemos utilizarlo para barrer todo el espectro de $\mathbf{Q}$}.
-Quedamos con sólo un datalle, respecto del \emph{powder average}.
+La ventaja de este cálculo es que es lineal en la suma del número de partículas y el número de réplicas que consideremos, $\mathcal{O}(N+M)$, mucho menor que el previo $\mathcal{O}(N^2M^2)$.
+En consecuencia, si queremos concentrarnos en una región de $\mathbf{Q}$, este nuevo enfoque será útil\footnote{Consideremos que con este método necesitamos $\mathcal{O}(N+M)$ cálculos para cada $\mathbf{Q}$, así que no podemos utilizarlo para barrer todo el espectro de $\mathbf{Q}$}.
+Quedamos con sólo un detalle, respecto del \emph{powder average}.
 No es trivial cómo calcular esta integral, ya que necesitamos darle pesos adecuados a cada ángulo.
 En este trabajo utilizamos la cuadratura de Lebedev~\cite{lebedev_values_1975}, aunque otros métodos (como Muestreo por Importancia de Montecarlo) pueden ser útiles en esta situación.
