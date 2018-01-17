@@ -1,22 +1,22 @@
 En este capítulo estudiamos el rol de la interacción de Coulomb en la dinámica de los nucleones en las condiciones de la corteza de las estrellas de neutrones.
-Estudiamos la materia simétrica en isospín a densidades de sub-saturación y temperaturas bajas.
-La interacción electrostática entre protones es incluida como un potencial de Coulomb apantallado, en el espíritu de la aproximación de Thomas-Fermi, pero variando artificialmente la longitud de apantallamiento para estudiar su efecto en la formación de las estructuras nucleares no homogéneas conocidas como ``pasta nuclear''.
+Estudiamos la materia simétrica en isospín a densidades de sub-saturación ($\rho < 0.16\text{fm}^{-3}$) y temperaturas bajas ($T < 2\,\text{Mev}$).
+La interacción electrostática entre protones es incluida como un potencial de Coulomb apantallado, en el espíritu de la aproximación de Thomas-Fermi, pero variando artificialmente la longitud de apantallamiento $\lambda$ para estudiar su efecto en la formación de las estructuras nucleares no homogéneas conocidas como ``pasta nuclear''.
 A medida que aumenta la longitud de apantallamiento, podemos ver una transición de un régimen de una pasta por celda (debido exclusivamente a efectos de tamaño finito) a un régimen en el que aparecen múltiples pastas por celda.
 Esta diferencia cualitativa en la estructura de la materia de estrellas de neutrones a bajas temperaturas muestra que se debe tomar especial cuidado cuando la longitud de apantallamiento es estimada para simulaciones numéricas.
 
 Como observamos en trabajos previos~\cite{schneider_nuclear_2013,gimenez_molinelli_simulations_2014}, en ausencia de la interacción de Coulomb (equivalente a $\lambda=0$), estructuras tipo pastas pueden ser observadas, aunque sólo una por celda.
 Estas \emph{pseudo-pastas} también tienen formas de esferas, tubos, placas, anti-tubos y anti-esferas, exactamente como la pasta con la interacción de Coulomb.
-La mayor diferencia es que, sin la interacción de Coulomb, encontramos siempre una estructura por celda, lo que nos hace pensar que la estructura está relacionada con la condición periódica de contorno impuesta en la caja,
+La mayor diferencia es que, sin la interacción de Coulomb, encontramos siempre una única estructura por celda, lo que nos hace pensar que la estructura está relacionada con la condición periódica de contorno impuesta en la caja,
 La \emph{pseudo-pasta} existe debido a efectos de tamaño finito y, si la caja no existiera, la solución sería una gota infinita.
-Notamos, sin embargo, que cuando existe la interacción de Coulomb, la competencia entre interacciones opuestas genera una longitud característica, ya no relacionada con el tamaño de la caja.
+Notamos, sin embargo, que cuando existe la interacción de Coulomb, la naturaliza competitiva de las interacciones genera una longitud característica, ya no relacionada con el tamaño de la caja sino con características físicas de la interacción.
 A densidades de sub-saturación esta competencia es responsable por las fases de pasta, y en el límite de densidades muy bajas le da forma a los núcleos a los que estamos acostumbrados.
 
-Incrementar el valor de $\lambda$ comenzando desde $0\,\text{fm}$, apuntamos a explorar la transición de las pastas artificiales en las que se produce una estructura por celda hacia las pastas más realistas que tienen múltiples estructuras en cada celda de simulación.
+Incrementar el valor de $\lambda$ comenzando desde $0\,\text{fm}$ apunta a explorar la transición de las pastas artificiales en las que se produce una estructura por celda hacia las pastas más realistas que tienen múltiples estructuras en cada celda de simulación.
 Más aún, esto nos permite estudiar las implicancias físicas del valor arbitrario y utilizado tradicionalmente de $\lambda=10\,\text{fm}$.
 
 \section{Introducción}
 
-En las estrellas de neutrones, además de los protones y neutrones, existe un gas de electrones que permea todo el espacio.
+En las estrellas de neutrones, además de los protones y neutrones, existe un gas de electrones que permea todo el espacio, haciendo que el sistema, en su conjunto, sea eléctricamente neutro.
 Este gas de electrones apantalla la interacción electrostática de rango largo entre los protones.
 Este efecto de apantallamiento es usualmente modelado con la aproximación de Thomas-Fermi, de acuerdo a la cual la interacción entre protones es un potencial del tipo Yukawa con una longitud de apantallamiento $\lambda$, conocida como longitud de Debye:
 
@@ -65,7 +65,7 @@ Esto significa que, para longitudes de apantallamiento tan bajas, la interacció
 
 Para $\lambda>10\,\text{fm}$ la presión se vuelve positiva, lo que quiere decir que las estructuras que se forman en estas configuraciones no se deben sólo a las condiciones periódicas de contorno, sino que la interacción de Coulomb está comenzando a jugar un rol.
 Las configuraciones para estos valores de $\lambda$ muestran efectivamente fluctuaciones de densidad de longitud menor que el tamaño de la caja, que sólo pueden ser atribuidas a la competencia entre el término de Coulomb y el término nuclear.
-Sin embargo, la forma de las estructuras, caracterizadas a través de las funcionales de Minkowski, cambia drásticamente con $\lambda$.
+Sin embargo, la forma de las estructuras, caracterizadas a través de las funcionales de Minkowski (ver~\ref{ap:minkowski}), cambia drásticamente con $\lambda$.
 
 \begin{figure}[h!]  \centering
 \centering
@@ -76,7 +76,7 @@ Sin embargo, la forma de las estructuras, caracterizadas a través de las funcio
 \end{figure}
 
 Para clasificar las estructuras de bajas temperaturas ($T=0.001\,\text{MeV}$) para cada valor de $\lambda$, estudiamos su topología con las herramientas de análisis para la distribución espacial de partículas: las funcionales de Minkowski.
-En las figuras~\ref{fig:minkowski} podemos ver la superficie, ancho medio y número de Euler para los estados hallados y su dependencia con $\lambda$ para distintas densidades.
+En las figuras~\ref{fig:minkowski} podemos ver la superficie, curvatura y número de Euler para los estados hallados y su dependencia con $\lambda$ para distintas densidades.
 
 \begin{figure}[h!]  %figure 5 \centering
 \centering
@@ -218,7 +218,7 @@ El error relativo promedio del gráfico es $e\approx8\%$.
 \label{fig:gnocchi_mass}
 \end{figure}
 
-Podemos ver que aunque odas las estructuras sin Coulomb son alguna de las pastas conocidas, una vez que agregamos la interacción de Coulomb (haciendo $\lambda\neq0$), la \emph{pseudo-pasta} original de $\lambda=0$ se separa: de una estructura por celda a múltiples estructuras por celda.
+Podemos ver que aunque todas las estructuras sin Coulomb son alguna de las pastas conocidas, una vez que agregamos la interacción de Coulomb (haciendo $\lambda\neq0$), la \emph{pseudo-pasta} original de $\lambda=0$ se separa: de una estructura por celda a múltiples estructuras por celda.
 Para valores intermedios a bajos de $\lambda < 20\,\text{fm}$, el efecto de las condiciones periódicas de contorno es todavía observable para algunas densidades y pueden aparece estructuras exóticas que no forman parte de las pastas usuales.
 
 \section{El Régimen de Transición} \label{transition}
@@ -257,7 +257,7 @@ A pesar de que la interacción de Coulomb es ahora suficientemente grande como p
 Estudiamos el efecto de la longitud de apantallamiento de la interacción de Coulomb en las simulaciones de materia de estrellas de neutrones a densidad comparables a las de la corteza de las estrellas de neutrones.
 A lo largo de la literatura podemos encontrar que el valor de la longitud de apantallamiento en la aproximación de Thomas-Fermi es $\lambda\approx100\,\text{fm}$.
 Para simulaciones basadas en partículas, debido a las limitaciones computacionales, este valor fue histórica y arbitrariamente reducido a $\lambda\approx10\,\text{fm}$, esperando mantener la fenomenología básica cuando se estudiaban sistemas pequeños.
-Encontramos, sin embargo, que existe una longitud de apantallamiento crítica $\lambda_c$ a la cual la estructura del estado fundamental cambia drásticamente.
+Encontramos, sin embargo, que existe para nuestro potencial una longitud de apantallamiento crítica $\lambda_c$ a la cual la estructura del estado fundamental cambia drásticamente.
 Para el potencial de Pandharipande en su parametrización Medium, yace entre $10\,\text{fm}$ y $15\,\text{fm}$ (dependiendo de la densidad).
 Para $\lambda<\lambda_c$, la interacción de Coulomb apenas actúa y las estructuras no homogéneas que emergen de las simulaciones se deben a efectos de tamaño finito, como es evidente a partir de la presión negativa de estas estructuras y el hecho de que hay sólo una estructura por celda.
 Para $\lambda>\lambda_c$ la presión se vuelve positiva y los sistemas presentan fluctuaciones de densidad a una escala menor que la de la celda, pero no con la forma de la pasta típica.
