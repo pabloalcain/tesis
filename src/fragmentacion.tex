@@ -2,11 +2,15 @@ Las estrellas de neutrones son sistemas astronómicos con nucleones sometidos a 
 Debido a la combinación entre la atracción nuclear y la repulsión de Coulomb entre protones el sistema tiene inhomogeneidades en su estructura.
 Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la distribución de fragmentos depende de las condiciones termodinámicas (temperatura, fracción de protones, \ldots) y la velocidad de expansión.
 
+El origen de elementos pesados (más pesados que el $^{56}_{26}\text{Fe}$) es aún una incógnita en la física.
+Las principales hipótesis respecto del origen de estos elementos implican que las colisiones de estrellas de neutrones serían responsables de más de la mitad de la abundancia terrestre.
+El reciente descubrimiento de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817_GW170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas.
+Recientes trabajos~\cite{kasen_origin_2017} han estudiado, mediante modelos hidrodinámicos, el rol de las colisiones de estrellas de neutrones en la generación de elementos pesados.
 Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
 Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
 Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
 
-El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}.
+El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}~\cite{dorso_onset_1996}.
 Esta expansión se parece a la evolución de las colisiones de estrellas de neutrones.
 A partir de una configuración de equilibrio, expandimos el sistema homogéneamente hasta llegar a una configuración asintótica (i.\ e.\ densidades muy bajas).
 Estudiamos, con cuatro algoritmos reconocedores de fragmentos distintos, la distribución de fragmentos a lo largo de esta expansión y la dinámica de la formación de fragmentos.
@@ -62,8 +66,8 @@ De acuerdo a este algoritmo, dos partículas pertenecen al mismo fragmento $\{C^
 A pesar de que de este algoritmo no se obtienen los mismos resultados teóricamente consistentes que con ECRA, igual evita el mayor problema de MST: no considerar de ninguna manera la energía cinética.
 
 \subsection{Identificación de Fragmentos Infinitos}
-Desarrollamos un algoritmo para el reconocimiento de fragmentos infinitos a través de los contornos.
-Explicamos aquí en detalle la implementación para fragmentos tipo MST en 2 dimensiones, mientras que la extensión a MSTE y 3 dimensiones es inmediata.
+Desarrollmos un algoritmo para el reconocimiento de fragmentos infinitos a través de los contornos.
+Explicamos aquí en detalle la implementación para fragmentos tipo MST en 2 dimensiones, mientras que la extensión a MSTE y 3 dimensiones es inmediata y, en general, a cualquier definición de clusters que cumpla con la \emph{aditividad}.
 En la figura~\ref{fig:scheme_clusters} podemos ver una representación esquemática de fragmentos 2D reconocidos en una celda periódica, etiquetados del 1 al 6 (notar que estos fragmentos no se conectan aún a través de las paredes periódicas).
 
 \begin{figure}  \centering
