@@ -58,21 +58,52 @@ Un análisis cuidadoso de la dinámica de formación de fragmentos mostró que s
 En particular, la novedosa estructura que llamamos \emph{pregnocchi} es de considerable relevancia, ya que de acuerdo al análisis de ECRA estos agregados preexistentes evolucionan en una nube de neutrones, resultando en configuraciones en las que el \emph{r-process} se puede desarrollar.
 
 
-\subsection{Perspectivas de futuro}
+\section{Perspectivas de futuro}
 
-A lo largo de la producción de esta tesis surgieron distintos interrogantes que forman parte de las perspectivas de trabajo futuro.
-
-\subsubsection{Parametrización de la interacción nuclear: Pauli}
+\subsection{Modelo para la interacción nuclear}
 
 Como ya vimos en los resultados mostrados, muchos de los resultados dependen (con mayor o menor sensibilidad) del modelo elegido para la parametrización.
 Quizás el caso más extremo que vimos es la presencia de \emph{pre-gnocchi} para una parametrización específica, mientras que no lo encontramos para otras.
 Hay otras diferencias también más sutiles: entre ellas el valor de $\lambda_c$ del capítulo~\ref{ch:coulomb} o las temperaturas de transición sólido-líquido que vimos en el capítulo~\ref{ch:transicion}
+Estos modelos están ajustados para poder describir apropiadamente las características de la materia nuclear infinita: la energía mínima, la densidad de equilibrio y la compresibilidad, entre otras características.
+Uno de los caminos para contrastar la validez del modelo es que reproduzca, a grandes rasgos, la forma de la curva de energía de ligadura de los núcleos.
+Hay un camino posible para realizar aquí, entonces, que consiste en desarrollar un modelo que, manteniendo las características de la materia nuclear, ajuste mejor a la curva de los núcleos conocidos.
 
+Dentro de estos caminos posibles, uno que vale la pena analizar es el uso del potencial de Pauli~\cite{dorso_classical_1987, dorso_classical_1988}.
+Éste consiste en agregar una interacción en el espacio de momentos de los fermiones a través de una gaussiana:
+\begin{equation}
+  V(q_{ij}, p_{ij}) = V_0{\left(\frac{\hbar}{p_0q_0}\right)}^D\text{exp}{\left(\frac{{(p_{ij}/p_0)}^2 +{(q_{ij}/q_0)}^2}{2}\right)}
+\end{equation}
+La gran ventaja de agregar un potencial de esta forma es que permite identificar apropiadamente la componente de energía de simetría de la ecuación de estado.
 
-\subsubsection{Opacidad a neutrinos de estrellas}
+Un posible trabajo futuro entonces, para robustecer este enfoque, es el desarrollo de nuevos potenciales de interacción.
+
+\subsection{Opacidad a neutrinos de estrellas}
 
 Los modelos hidrodinámicos para la materia rica en neutrones~\cite{ruffert_coalescing_1995, mezzacappa_investigation_1998, geppert_temperature_2004, woosley_physics_2005, liebendorfer_supernova_2005} pueden sugerir fracciones de protones, densidades y temperaturas para distintas condiciones (supernovas, proto-estrellas de neutrones, estrellas de neutrones).
 A partir de trabajos microscópicos podemos hallar la opacidad, distribución de neutrones (y consecuentemente probabilidad de \emph{r-process}) en función de $(\rho, T, x)$ e insertar las predicciones de cada modelo en los cálculos hidrodinámicos.
-Combinando estos dos resultados con mediciones eventuales de la opacidad de los neutrinos en estrellas de neutrones, podemos comprobar la validez de distintos modelos nucleares y, en consecuencia, avanzar hacia la ecuación de estado de la materia nuclear.
+En general, la propia opacidad a los neutrinos es un parámetro utilizado en los modelos hidrodinámicos; así, dependiendo de la función de opacidad que se escoja, la evolución de las estrellas será distinta.
+Combinando la opacidad con modelos microscópicos y la evolución de modelos hidrodinámicos, podemos hallar posibles diferencias en los observables que predicen estos modelos, comprobar su validez y, en consecuencia, avanzar hacia la ecuación de estado de la materia nuclear.
 
-\subsubsection{¿Existen las pastas tradicionales?}
+
+\subsection{¿Existen las pastas tradicionales?}
+
+A lo largo de este trabajo, y desde el trabajo original de Williams y Koonin del año 1985~\cite{williams_sub-saturation_1985}, se ha hecho mucho hincapié en las pastas nucleares como las fluctuaciones de densidad de largo rango.
+En un trabajo de este grupo~\cite{gimenez_molinelli_finite_2015} notamos que las pastas tradicionales, en el marco de la materia nuclear (sin la interacción de Coulomb) eran un artefacto producido por las condiciones periódicas de contorno.
+Estas pastas también se producen en casos como el gas de Lennard-Jones, como estudiaron Binder \emph{et al}~\cite{binder_beyond_2012}.
+En este estudio también se observó que, si bien por motivos geométricos las pastas son el estado de menor energía, su comportamiento es muy sensible con la temperatura a medida que aumenta el tamaño del sistema.
+
+Esencialmente la energía de un sistema de Lennard-Jones se puede escribir con sus contribuciones de volumen y superfice $U = U_S - U_V$.
+De este modo, minimizar la superficie minimiza la energía total.
+En general, el cuerpo geométrico que minimiza la superficie es una esfera.
+Al existir condiciones periódicas de contorno, las partículas de Lennard-Jones pueden ``pegarse'' a través de las paredes de la caja, formando así un bloque o un cilindro infinito que tenga menos área que la esfera (ya que las tapas del cilindro desaparecen al pegarse sobre sí mismo).
+Esta característica hace que las llamemos \emph{pseudo pastas}.
+
+Cuando agregamos la temperatura el problema toma otra característica importante.
+Los sistemas a temperatura distinta de cero no minimizan su energía, sino la energía libre de Helmholtz $A = U - T\,S$.
+De este modo, hay que considerar en las variaciones en la geometría que minimicen la energía, el efecto que éstas tienen sobre la entropía.
+En el caso de los sistemas de Lennard-Jones, estas \emph{pseudo pastas} existen sólo para sistemas pequeños; a medida que aumenta el número de partículas, la temperatura a la que aparecen las \emph{pseudo pastas} disminuye hasta llegar a ser $T=0$ para el sistema infinito.
+
+El comportamiento del sistema de materia nuclear sin Coulomb es similar en este respecto.
+La pregunta que prosigue es: ¿se observa este efecto también en las pastas nucleares con la interacción de Coulomb?
+Como el sistema de materia nuclear con Coulomb tiene un grado de libertad extra (la fracción de protones), pretendemos realizar este estudio con partículas con Lennard-Jones y una interacción de Yukawa y observar cómo se comportan las estructuras que s forman al variar el número de partículas y la temperatura.

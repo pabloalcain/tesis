@@ -101,6 +101,7 @@ A pesar de que ninguna teoría puede arrogarse una descripción perfecta de la m
 
 \subsection{Classical Molecular Dynamics}\label{ssc:cmd}
 A lo largo de este trabajo utilizamos para modelar la dinámica de los nucleones el CMD.\@
+Para ver algunos detalles sobre la implementación de la dinámica molecular, ver el apéndice~\ref{ap:md}.
 Ha sido usado en varias reacciones de iones pesados para estudiar datos experimentales~\cite{chernomoretz_quasiclassical_2002}; identificar señales de transiciones de fase y otros fenómenos críticos~\cite{lopez_lectures_2000, barranon_searching_2001, dorso_selection_2001, barranon_critical_2003, barranon_time_2007}; y explorar la curva calórica~\cite{barranon_entropy_2004} y el \emph{isoscaling}~\cite{dorso_dynamical_2006, dorso_isoscaling_2011}.
 CMD usa dos potenciales de dos cuerpos para describir la interacción entre nucleones, que son una combinación de potenciales de Yukawa:
 \begin{align*}
@@ -231,6 +232,17 @@ Como ejemplo, en la figura~\ref{fig:pasta} mostramos las configuraciones de algu
 \end{figure}
 
 \section{Choque de Estrellas de Neutrones}
+
+El 17 de agosto de 2017, LIGO observó ondas gravitacionales surgidas de la colisión de dos estrellas de neutrones~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017}.
+Son consideradas como fuentes posibles de nucleosíntesis generadas por el proceso de captura rápida de neutrones, conocido como \emph{r-process}.
+Su aporte a la abundancia terrestre de núcleos terrestres aún está en discusión, pero se especula que es responsable de más de la mitad de los elementos con masa mayor a la del hierro y la única fuente de elementos más pesados que el plomo.
+La simulación con detalle microscópico de la colisión de Estrellas de Neutrones imposible en la práctica, ya que implicaría la simulación de $10^{55}$ partículas sólo en la corteza y la interacción de $10^{110}$ pares de partículas, por lo que usualmente estos estudios se realizan con un enfoque hidrodinámico más característico de las técnicas de campo medio.
+De este modo se intenta emular el comportamiento microscópico en la simulación detallada de la colisión.
+
+La otra alternativa es emular la colisión en el ambiente microscópico.
+Para lograrlo sometemos a un sistema de protones y neutrones a una expansión homogénea, conocida como pequeño \emph{big bang}~\cite{dorso_onset_1996}.
+
+
 
 %  LocalWords:  MeV fm neutron lasagna spaghetti gnocchi Ref Coupled
 %  LocalWords:  Tandem and Super Conducting Cyclotron

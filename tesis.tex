@@ -21,10 +21,10 @@ rectangle (0.2cm,0.2cm);}}
 \newcommand{\mycircle}[2]{\tikz{\filldraw[draw=#1,fill=#2] (0,0) circle [radius=0.1cm];}}
 
 \newcommand{\mytriangle}[2]{\tikz{\filldraw[draw=#1,fill=#2] (0,0) --
-(0.2cm,0) -- (0.1cm,0.2cm);}}
+(0.2cm,0) -- (0.1cm,0.2cm) -- (0, 0);}}
 
 \newcommand{\mydiamond}[2]{\tikz{\filldraw[draw=#1,fill=#2] (0.1cm,0cm) --
-(0.2cm,0.1cm) -- (0.1cm,0.2cm) -- (0cm,0.1cm);}}
+(0.2cm,0.1cm) -- (0.1cm,0.2cm) -- (0cm,0.1cm) -- (0.1cm,0cm);}}
 
 \definecolor{color1}{RGB}{102,194,165}
 \definecolor{color2}{RGB}{252,141,98}
@@ -77,6 +77,11 @@ rectangle (0.2cm,0.2cm);}}
 \input{src/conclusiones.tex}
 
 \appendix
+
+\chapter{Dinámica Molecular}
+\label{ap:md}
+\input{src/md.tex}
+
 \chapter{Funcionales de Minkowski}
 \label{ap:minkowski}
 \input{src/minkowski.tex}
