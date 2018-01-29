@@ -11,9 +11,11 @@
 \usepackage{amsmath} \usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{caption}
-\captionsetup{font=scriptsize}
-\captionsetup[sub]{font=scriptsize}
-
+%\captionsetup{font=scriptsize}
+\captionsetup[subfigure]{font=small}
+\DeclareCaptionFormat{figformat}{#1#2#3\hrulefill}
+\captionsetup[figure]{format=figformat}
+\captionsetup[subfigure]{format=default}
 
 \newcommand{\mysquare}[2]{\tikz{\filldraw[draw=#1,fill=#2] (0,0)
 rectangle (0.2cm,0.2cm);}}
@@ -33,24 +35,44 @@ rectangle (0.2cm,0.2cm);}}
 
 %\usepackage{geometry}
 \usepackage{hyperref}
-\input{lgorg/structure}
 %\usepackage{kpfonts}
 \usepackage{subcaption}
-\graphicspath{{./fig/}}
 \linespread{1.3}
 \usepackage{natbib}
 \bibliographystyle{alpha}
-\title{Dependencia en el isospin de la ecuación de estado de la materia nuclear}
+\input{lgorg/structure}
+\graphicspath{{./fig/}}
 
-\author{P. N. Alcain and C. O. Dorso}
-
-\date{\today}
 \begin{document}
 
-\maketitle
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%% Caratula
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\begin{center}
+\large{
+\includegraphics[width=0.25\textwidth]{logo.png}\vspace{1cm}\\
+\textbf{UNIVERSIDAD DE BUENOS AIRES}\\
+Facultad de Ciencias Exactas y Naturales\\
+Departamento de Física\vspace{1.5cm}\\
+\textbf{\LARGE Dependencia en el isospin de la ecuación de estado de la materia nuclear}
+\vspace{0.5cm}\\
+Tesis presentada para optar al título de \\
+Doctor de la Universidad de Buenos Aires en el área Ciencias Físicas\\
+por \textbf{Pablo N. Alcain} \vspace{1.5cm}\\
+Director de Tesis: Claudio O. Dorso\\
+Consejero de Estudios: Ariel Chernomoretz\\
+Lugar de Trabajo: Instituto de Física de Buenos Aires (IFIBA)
+\vspace{1.5cm}\\
+\today
+}
+\end{center}
+
+
 \chapterimage{chapter_head_2.pdf}
 \tableofcontents
-
+\mainmatter
 \chapter[Introducción]{Introducción}
 \label{ch:introduccion}
 \input{src/introduccion.tex}
@@ -86,9 +108,9 @@ rectangle (0.2cm,0.2cm);}}
 \label{ap:minkowski}
 \input{src/minkowski.tex}
 
-\chapter{Estabilidad de los fragmentos MSTE}
-\label{ap:mste}
-\input{src/mste.tex}
+\chapter{Reconocedores de Fragmentos}
+\label{ap:reconocedores}
+\input{src/reconocedores.tex}
 
 \chapter{Cálculo del factor de estructura}
 \label{ap:sq}

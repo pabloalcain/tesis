@@ -4,7 +4,7 @@ Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la di
 
 El origen de elementos pesados (más pesados que el $^{56}_{26}\text{Fe}$) es aún una incógnita en la física.
 Las principales hipótesis respecto del origen de estos elementos implican que las colisiones de estrellas de neutrones serían responsables de más de la mitad de la abundancia terrestre.
-El reciente descubrimiento de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817_GW170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas.
+El reciente descubrimiento de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas.
 Recientes trabajos~\cite{kasen_origin_2017} han estudiado, mediante modelos hidrodinámicos, el rol de las colisiones de estrellas de neutrones en la generación de elementos pesados.
 Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
 Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
@@ -51,8 +51,7 @@ En este algoritmo, las partículas se particionan en distintos fragmentos disjun
   \epsilon_n = \sum_{i \in C_n} K^{CM}_i +  \sum_{i,j \in C_n} V_{ij}
 \end{equation*}
 donde $K^{CM}_i$ es la energía cinética relativa al centro de masa del fragmento.
-El conjunto de fragmentos $\{C_n\}$ es, entonces, el que minimiza la suma de todas las energías de los fragmentos $E_{\text{partición}} =
-\sum_n \epsilon_n$.
+El conjunto de fragmentos $\{C_n\}$ es, entonces, el que minimiza la suma de todas las energías de los fragmentos $E_{\text{partición}} = \sum_n \epsilon_n$.
 
 El algoritmo ECRA puede ser utilizado fácilmente para sistemas pequeños~\cite{dorso_fluctuation_1994}, pero al ser una optimización combinatoria, no puede ser utilizado en sistemas grandes.
 Mientras que encontrar fragmentos ECRA es muy costoso computacionalmente, utilizar simplemente fragmentos MST resulta en fragmentos excesivamente grandes.
@@ -60,8 +59,7 @@ Una alternativa es el algoritmo Minimum Spanning Tree Energy (MSTE)~\cite{dorso_
 Este algoritmo es una modificación de MST, considerando la energía cinética.
 De acuerdo a este algoritmo, dos partículas pertenecen al mismo fragmento $\{C^{\text{MSTE}}_n\}$ si están unidas energéticamente:
 \begin{equation*}
-  i \in C^{\text{MSTE}}_n \Leftrightarrow \exists j \in C_n :
-  V_{ij}+ K_{ij} \le 0
+  i \in C^{\text{MSTE}}_n \Leftrightarrow \exists j \in C_n :  V_{ij}+ K_{ij} \le 0
 \end{equation*}
 A pesar de que de este algoritmo no se obtienen los mismos resultados teóricamente consistentes que con ECRA, igual evita el mayor problema de MST: no considerar de ninguna manera la energía cinética.
 
@@ -128,7 +126,7 @@ Esta prescripción para la expansión es matemáticamente equivalente a la ley d
 Es interesante notar que la expansión con esta prescripción es (para el sistema infinito simulado) adiabática: del momento inicial en adelante, no se agrega más energía al sistema.
 
 \section{Fragmento infinito}
-En la figura~\ref{fig:morpho} mostramos los estados inicial y final de la expansión de la celda principal de $N=11000$ partículas para velocidades de expansión muy bajas.
+En la figura~\ref{fig:morpho_frag} mostramos los estados inicial y final de la expansión de la celda principal de $N=11000$ partículas para velocidades de expansión muy bajas.
 Podemos ver que, más allá de que la configuración inicial muestra una distribución de partículas compacta, la configuración final consiste de \emph{gnocchi} (casi esféricos) con una masa de alrededor de 80 partículas.
 
 \begin{figure} \centering
@@ -144,7 +142,7 @@ Podemos ver que, más allá de que la configuración inicial muestra una distrib
   \end{subfigure}
   \caption{Estructuras de un sistema en su configuración inicial~\ref{subfig:initial} y el sistema expandido final~\ref{subfig:expanded}.
     En el sistema expandido podemos ver que se forman fragmentos de tipo \emph{gnocchi}.}
-  \label{fig:morpho}
+  \label{fig:morpho_frag}
 \end{figure}
 
 En la figura~\ref{fig:infinite} mostramos la fracción de partículas en la celda principal que forman parte de un cluster infinito (\emph{Fracción de Fragmento Infinito}, FFI).
@@ -262,7 +260,7 @@ Para tiempos suficientemente largos, estos fragmentos permanecen estables, ya qu
 Llamaremos a estos ``fragmentos asintóticos''.
 
 Expandimos distintas configuraciones iniciales con el modelo \emph{New medium} para encontrar la distribución asintótica de masas.
-Como primer ejemplo, mostramos en la figura~\ref{fig:asymp_preg} la distribución asintótica de masas (calculada con el algoritmo MSTE) para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ para dos velocidades de expansión: \emph{rápida} ($\dot{\eta} = 0.01\,\text{c/fm}$)y \emph{lenta} ($\dot{\eta} = 0.0001\,\text{c/fm}$)
+Como primer ejemplo, mostramos en la figura~\ref{fig:asymp_preg} la distribución asintótica de masas (calculada con el algoritmo MSTE) para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ para dos velocidades de expansión: \emph{rápida} ($\dot{\eta} = 0.01\,\text{c/fm}$) y \emph{lenta} ($\dot{\eta} = 0.0001\,\text{c/fm}$)
 Podemos ver aquí que la expansión lenta permite la existencia de fragmentos con masa de hasta 60 (20 de los cuales son protones) mientras que la expansión rápida produce fragmentos más pequeños de hasta 20 (6 protones).
 Este comportamiento es esperado, ya que cuanto más rápida la expansión, mayor la energía de excitación que se le agrega al sistema.
 En consecuencia, una expansión más rápida debería romper fragmentos que, de otro modo, serían estables.
@@ -270,12 +268,14 @@ Un comportamiento similar se puede ver en la figura~\ref{fig:asymp_las}, donde e
 Otra característica relevante de la distribución asintótica de masas (que no se muestra en la figura debido a limitaciones de escala) es que la expansión rápida tiene una fracción no despreciable de neutrones sueltos (cerca del $4\%$) mientras que la expansión lenta presenta muy pocos ($0.1\%$).
 
 \begin{figure}[h]
+  \centering
   \includegraphics[width=0.8\columnwidth]{fragmentacion/pregnocchi}
   \caption{Distribución asintótica de masas para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ y dos velocidades de expansión distintas: \emph{rápida} $\dot{\eta} = 0.01\,\text{c/fm}$ y \emph{lenta} $\dot{\eta} = 0.0001\,\text{c/fm}$.}
 \label{fig:asymp_preg}
 \end{figure}
 
 \begin{figure}[h]
+  \centering
   \includegraphics[width=0.8\columnwidth]{fragmentacion/lasagna}
   \caption{Distribución asintótica de masas para $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$ y dos velocidades de expansión distintas: \emph{rápida} $\dot{\eta} = 0.01\,\text{c/fm}$ y \emph{lenta} $\dot{\eta} = 0.0001\,\text{c/fm}$.}
 \label{fig:asymp_las}
@@ -377,10 +377,9 @@ También es interesante notar (no se muestra en las figuras) que la fracción de
 \end{figure}
 
 
-\section{Conclusiones}\label{sc:conc}
+\section{Conclusiones}
 
-
-Desarrollamos experimentos numéricos de sistemas expandidos homogéneamente  y, para analizar la estructura del sistema en función del tiempo, desarrollamos una herramienta basada en análisis de grafos para identificar fragmentos infinitos para cualquier tipo de fragmentos aditivos.
+Desarrollamos experimentos numéricos de sistemas expandidos homogéneamente y, para analizar la estructura del sistema en función del tiempo, desarrollamos una herramienta basada en análisis de grafos para identificar fragmentos infinitos para cualquier tipo de fragmentos aditivos.
 Una vez que esta formalismo fue aplicado a las simulaciones mencionadas, pudimos identificar la región en la que se da una distribución de fragmentos de tipo ley de potencias.
 Esta distribución tiene formas desde U-shaped hasta decaimiento exponencial.
 
@@ -397,9 +396,5 @@ El estado asintóticos mostró una alta dependencia con la velocidad de expansi�
 Sin embargo, para velocidades más bajas, la expansión era una \emph{expansión térmica}, en la que el estado asintótico era relativamente homogéneo.
 Los fragmentos formados en la expansión más lenta eran mucho más grandes que los formados en la expansión rápida.
 Un análisis cuidadoso de la dinámica de formación de fragmentos mostró que se formaron muy temprano en la expansión.
-En particular, la novedosa estructura que llamamos \emph{pregnocchi}
-es de considerable relevancia, ya que de acuerdo al análisis de ECRA
-estos agregados preexistentes evolucionan en una nube de neutrones,
-resultando en configuraciones en las que el \emph{r-process} se puede
-desarrollar.
+En particular, la novedosa estructura que llamamos \emph{pregnocchi} es de considerable relevancia, ya que de acuerdo al análisis de ECRA estos agregados preexistentes evolucionan en una nube de neutrones, resultando en configuraciones en las que el \emph{r-process} se puede desarrollar.
 %  LocalWords:  process

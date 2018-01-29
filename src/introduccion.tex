@@ -23,9 +23,9 @@ A medida que la compresión avanza y la densidad aumenta y llega a niveles de la
 El núcleo luego rebota fuertemente y comienza una onda de choque que viaja a través del material que viajaba originalmente hacia el centro.
 Esta onda de choque puede revertir la caída de la materia de estrellas que envuelve al núcleo y producir una expulsión hacia afuera, llamada supernova.
 
-La física del colapso, el rebote y la onda de choque asociada es muy complicada.
-No es seguro cómo se transfiera la energía y el momento a las capas exteriores de la estrella, y tampoco es seguro que el colapso del núcleo esté siempre acompañado por una supernova.
-De todos modos, el colapso deja un residuo del núcleo: una proto-estrella de neutrones caliente (con temperaturas de entre $20$ y $50\,\text{MeV}$).
+La física del colapso, el rebote y la onda de choque asociada es muy compleja.
+No hay completa certeza sobre cómo se transfiere la energía y el momento a las capas exteriores de la estrella, y tampoco es seguro que el colapso del núcleo esté siempre acompañado por una supernova.
+De cualquier modo, el colapso deja un residuo del núcleo: una proto-estrella de neutrones caliente (con temperaturas de entre $20$ y $50\,\text{MeV}$).
 Esa proto-estrella de neutrones va acreciendo material de las capas exteriores de la estrella y, si no se convierte en un agujero negro, se enfría hasta estabilizarse (principalmente a través de la emisión de neutrinos) formando un núcleo rico en neutrones de aproximadamente $10\,\text{km}$ de radio: una estrella de neutrones propiamente dicha.
 Durante esta etapa, la proto-estrella de neutrones emite hasta un 10\% de su masa en reposo en forma de neutrinos, y se cree que la interacción de estos neutrinos con el material de las capas exteriores de la estrella produce la Súper Nova, a pesar de que no hay consenso sobre los detalles del mecanismo~\cite{woosley_physics_2005, bethe_supernova_1990}.
 También está en discusión el proceso de Urca como mecanismo de enfriamiento~\cite{piekarewicz_proton_2012, lattimer_direct_1991}, puesto que para algunos modelos de ecuación de estado la fracción de protones en equilibrio no sería suficiente como para producir la cantidad de neutrinos necesaria.
@@ -39,7 +39,7 @@ Su estructura puede dividirse en dos partes, de acuerdo a modelos actuales~\cite
 La densidad de dicha corteza toma los valores de la densidad nuclear normal ($\rho \simeq 10^{14}\,\text{g/cm}^3$ o $ \rho \simeq \rho_0=0.15 \text{fm}^{-3}$) a una profundidad $d \simeq 1\,\text{km}$, la densidad de \emph{neutron drip} ($\rho\simeq 4 \cdot 10^{11}\,\text{g/cm}^3$) a $d\simeq 0.5\,\text{km}$, y una mezcla de nucleos ricos en neutrones con densidades decrecientes hasta ser prácticamente cero en lo que se conoce como el envoltorio de la estrella de neutrones.
 Ravenhall \emph{et al.} en Ref.~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.} en Ref.~\cite{hashimoto_shape_1984} propusieron que la corteza de las estrellas de neutrones está compuesta por estructuras conocidas como \emph{pasta nuclear}.
 
-Varios modelos han sido desarrollados para estudiar la pasta nuclear, y han mostrado que estas estructuras aparecen debido al juego entre las fuerzas nuclears y las de Coulomb en un medio infinito.
+Varios modelos han sido desarrollados para estudiar la pasta nuclear, y han mostrado que estas estructuras aparecen debido al juego competitivo entre las fuerzas nucleares y las de Coulomb en un medio infinito.
 De cualquier modo, la dependencia de los observables de diferentes cantidades termodinámicas no ha sido estudiado en profundidad.
 Los trabajos originales de Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.}~\cite{hashimoto_shape_1984} utilizaban un modelo de gota líquida compresible, y mostraron que las \emph{fases de pasta}
 --\emph{lasagna}, \emph{spaghetti} y \emph{gnocchi}-- son soluciones al estado fundamental de la materia de estrellas de neutrones.
@@ -50,15 +50,6 @@ Los modelos microscópicos incluyen Dinámica Molecular Cuántica (QMD por sus s
 De todos los modelos utilizados para estudiar las estrellas de neutrones, las ventajas de los modelos clásicos o semiclásicos son la accesibilidad a las posiciones y velocidades de todas las partículas y el hecho de que no se debe especificar \emph{a priori} ninguna morfología específica, a diferencia de la mayoría de los modelos de campo medio.
 Esto permite estudiar la estructura de la materia de estrellas de neutrones desde un punto de vista de las partículas.
 En estos modelos la repulsión de Pauli entre nucleones del mismo isospín es, o bien considerado en la interacción nuclear, o bien agregado como un término aparte~\cite{dorso_classical_1988}.
-
-La multifragmentación en sistemas nucleares fue estudiada
-antes~\cite{bonasera_critical_2000, chikazumi_quantum_2001}, pero, a
-diferencia de las colisiones, fue en mayor medida con materia nuclear (sin la interacción de Coulomb).
-En un reciente trabajo de Caplan et al~\cite{caplan_pasta_2015}, se estudió la materia de estrellas de neutrones expandiéndose como posible explicación para la nucleosíntesis en colisiones de estrellas de neutrones y en otro trabajo, de este grupo~\cite{alcain_dynamics_2017}, la formación de los fragmentos en la expansión.
-
-La compresión de la materia de estrellas de neutrones durante la colisión de dos estrellas es una posible fuente para nucleos a través del \emph{r-process}, como fue discutido inicialmente en Ref.~\cite{lattimer_black-hole-neutron-star_1974}.
-De acuerdo a modelos hidrodinámicos~\cite{goriely_r-process_2011}, éstos tienen coeficientes de expansión típicos de  $\eta = 10^{-21}\,\text{c/fm} < \eta < 4\cdot 10^{-20}\,\text{c/fm}$.
-Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
 
 \section{Dinámica de los nucleones}\label{sc:nucleon}
 Para estudiar la estructura nuclear de la corteza de las estrellas de neutrones es necesario comprender el comportamiento de los nucleones (es decir, protones y neutrones) a las densidades y temperaturas típicas de las capas externas de las estrellas.
@@ -144,7 +135,7 @@ La evolución del sistema se sigue utilizando un algoritmo de Verlet en velocida
 A cualquier punto en el tiempo la posición y momento de los nucleones es conocida y puede ser transformada en información de fragmentos y partículas libres a través de distintas técnicas de reconocimiento de fragmentos~\cite{dorso_early_1993, dorso_when_1995, strachan_time_1997}.
 
 Este método implica masas, momentos, energías de excitación y decaimientos secundarios comparables al experimental~\cite{belkacem_searching_1996,chernomoretz_quasiclassical_2002}.
-La figura~\ref{fig:distribution}, por ejemplo, muestra las distribuciones de la velocidad paralela simuladas y experimentales obtenidas de la colisión de $\text{Ni+C}$ realizadas en el \emph{Coupled Tandem and Super-Conducting Cyclotron accelerators} de AECL en Chalk River~\cite{chernomoretz_quasiclassical_2002}.
+La figura~\ref{fig:distribution_vel}, por ejemplo, muestra las distribuciones de la velocidad paralela simuladas y experimentales obtenidas de la colisión de $\text{Ni+C}$ realizadas en el \emph{Coupled Tandem and Super-Conducting Cyclotron accelerators} de AECL en Chalk River~\cite{chernomoretz_quasiclassical_2002}.
 
 \begin{figure}[h]
   \begin{subfigure}[h!]{0.48\columnwidth}
@@ -159,7 +150,7 @@ La figura~\ref{fig:distribution}, por ejemplo, muestra las distribuciones de la 
   \end{subfigure}
   \centering
   \caption{Distribuciones de velocidad paralela~\ref{sfig:exp} experimental y~\ref{sfig:sim} simulada para colisiones de ${}^{58}\text{Ni+C}$.}
-  \label{fig:distribution}
+  \label{fig:distribution_vel}
 \end{figure}
 
 
@@ -240,7 +231,13 @@ La simulación con detalle microscópico de la colisión de Estrellas de Neutron
 De este modo se intenta emular el comportamiento microscópico en la simulación detallada de la colisión.
 
 La otra alternativa es emular la colisión en el ambiente microscópico.
-Para lograrlo sometemos a un sistema de protones y neutrones a una expansión homogénea, conocida como pequeño \emph{big bang}~\cite{dorso_onset_1996}.
+Para lograrlo sometemos a un sistema de protones y neutrones a una expansión homogénea, conocida como pequeño \emph{big bang}~\cite{dorso_onset_1996}, dando origen a un proceso de multifragmentación.
+La multifragmentación en sistemas nucleares fue estudiada antes~\cite{bonasera_critical_2000, chikazumi_quantum_2001}, pero, a diferencia de las colisiones, fue en mayor medida con materia nuclear (sin la interacción de Coulomb).
+En un reciente trabajo de Caplan et al~\cite{caplan_pasta_2015}, se estudió la materia de estrellas de neutrones expandiéndose como posible explicación para la nucleosíntesis en colisiones de estrellas de neutrones y en otro trabajo, de este grupo~\cite{alcain_dynamics_2017}, la formación de los fragmentos en la expansión.
+
+La compresión de la materia de estrellas de neutrones durante la colisión de dos estrellas es una posible fuente para nucleos a través del \emph{r-process}, como fue discutido inicialmente en Ref.~\cite{lattimer_black-hole-neutron-star_1974}.
+De acuerdo a modelos hidrodinámicos~\cite{goriely_r-process_2011}, éstos tienen coeficientes de expansión típicos de  $\eta = 10^{-21}\,\text{c/fm} < \eta < 4\cdot 10^{-20}\,\text{c/fm}$.
+Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
 
 
 

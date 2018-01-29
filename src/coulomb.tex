@@ -1,5 +1,5 @@
 En este capítulo estudiamos el rol de la interacción de Coulomb en la dinámica de los nucleones en las condiciones de la corteza de las estrellas de neutrones.
-Estudiamos la materia simétrica en isospín a densidades de sub-saturación ($\rho < 0.16\text{fm}^{-3}$) y temperaturas bajas ($T < 2\,\text{Mev}$).
+Estudiamos la materia simétrica en isospín a densidades de sub-saturación ($\rho < 0.16\text{fm}^{-3}$) y temperaturas bajas ($T < 2\,\text{MeV}$).
 La interacción electrostática entre protones es incluida como un potencial de Coulomb apantallado, en el espíritu de la aproximación de Thomas-Fermi, pero variando artificialmente la longitud de apantallamiento $\lambda$ para estudiar su efecto en la formación de las estructuras nucleares no homogéneas conocidas como ``pasta nuclear''.
 A medida que aumenta la longitud de apantallamiento, podemos ver una transición de un régimen de una pasta por celda (debido exclusivamente a efectos de tamaño finito) a un régimen en el que aparecen múltiples pastas por celda.
 Esta diferencia cualitativa en la estructura de la materia de estrellas de neutrones a bajas temperaturas muestra que se debe tomar especial cuidado cuando la longitud de apantallamiento es estimada para simulaciones numéricas.
@@ -31,12 +31,12 @@ Al enfrentar este inconveniente, distintos autores~\cite{maruyama_molecular_2012
 Incluso si fueran capaces de producir estructura del tipo pasta, la elección particular del valor para la longitud de apantallamiento es arbitraria y basada casi únicamente en detalles computacionales.
 Notablemente, este valor de longitud de apantallamiento fue utilizado
 consecutivamente por los autores desde ese momento~\cite{maruyama_quantum_1998, horowitz_neutrino-pasta_2004, dorso_topological_2012}.
-En este capítulo nos centraremos en el estudio de las consecuencias física de esta elección arbitraria.
+En este capítulo nos centraremos en el estudio de las consecuencias físicas de esta elección arbitraria.
 
 El rol de la longitud de apantallamiento ha sido apenas explorado en otros modelos.
 Por ejemplo, en un estudio del 2003~\cite{watanabe_electron_2003}, el efecto de apantallamiento de un gas de electrones en estructuras nucleares fue investigado utilizando un modelo estático de gota líquida.
 En este estudio se encontró que el principal efecto del gas apantallante fue extender el rango de densidades en las que las burbujas y los fragmentos aparecían, y reducir el rango de estabilidad de fases homogéneas.
-A pesar de que la relevancia del apantallamiento resultó menor, el estudio, al ser estático, no incluía ningún efecto dinámico.
+A pesar de que la relevancia del apantallamiento resultó menor, es importante resaltar que el estudio no incluía ningún efecto dinámico.
 
 Otro estudio, del 2005~\cite{maruyama_nuclear_2005}, utilizó una funcional densidad para investigar el apantallamiento de la carga en estructuras nucleares a densidades menores a la nuclear, pero a temperatura cero; en particular se compararon casos con y sin apantallamiento.
 Los resultados principales del estudio fueron perfiles de densidad de nucleones utilizados para cuantificar el ordenamiento de las densidades de carga de protones y electrones.
@@ -45,18 +45,30 @@ Nuevamente, hallaron que las regiones de densidad en las que existe la pasta se 
 Más recientemente, algunos trabajos~\cite{schneider_nuclear_2013,gimenez_molinelli_simulations_2014} comenzaron a estudiar el efecto que tiene la interacción de Coulomb en la formación de pasta utilizando modelos dinámicos.
 Los hallazgos principales fueron que la pasta artificial, de una estructura por celda (\emph{pseudo-pasta}), podía existir incluso en ausencia de interacción de Coulomb, y que existía debido a las condiciones periódicas de contorno y el tamaño finito~\cite{binder_beyond_2012}.
 
+Para caracterizar topológicamente las estructuras utilizamos las funcionales de Minkowski~\cite{michielsen_integral-geometry_2001}.
+
+\subsection{Funcionales de Minkowski}
+
+Las medidas topológicas de un cuerpo convexo $K \in \mathcal{R}$ se definen como funcionales $\varphi: \mathcal{R} \rightarrow \mathbb{R}$ que satisfacen tres propiedades:
+
+\begin{itemize}
+  \item \textbf{Invariancia de movimiento:} $\varphi(K) = \varphi(g(K))$, donde $g(K)$ implica cualquier tipo de traslación y rotación del cuerpo $K$.
+  \item \textbf{Aditividad:} $\varphi(K_1 \cup K_2) = \varphi(K_1) + \varphi(K_2) - \varphi(K_1 \cap K_2)$.
+  \item \textbf{Continuidad:} $\lim_{n\rightarrow\infty}\varphi(K_n) = \varphi(K)$ si $\lim_{n\rightarrow\infty}K_n = K$, donde ${K_n}$ es un conjunto de cuerpos convexos.
+\end{itemize}
+
+El teorema de Hadwiger dice que para un sistema de dimensión $d$ hay sólo $d+1$ funcionales independientes que satisfacen las propiedades mencionadas: las funcionales de Minkowski. En el espacio tridimensional, las funcionales de Minkowski están asociadas al volumen, el área, la curvatura media y el número de Euler. A pesar de que no necesariamente las estructuras obtenidas en este trabajo sean convexas (es decir, las funcionales de Minkowski no las definen unívocamente), utilizamos estas medidas para caracterizarlas. En el apéndice~\ref{ap:minkowski} se puede observar detalladamente el cálculo de estas magnitudes.
+
 \section{Longitud de apantallamiento ``crítica''}\label{lambda_c}
 
-Una forma de analizar la naturaleza de la pasta obtenida es a través de la presión de las distintas configuraciones.
-
-Podemos medir la presión a través de la fórmula del virial
+Una forma de analizar la naturaleza de la pasta obtenida es a través de la presión de las distintas configuraciones, que se puede medir a través de la fórmula del virial
 \begin{equation*}
 P=\frac{N\,k_B\,T}{V} + \frac{1}{3}
 \frac{\Sigma_{i}^{N}\mathbf{r}_i\cdot\mathbf{F}_i}{V}
 \end{equation*}
 donde $N$ es el número de partículas en el sistema y $\mathbf{F}$ la fuera ejercida sobre cada nucleón.
 Los términos en la fórmula del virial se aplican sólo a las interacciones específicas del modelo, sin contemplar la presión del gas de electrones.
-Esta presión no debe ser confundida con la presión esperada en la corteza de las estrellas de neutrones (ya que los electrones deberían ser considerados explícitamente para calcularla adecuadamente), sino simplemente una prueba de la estabilidad mecánica de las configuraciones obtenidas con este modelo.
+Esta presión no debe ser confundida con la presión real en la corteza de las estrellas de neutrones (ya que los electrones deberían ser considerados explícitamente para calcularla adecuadamente), sino simplemente una prueba de la estabilidad mecánica de las configuraciones obtenidas con este modelo.
 En la figura~\ref{fig:pre} vemos que para todo $\lambda<10\,\text{fm}$ la presión es negativa.
 
 La presión negativa es una señal de que las estructuras no-homogéneas encontradas son artificiales, y que las estructuras sólo pueden existir bajo condiciones periódicas de contorno (ver~\cite{binder_beyond_2012,gimenez_molinelli_simulations_2014}).
@@ -65,7 +77,7 @@ Esto significa que, para longitudes de apantallamiento tan bajas, la interacció
 
 Para $\lambda>10\,\text{fm}$ la presión se vuelve positiva, lo que quiere decir que las estructuras que se forman en estas configuraciones no se deben sólo a las condiciones periódicas de contorno, sino que la interacción de Coulomb está comenzando a jugar un rol.
 Las configuraciones para estos valores de $\lambda$ muestran efectivamente fluctuaciones de densidad de longitud menor que el tamaño de la caja, que sólo pueden ser atribuidas a la competencia entre el término de Coulomb y el término nuclear.
-Sin embargo, la forma de las estructuras, caracterizadas a través de las funcionales de Minkowski (ver~\ref{ap:minkowski}), cambia drásticamente con $\lambda$.
+Sin embargo, la forma de las estructuras, caracterizadas a través de las funcionales de Minkowski (ver Apéndice~\ref{ap:minkowski}), cambia drásticamente con $\lambda$.
 
 \begin{figure}[h!]  \centering
 \centering
@@ -121,7 +133,7 @@ A medida que las configuraciones se parten en múltiples estructuras por celda a
 En cuanto al ancho medio, el comportamiento descripto en la tabla~\ref{tab:mink} (positivo para \emph{spaghetti} y \emph{gnocchi}, cero para \emph{lasagna} y negativo para túnel sólo se observa para $\lambda=20\,\text{fm}$.
 Entre $\lambda=7\,\text{fm}$ y $\lambda=10\,\text{fm}$ las tres funcionales de Minkowski cambian drásticamente antes de alcanzar valores bien definidos.
 Esto indica que hay un régimen de transición en el que las estructuras no se pueden describir como cualquiera de las pastas tradicionales.
-Para este modelo de interacción nuclear y Coulomb, parece que el valor usual de $\lambda=10\,\text{fm}$ es demasiado bajo.
+Para este modelo de interacción nuclear y Coulomb, todo parece indicar que el valor usual de $\lambda=10\,\text{fm}$ es demasiado bajo.
 
 
 \section{Régimen de una pasta por celda} \label{pasta-bup}
@@ -254,18 +266,18 @@ A pesar de que la interacción de Coulomb es ahora suficientemente grande como p
 
 \section{Conclusiones}\label{concluding}
 
-Estudiamos el efecto de la longitud de apantallamiento de la interacción de Coulomb en las simulaciones de materia de estrellas de neutrones a densidad comparables a las de la corteza de las estrellas de neutrones.
+Estudiamos el efecto de la longitud de apantallamiento de la interacción de Coulomb en las simulaciones de materia de estrellas de neutrones a densidades compatbiles con las de la corteza de las estrellas de neutrones.
 A lo largo de la literatura podemos encontrar que el valor de la longitud de apantallamiento en la aproximación de Thomas-Fermi es $\lambda\approx100\,\text{fm}$.
 Para simulaciones basadas en partículas, debido a las limitaciones computacionales, este valor fue histórica y arbitrariamente reducido a $\lambda\approx10\,\text{fm}$, esperando mantener la fenomenología básica cuando se estudiaban sistemas pequeños.
 Encontramos, sin embargo, que existe para nuestro potencial una longitud de apantallamiento crítica $\lambda_c$ a la cual la estructura del estado fundamental cambia drásticamente.
 Para el potencial de Pandharipande en su parametrización Medium, yace entre $10\,\text{fm}$ y $15\,\text{fm}$ (dependiendo de la densidad).
-Para $\lambda<\lambda_c$, la interacción de Coulomb apenas actúa y las estructuras no homogéneas que emergen de las simulaciones se deben a efectos de tamaño finito, como es evidente a partir de la presión negativa de estas estructuras y el hecho de que hay sólo una estructura por celda.
+Para $\lambda<\lambda_c$, la interacción de Coulomb apenas actúa y las estructuras no homogéneas que emergen de las simulaciones se deben a efectos de tamaño finito y las condiciones periódicas de contorno, como es evidente a partir de la presión negativa de estas estructuras y el hecho de que hay sólo una estructura por celda.
 Para $\lambda>\lambda_c$ la presión se vuelve positiva y los sistemas presentan fluctuaciones de densidad a una escala menor que la de la celda, pero no con la forma de la pasta típica.
 Este régimen de transición se caracteriza por grandes fluctuaciones en la superficie, ancho medio y característica de Euler $\chi$ de las estructuras.
 Es recién para $\lambda=20\,\text{fm}$ que la morfología de las estructuras se estabiliza y deja de depender de $\lambda$.
 Más aún, las estructuras en este régimen son las pastas usuales.
 
-Debido a esto, creemos que se tiene que tomar extrema precaución cuando se elige un valor arbitrario de $\lambda$, ya que aunque algunos resultados a $\lambda=10\,\text{fm}$ pueden ser como la pasta esperada, los resultados obtenidos para esa elección particular de $\lambda$ pueden ser cualitativamente diferente de aquellos en la correcta aproximación de Thomas-Fermi.
+Debido a esto, consideramos que se tiene que tomar extrema precaución cuando se elige un valor arbitrario de $\lambda$, ya que, si bien algunos resultados a $\lambda=10\,\text{fm}$ pueden ser como la pasta esperada, los resultados obtenidos para esa elección particular de $\lambda$ pueden ser cualitativamente diferente de aquellos en la correcta aproximación de Thomas-Fermi.
 En conclusión, encontramos que la elección de un buen valor para $\lambda$ que vuelve al sistema computable computacionalmente y puede adecuadamente recuperar la física de la aproximación de Thomas-Fermi no es una tarea trivial, y se necesita un estudio riguroso antes de escogerlo.
 Un buen valor de $\lambda$ debe cumplir $\lambda>\lambda_c$, que depende del modelo utilizado para la interacción nuclear.
 
