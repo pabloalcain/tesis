@@ -57,7 +57,7 @@ Utilizando este método para un caso de prueba muy simple (una red cúbica simpl
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.4\columnwidth]{nuevas_pastas/ssf_comp.pdf}
+  \includegraphics[width=0.7\columnwidth]{nuevas_pastas/ssf_comp.pdf}
   \caption{Comparación del factor de estructura con y sin CPC.
     Es evidente que el factor de estructura calculado con CPC muestra valores negativos, que no deberían existir desde la misma definición del factor de estructura.}
   \label{fig:ssf_comp}
@@ -81,21 +81,21 @@ Hay una alternativa para agregar las condiciones de contorno.
 Comenzamos con la definición de la \emph{amplitud de scattering} como en~\ref{eq:scat_amp}, pero escribiendo explícitamente las imágenes que queremos considerar:
 \begin{equation}
   \Psi(\mathbf{Q}) = \sum_i \sum_j
-  \text{e}^{i\mathbf{Q}\cdot(\mathbf{R}_i+\mathbf{\Delta L}_j})
+  \text{e}^{i\mathbf{Q}\cdot(\mathbf{R}_i+\boldsymbol{\Delta}\mathbf{L}_j)}
 \end{equation}
-donde $\mathbf{\Delta L}_j$ es la distancia entre una partícula y su réplica
+donde $\boldsymbol{\Delta}\mathbf{L}_j$ es la distancia entre una partícula y su réplica
 $j$-ésima. Como las sumas son independientes, podemos escribir:
 \begin{equation}
   \Psi(\mathbf{Q}) = \left(\sum_i
     \text{e}^{i\mathbf{Q}\cdot\mathbf{R}_i}\right)
-  \left(\sum_j\text{e}^{i\mathbf{Q}\cdot\mathbf{\Delta L}_j}\right)
+  \left(\sum_j\text{e}^{i\mathbf{Q}\cdot{\boldsymbol{\Delta}\mathbf{L}_j}}\right)
 \end{equation}
 
 Multiplicando por el conjugado, obtenemos el factor de estructura
 \begin{align}
   S(\mathbf{Q}) &= \left|\sum_i
     \text{e}^{i\mathbf{Q}\cdot\mathbf{R}_i}\right|^2 \left|\sum_j
-    \text{e}^{i\mathbf{Q}\cdot\mathbf{\Delta L}_j}\right|^2\\
+    \text{e}^{i\mathbf{Q}\cdot{\boldsymbol{\Delta}\mathbf{L}}_j}\right|^2\\
   &= S_{\text{celda}}(\mathbf{Q})\,S_{\text{CPC}}(\mathbf{Q})
 \end{align}
 

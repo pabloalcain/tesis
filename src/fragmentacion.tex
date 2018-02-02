@@ -4,19 +4,18 @@ Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la di
 
 El origen de elementos pesados (más pesados que el $^{56}_{26}\text{Fe}$) es aún una incógnita en la física.
 Las principales hipótesis respecto del origen de estos elementos implican que las colisiones de estrellas de neutrones serían responsables de más de la mitad de la abundancia terrestre.
-El reciente descubrimiento de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas.
+La reciente observación de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas en la abundancia de elementos pesados.
 Recientes trabajos~\cite{kasen_origin_2017} han estudiado, mediante modelos hidrodinámicos, el rol de las colisiones de estrellas de neutrones en la generación de elementos pesados.
 Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
 Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
 Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
 
-El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}~\cite{dorso_onset_1996}.
-Esta expansión se parece a la evolución de las colisiones de estrellas de neutrones.
-A partir de una configuración de equilibrio, expandimos el sistema homogéneamente hasta llegar a una configuración asintótica (i.\ e.\ densidades muy bajas).
+El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}~\cite{dorso_onset_1996}, que corresponde localmente a la evolución de las colisiones de estrellas de neutrones.
+A partir de una configuración de equilibrio, expandimos el sistema homogéneamente hasta llegar a una configuración asintótica (correspondiente a densidades muy bajas).
 Estudiamos, con cuatro algoritmos reconocedores de fragmentos distintos, la distribución de fragmentos a lo largo de esta expansión y la dinámica de la formación de fragmentos.
 
 Encontramos los típicos regímenes de la distribución de fragmentos de una expansión: U-shaped, ley de potencias y exponencial.
-Otra característica de nuestro cálculo es que, ya que la interacción entre protones es repulsiva de largo rango, no siempre tenemos un fragmento infinito.
+Otra característica de nuestro cálculo es que, ya que la interacción entre protones es repulsiva de largo rango, no tenemos un fragmento infinito en toda etapa de la evolución.
 Como es de esperar, cuanto más rápida es la velocidad e expansión, más rápido desaparece el fragmento infinito.
 
 Desarrollamos una herramienta basada en análisis de grafos para la identificación del fragmento infinito y encontramos una transición de distribución de fragmentos de U-shaped a exponencial a medida que aumenta la velocidad de expansión.
@@ -54,7 +53,7 @@ donde $K^{CM}_i$ es la energía cinética relativa al centro de masa del fragmen
 El conjunto de fragmentos $\{C_n\}$ es, entonces, el que minimiza la suma de todas las energías de los fragmentos $E_{\text{partición}} = \sum_n \epsilon_n$.
 
 El algoritmo ECRA puede ser utilizado fácilmente para sistemas pequeños~\cite{dorso_fluctuation_1994}, pero al ser una optimización combinatoria, no puede ser utilizado en sistemas grandes.
-Mientras que encontrar fragmentos ECRA es muy costoso computacionalmente, utilizar simplemente fragmentos MST resulta en fragmentos excesivamente grandes.
+Mientras que encontrar fragmentos ECRA es muy costoso computacionalmente, utilizar simplemente fragmentos MST resulta en fragmentos excesivamente grandes e inestables.
 Una alternativa es el algoritmo Minimum Spanning Tree Energy (MSTE)~\cite{dorso_topological_2012}.
 Este algoritmo es una modificación de MST, considerando la energía cinética.
 De acuerdo a este algoritmo, dos partículas pertenecen al mismo fragmento $\{C^{\text{MSTE}}_n\}$ si están unidas energéticamente:
@@ -64,7 +63,7 @@ De acuerdo a este algoritmo, dos partículas pertenecen al mismo fragmento $\{C^
 A pesar de que de este algoritmo no se obtienen los mismos resultados teóricamente consistentes que con ECRA, igual evita el mayor problema de MST: no considerar de ninguna manera la energía cinética.
 
 \subsection{Identificación de Fragmentos Infinitos}
-Desarrollmos un algoritmo para el reconocimiento de fragmentos infinitos a través de los contornos.
+Desarrollamos~\cite{alcain_fragmentation_2017} un algoritmo para el reconocimiento de fragmentos infinitos a través de los contornos.
 Explicamos aquí en detalle la implementación para fragmentos tipo MST en 2 dimensiones, mientras que la extensión a MSTE y 3 dimensiones es inmediata y, en general, a cualquier definición de clusters que cumpla con la \emph{aditividad}.
 En la figura~\ref{fig:scheme_clusters} podemos ver una representación esquemática de fragmentos 2D reconocidos en una celda periódica, etiquetados del 1 al 6 (notar que estos fragmentos no se conectan aún a través de las paredes periódicas).
 
@@ -107,7 +106,7 @@ Para el ciclo E--W, $I = M_E + M_W = 0$, y el ciclo es finito.
 
 \section{Expansión}\label{sc:expansion}
 La simulación de la colisión de dos estrellas de neutrones es impracticable computacionalmente con este nivel de detalle, ya que implicaría resolver aproximadamente $10^{30}$ veces la celda de simulación que utilizamos.
-En vez de simular la colisión de las estrellas, emulamos su comportamiento realizando expansiones locales de sistemas infinitos.
+En vez de simular la colisión de las estrellas, emulamos el efecto que ésta tiene en distintas regiones del sistema realizando expansiones locales de sistemas infinitos.
 Para expandir la materia rica en neutrones que simula un sistema infinito con condiciones periódicas de contorno, seguimos el método del \emph{big bang microscópico}, explicado por Holian y Grady en Ref.~\cite{holian_fragmentation_1988} y usado por la expansión de sistemas infinitos previamente~\cite{dorso_onset_1996}.
 Consiste en una expansión de la celda de simulación a un ritmo isotrópico y constante $\dot{\eta}$:
 \begin{equation}
@@ -256,8 +255,8 @@ Estas estructuras son cercanas al estado fundamental, con temperatura muy baja (
 
 \section{Distribución Asintótica de Masas}
 Cuando el sistema se expande, la estructura se parte en fragmentos finitos.
-Para tiempos suficientemente largos, estos fragmentos permanecen estables, ya que no interactúan entre sí y se han desexcitado por emisión de partículas.
-Llamaremos a estos ``fragmentos asintóticos''.
+A partir de tiempos suficientemente largos estos fragmentos permanecen estables, ya que no interactúan entre sí y se han desexcitado por emisión de partículas.
+Llamaremos a éstos ``fragmentos asintóticos''.
 
 Expandimos distintas configuraciones iniciales con el modelo \emph{New medium} para encontrar la distribución asintótica de masas.
 Como primer ejemplo, mostramos en la figura~\ref{fig:asymp_preg} la distribución asintótica de masas (calculada con el algoritmo MSTE) para $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.8\,\text{MeV}$ para dos velocidades de expansión: \emph{rápida} ($\dot{\eta} = 0.01\,\text{c/fm}$) y \emph{lenta} ($\dot{\eta} = 0.0001\,\text{c/fm}$)
@@ -310,9 +309,9 @@ Es interesante notar que la expansión rápida se parece a una fractura mecánic
 Los fragmentos se parten en muchos porque su tamaño tan grande no puede soportar la energía asociada con la expansión del sistema.
 
 Un escenario muy interesante es la expansión del sistema con baja fracción de protones: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
-En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$. \todo[inline]{Es como supernova?}
+En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$.
 
-A diferencia del escenario anterior, aquí hay una clara estructura de protones: los fragmentos existen desde el comienzo, inmersos en un mar de neutrones.
+A diferencia del escenario anterior, aquí hay una clara estructura de protones: hay agregados de protones inmersos en un mar de neutrones.
 Pueden ser identificados visualmente si dibujamos los protones con un tamaño mucho mayor que el de los neutrones, como se ve en este conjunto de figuras.
 A medida que el sistema se expande, se modifica.
 Esto genera la siguiente pregunta: ¿la distribución de fragmentos se modifica sustancialmente?
@@ -348,7 +347,7 @@ En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-
 \end{figure}
 
 Con estos resultados en mente, utilizamos tres herramientas para el reconocimiento de fragmentos: MSTE, ECRA y MSTpC.
-MSTE y ECRA son los algoritmos ya descritos, mientras que MSTpC es el algoritmo de MST sobre protones con la nube de neutrones que están cerca de cada cluster MST.\@
+MSTE y ECRA son los algoritmos ya descritos, mientras que MSTpC es el algoritmo de MST sobre protones, agregando a éste la nube de neutrones que están cerca de cada cluster MST.\@
 En la figura~\ref{fig:lm_pre} mostramos la evolución del tamaño del fragmento más grande para las etapas iniciales de la evolución para los tres reconocedores de fragmentos: MSTE, MSTpC y ECRA.\@
 La figura muestra que el fragmento ECRA se estabiliza rápido y se mantiene relativamente estable, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes que los ECRA y se estabilizan más lentamente.
 También es interesante notar que el fragmento MSTpC comienza con alrededor de 100 neutrones más que el fragmento ECRA correspondiente, lo que implica que el fragmento de ECRA está en un ambiente muy rico en neutrones.
@@ -364,7 +363,7 @@ También es interesante notar (no se muestra en las figuras) que la fracción de
 \begin{figure}[H]  \centering
   \includegraphics[width=0.8\columnwidth]{fragmentacion/lm_pre}
   \caption{Masa del fragmento más grande para MSTE, MSTpC y ECRA para las etapas iniciales de la evolución, para la configuración \emph{pre-gnocchi}.
-    Se puede observar que el fragmento de ECRA se mantiene relativamente estable y se estabiliza rápidamente, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes y tardan más en estabilizarse.}
+    Se puede observar que el fragmento de ECRA identifica las estructuras que se forman tempranamente y dan lugar a los fragmentos asintóticos, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes y tardan más en estabilizarse.}
 \label{fig:lm_pre}
 \end{figure}
 

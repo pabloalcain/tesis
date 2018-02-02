@@ -3,7 +3,7 @@ Estudiamos la opacidad de neutrinos de la materia heterogénea a distintas condi
 La opacidad de los neutrinos es de crucial importancia para la evolución térmica de las supernovas y el scattering de neutrinos de las estrellas de neutrones.
 
 \section{Introducción}
-La materia rica de neutrones es un sistema neutral compuesto de una mezcla de protones y neutrones embebidos en un gas de electrones.
+La materia rica de neutrones es un sistema neutro compuesto de una mezcla de protones y neutrones embebidos en un gas de electrones.
 Este tipo de materia puede desarrollar estructuras heterogéneas, usualmente conocidas como \emph{pasta nuclear}.
 Como podemos ver en Ref.~\cite{horowitz_nonuniform_2004, horowitz_neutrino-pasta_2004}, el factor de estructura estático neutrón-neutrón $S(q)$ de la pasta nuclear describe el \emph{scattering} coherente de neutrinos.
 Este fenómeno se espera que tenga impacto para la opacidad de neutrinos en ciertas longitudes de onda.
@@ -23,7 +23,12 @@ Con esto en mente, la sección eficaz del sistema resulta:
 \sigma_{\text{total}} = \frac{G_F^2E_\nu^2}{6\pi}\, S(q)
 \label{eq:opac}
 \end{equation}
-Ya que la masa del neutrino ($m_\nu \approx 10^{-2}\,\text{eV}$) es despreciable para energías en el rango de los MeV, la relación entre la energía y el número de onda es $E_\nu = \hbar q$.
+Ya que la masa del neutrino ($m_\nu \approx 10^{-2}\,\text{eV}$) es despreciable para energías en el rango de los MeV, la relación entre la energía y el número de onda es $E_\nu = \hbar q$, resultando entonces
+
+\begin{equation}
+\sigma_{\text{total}} = \frac{G_F^2\hbar^2}{6\pi}\, q^2S(q)
+\label{eq:opac}
+\end{equation}
 
 Para hallar la opacidad de la materia heterogénea, calculamos el factor de estructura del sistema para un amplio rango de longitudes de onda de interés relacionadas con la estructura de la pasta, y luego buscamos el máximo.
 Para tener una idea de la distribución espacial de las partículas, calculamos también el factor de estructura del sistema, que se define como:
@@ -70,7 +75,7 @@ Para un detalle de cómo se realizó el cálculo, ver apéndice~\ref{ap:sq}.
 \end{figure}
 
 En la figura~\ref{fig:morpho} mostramos cuatro estructuras distintas para fracción de protones de $x=0.4$ y $x=0.5$, y temperatura $T=0.5\,\text{MeV}$ y $T=1.0\,\text{MeV}$.
-Claramente podemos ver que las estructuras ya no se limitan a las que originalmente propusieron Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983}.
+Claramente podemos ver que las estructuras ya no se limitan a las originalmente propuestas por Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983}.
 Para estudiarlas en mayor profundidad, podemos ver en la figura~\ref{fig:cluster} la distribución de fragmentos correspondiente al modelo MSTE (ver capítulo~\ref{ch:fragmentacion} para más detalles).
 En esta figura podemos ver que para una fracción de protones de $x=0.2$ hay muchos nucleones aislados que son casi exclusivamente neutrones.
 Éstos funcionan como un gas de neutrones en el que se embebe la estructura de protones subyacente.

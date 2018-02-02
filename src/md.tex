@@ -4,7 +4,7 @@ Dos técnicas son fundamentales para realizar las simulaciones que hemos hecho a
 
 \section{Integración Temporal}
 A cada tiempo $t_i = t$ calculamos todas las fuerzas y, con la aceleración correspondiente, hallamos las posiciones y velocidades de la partícula a tiempo $t_{i+1} = t + \Delta t$.
-A pesar de que hay una gran multiplicidad de técnicas~\cite{hairer_geometric_2002} para encontrar las posiciones en el tiempo $t_{i+1}$, quizás una de las características más fundamentales que se buscan en estos algoritmos es que sean \textbf{simplécticos}, es decir, que conserven el volumen en el espacio de fases $dp \wedge dq$, como lo hace la evolución hamiltoniana exacta de acuerdo al teorema de Liouville\todo[inline]{citation needed}.
+A pesar de que hay una gran multiplicidad de técnicas~\cite{hairer_geometric_2002} para encontrar las posiciones en el tiempo $t_{i+1}$, quizás una de las características más fundamentales que se buscan en estos algoritmos es que sean \textbf{simplécticos}, es decir, que conserven el volumen en el espacio de fases $dp \wedge dq$, como lo hace la evolución hamiltoniana exacta de acuerdo al teorema de Liouville.
 Uno de los algoritmos de evolución temporal más conocidos que cumplen el teorema de Liouville es el \emph{velocity verlet}, que es el que utilizamos en este trabajo.
 
 \section{Termostatos}
@@ -12,8 +12,8 @@ La integración numérica de las ecuaciones de Newton naturalmente llevan a un s
 Para realizar nuestro estudio, sin embargo, nos gustaría poder controlar la \emph{temperatura} del sistema.
 En términos termodinámicos, la integración temporal de las ecuaciones de Newton forma un ensamble microcanónico, en el que se conservan la energía, número de partículas y volumen; mientras que nosotros necesitamos un ensamble \emph{canónico}, en el que se conserven la temperatura, el número de partículas y el volumen.
 Las técnicas utilizadas para implementar sistemas de temperatura constante son llamadas \emph{termostatos}.
-A pesar de que existen una gran cantidad de técnicas para lograrlo, las más conocidas y extendidas son los termostatos de Nose-Hoover, Andersen y Liouville\todo[inline]{citation needed}.
+A pesar de que existen una gran cantidad de técnicas para lograrlo, las más conocidas y extendidas son los termostatos de Nose-Hoover, Andersen y Liouville.
 En los cálculos realizados aquí utilizamos el termostato de Nose-Hoover, que tiene como característica fundamental ser un algoritmo determinístico.
 Uno de los mayores defectos es que, para sistemas sencillos, el termostato de Nose-Hoover no genera un sistema ergódico.
 Sin embargo, esta característica se puede aminorar usando los que se conocen como \emph{chained Nose-Hoover} y su impacto en sistemas grandes y caóticos es prácticamente inexistente.
-Para cálculos que requiere explícitamente de la ergodicidad (como, por ejemplo, un estudio detallado de las fases de la pasta nuclear) sí sería recomendable la utilización de otros termostatos como, por ejemplo, el Braga-Travis y Patra-Bhattacharya\todo[inline]{citation needed}.
+Para cálculos que requiere explícitamente de la ergodicidad (como, por ejemplo, un estudio detallado de las fases de la pasta nuclear) sí sería recomendable la utilización de otros termostatos como, por ejemplo, el Braga-Travis y Patra-Bhattacharya.
