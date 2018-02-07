@@ -1,16 +1,4 @@
-Las estrellas de neutrones son sistemas astronómicos con nucleones sometidos a condiciones extremas.
-Debido a la combinación entre la atracción nuclear y la repulsión de Coulomb entre protones el sistema tiene inhomogeneidades en su estructura.
-Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la distribución de fragmentos depende de las condiciones termodinámicas (temperatura, fracción de protones, \ldots) y la velocidad de expansión.
-
-El origen de elementos pesados (más pesados que el $^{56}_{26}\text{Fe}$) es aún una incógnita en la física.
-Las principales hipótesis respecto del origen de estos elementos implican que las colisiones de estrellas de neutrones serían responsables de más de la mitad de la abundancia terrestre.
-La reciente observación de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas en la abundancia de elementos pesados.
-Recientes trabajos~\cite{kasen_origin_2017} han estudiado, mediante modelos hidrodinámicos, el rol de las colisiones de estrellas de neutrones en la generación de elementos pesados.
-Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
-Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
-Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
-
-El objetivo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}~\cite{dorso_onset_1996}, que corresponde localmente a la evolución de las colisiones de estrellas de neutrones.
+El objetivo de este capítulo es encontrar la dinámica de la formación de los fragmentos para sistemas que se expanden de acuerdo al modelo del pequeño \emph{big bang}~\cite{dorso_onset_1996}, que corresponde localmente a la evolución de las colisiones de estrellas de neutrones.
 A partir de una configuración de equilibrio, expandimos el sistema homogéneamente hasta llegar a una configuración asintótica (correspondiente a densidades muy bajas).
 Estudiamos, con cuatro algoritmos reconocedores de fragmentos distintos, la distribución de fragmentos a lo largo de esta expansión y la dinámica de la formación de fragmentos.
 
@@ -28,7 +16,23 @@ Mostramos que una identificación adecuada de la distribución de fragmentos dep
 Este enfoque nos permitió identificar la dinámica de la formación de fragmentos.
 Estos cálculos pueden ser el comienzo de una comparación entre los experimentos de fragmentación terrestres y los estudios de estrellas de neutrones.
 
+
 \section{Introducción}
+
+Las estrellas de neutrones son sistemas astronómicos con nucleones sometidos a condiciones extremas.
+Debido a la combinación entre la atracción nuclear y la repulsión de Coulomb entre protones el sistema tiene inhomogeneidades en su estructura.
+Estas inhomogeneidades aparecen también en sistemas expandiéndose, donde la distribución de fragmentos depende de las condiciones termodinámicas (temperatura, fracción de protones, \ldots) y la velocidad de expansión.
+
+El origen de elementos pesados (más pesados que el $^{56}_{26}\text{Fe}$) es aún una incógnita en la física.
+Las principales hipótesis respecto del origen de estos elementos implican que las colisiones de estrellas de neutrones serían responsables de más de la mitad de la abundancia terrestre.
+La reciente observación de colisiones de estrellas de neutrones y sus correspondientes ondas gravitacionales~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017} en LIGO representa la primera oportunidad para detectar y estudiar el impacto de éstas en la abundancia de elementos pesados.
+Recientes trabajos~\cite{kasen_origin_2017} han estudiado, mediante modelos hidrodinámicos, el rol de las colisiones de estrellas de neutrones en la generación de elementos pesados.
+Al producirse la colisión de dos estrellas de neutrones, la materia se fragmenta en condiciones extremas.
+Estas condiciones, de acuerdo a Ref.~\cite{lattimer_black-hole-neutron-star_1974}, son favorables para que se produzca el \emph{r-process} y, en conclusión, una fuente posible para núcleos terrestres.
+Inspirados por la colisión de estrellas de neutrones, desarrollamos un estudio en la fragmentación de materia de estrellas de neutrones en expansión.
+
+\subsection{Reconocedores de fragmentos}x
+
 En configuraciones típicas tenemos no sólo la estructura conocida como pasta nuclear, sino también, para ciertos valores de la fracción de protones $x$, un gas de nucleones en que aquélla está embebida.
 Para caracterizar adecuadamente las fases de pasta debemos saber cuáles partículas pertenecen a las fases de pasta y cuáles al gas.
 Así, lo que debemos es encontrar los fragmentos que se forman a lo largo de la simulación.
@@ -61,6 +65,16 @@ De acuerdo a este algoritmo, dos partículas pertenecen al mismo fragmento $\{C^
   i \in C^{\text{MSTE}}_n \Leftrightarrow \exists j \in C_n :  V_{ij}+ K_{ij} \le 0
 \end{equation*}
 A pesar de que de este algoritmo no se obtienen los mismos resultados teóricamente consistentes que con ECRA, igual evita el mayor problema de MST: no considerar de ninguna manera la energía cinética.
+
+\subsubsection{Condiciones para \emph{r-process}: MSTpC}
+
+Las estrellas de neutrones, al tener una gran cantidad de neutrones por sobre protones, aparenta ser un candidato ideal para la producción de \emph{r-process} que se supone que aporta gran cantidad de los núcleos terrestres más pesados que el hierro.
+Para que suceda el \emph{r-process} son necesarias dos condiciones fundamentales: un núcleo \emph{semilla}, que es el que va a capturar los neutrones; y una gran cantidad de neutrones libres alrededor de este núcleo.
+Por esto es que necesitamos que nuestros reconocedores de fragmentos tambien traten de identificar nubes de neutrones en las que haya \emph{neutrones libres} que puedan ser capturados por el núcleo.
+
+Mientras que los modelos de reconocimiento de fragmentos asintóticos como ECRA nos permiten encontrar los núcleos estables, precisamos también encontrar los neutrones libres (es decir, los que no pertenecen al núcleo estable) que estan en la vecindad de este fragmento.
+Con esto en mente desarrollamos el MSTpC, un modelo que busca con MST fragmentos de protones cercanos y luego identifica una \emph{nube} de neutrones que lo rodea.
+La comparación entre la cantidad de neutrones del cluster MSTpC y el cluster ECRA asociado nos da una idea de la abundancia de neutrones libres que tiene cada núcleo \emph{semilla}.
 
 \subsection{Identificación de Fragmentos Infinitos}
 Desarrollamos~\cite{alcain_fragmentation_2017} un algoritmo para el reconocimiento de fragmentos infinitos a través de los contornos.
@@ -104,7 +118,7 @@ Si $I$ no es cero, entonces el ciclo es infinito.
 Por ejemplo, el ciclo  E--E--S tiene paredes E y S, de modo que $I = M_E + M_S = -1$ y el ciclo es infinito.
 Para el ciclo E--W, $I = M_E + M_W = 0$, y el ciclo es finito.
 
-\section{Expansión}\label{sc:expansion}
+\subsection{Expansión}\label{sc:expansion}
 La simulación de la colisión de dos estrellas de neutrones es impracticable computacionalmente con este nivel de detalle, ya que implicaría resolver aproximadamente $10^{30}$ veces la celda de simulación que utilizamos.
 En vez de simular la colisión de las estrellas, emulamos el efecto que ésta tiene en distintas regiones del sistema realizando expansiones locales de sistemas infinitos.
 Para expandir la materia rica en neutrones que simula un sistema infinito con condiciones periódicas de contorno, seguimos el método del \emph{big bang microscópico}, explicado por Holian y Grady en Ref.~\cite{holian_fragmentation_1988} y usado por la expansión de sistemas infinitos previamente~\cite{dorso_onset_1996}.
@@ -123,6 +137,8 @@ Ya que estamos trabajando con condiciones periódicas de contorno, cuando una pa
 Por ejemplo, si la partícula cruza el contorno izquierdo de la caja periódica, la velocidad de la partícula imagen $v_i^\dagger$ en el lado derecho debe ser modificada $v_i^\dagger = v_i + L_0\,\dot{\eta}$.
 Esta prescripción para la expansión es matemáticamente equivalente a la ley de Hubble en astrofísica~\cite{chikazumi_quantum_2001}.
 Es interesante notar que la expansión con esta prescripción es (para el sistema infinito simulado) adiabática: del momento inicial en adelante, no se agrega más energía al sistema.
+
+
 
 \section{Fragmento infinito}
 En la figura~\ref{fig:morpho_frag} mostramos los estados inicial y final de la expansión de la celda principal de $N=11000$ partículas para velocidades de expansión muy bajas.
@@ -347,7 +363,6 @@ En la figura~\ref{fig:ecra_pregnocchi} mostramos que de hecho el algoritmo ECRA-
 \end{figure}
 
 Con estos resultados en mente, utilizamos tres herramientas para el reconocimiento de fragmentos: MSTE, ECRA y MSTpC.
-MSTE y ECRA son los algoritmos ya descritos, mientras que MSTpC es el algoritmo de MST sobre protones, agregando a éste la nube de neutrones que están cerca de cada cluster MST.\@
 En la figura~\ref{fig:lm_pre} mostramos la evolución del tamaño del fragmento más grande para las etapas iniciales de la evolución para los tres reconocedores de fragmentos: MSTE, MSTpC y ECRA.\@
 La figura muestra que el fragmento ECRA se estabiliza rápido y se mantiene relativamente estable, mientras que los otros dos algoritmos resultan en fragmentos que son siempre más grandes que los ECRA y se estabilizan más lentamente.
 También es interesante notar que el fragmento MSTpC comienza con alrededor de 100 neutrones más que el fragmento ECRA correspondiente, lo que implica que el fragmento de ECRA está en un ambiente muy rico en neutrones.

@@ -35,16 +35,29 @@ Debido a esto, la masa residual tiende a tener un exceso de neutrones por sobre 
 Estas estrellas de neutrones entonces contienen protones y neutrones, pero además son eléctricamente neutros debido a los electrones: la carga neta es cero.
 
 La masa de una estrella de neutrones es de entre 1 y 3 masas solares y su radio de cerca de $10\,\text{km}$, lo que resulta en una densidad de $\rho \simeq 10^{15}\,\text{g/cm}^3$, aproximadamente 20 veces mayor que la de los nucleos usuales.
-Su estructura puede dividirse en dos partes, de acuerdo a modelos actuales~\cite{page_minimal_2004, geppert_temperature_2004}: la \emph{corteza}, de aproximadamente $1.5\,\text{km}$ de espesor y con una densidad de hasta la mitad de la densidad normal nuclear $\rho_0$; y el \emph{núcleo}, donde la estructura es aún desconocida y se mantiene altamente especulativa~\cite{akmal_equation_1998, ravenhall_structure_1983, oyamatsu_nuclear_1993, woosley_physics_2005}.
+Su estructura, aobservada esquemáticamente en la figura~\ref{fig:esquema} puede dividirse en dos partes, de acuerdo a modelos actuales~\cite{page_minimal_2004, geppert_temperature_2004}: la \emph{corteza}, de aproximadamente $1.5\,\text{km}$ de espesor y con una densidad de hasta la mitad de la densidad normal nuclear $\rho_0$; y el \emph{núcleo}, donde la estructura es aún desconocida y se mantiene altamente especulativa~\cite{akmal_equation_1998, ravenhall_structure_1983, oyamatsu_nuclear_1993, woosley_physics_2005}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\columnwidth]{introduccion/esquema}
+  \caption{Esquema de la estructura del interior de una estrella de neutrones}
+\label{fig:esquema}
+\end{figure}
 
 La densidad de dicha corteza toma los valores de la densidad nuclear normal a una profundidad $d \simeq 1\,\text{km}$, la densidad de \emph{neutron drip} ($\rho\simeq 4 \cdot 10^{11}\,\text{g/cm}^3$) a $d\simeq 0.5\,\text{km}$, y una mezcla de nucleos ricos en neutrones con densidades decrecientes hasta ser prácticamente cero en lo que se conoce como el envoltorio de la estrella de neutrones.
 Ravenhall \emph{et al.} en Ref.~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.} en Ref.~\cite{hashimoto_shape_1984} propusieron que la corteza de las estrellas de neutrones está compuesta por estructuras conocidas como \emph{pasta nuclear}.
 
 Varios modelos han sido desarrollados para estudiar la pasta nuclear, y han mostrado que estas estructuras aparecen debido al juego competitivo entre las fuerzas nucleares y las de Coulomb en un medio infinito.
 De cualquier modo, la dependencia de los observables de diferentes cantidades termodinámicas no ha sido estudiado en profundidad.
-Los trabajos originales de Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.}~\cite{hashimoto_shape_1984} utilizaban un modelo de gota líquida compresible, y mostraron que las \emph{fases de pasta}
---\emph{lasagna}, \emph{spaghetti} y \emph{gnocchi}-- son soluciones al estado fundamental de la materia de estrellas de neutrones.
+Los trabajos originales de Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.}~\cite{hashimoto_shape_1984} utilizaban un modelo de gota líquida compresible, y mostraron que las \emph{fases de pasta} --\emph{lasagna}, \emph{spaghetti} y \emph{gnocchi}-- (ver figura~\ref{fig:pasta_orig} son soluciones al estado fundamental de la materia de estrellas de neutrones.
 De ahí en adelante, se han tomado distintos enfoques que clasificaremos en dos categorías: campo medio o microscópico.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\columnwidth]{introduccion/pasta_orig}
+  \caption{Estructura de pastas originales propuestas por Ravenhall \emph{et al.}~\cite{ravenhall_structure_1983} y Hashimoto \emph{et al.}~\cite{hashimoto_shape_1984}}
+\label{fig:esquema}
+\end{figure}
 
 Los trabajos de campo medio incluyen el modelo de la gota líquida, de Lattimer \emph{et al.}~\cite{page_minimal_2004}, Thomas-Fermi, de Williams y Koonin~\cite{williams_sub-saturation_1985}, entre otros~\cite{oyamatsu_nuclear_1993, lorenz_neutron_1993, cheng_properties_1997, watanabe_thermodynamic_2000, watanabe_electron_2003, nakazato_gyroid_2009}.
 Los modelos microscópicos incluyen Dinámica Molecular Cuántica (QMD por sus siglas en inglés), usado por Maruyama \emph{et al.}~\cite{maruyama_quantum_1998, kido_md_2000} y por Watanabe~\emph{et al.}\cite{watanabe_structure_2003}, el Potencial Simple Semiclásico (SSP), utilizado por Horowitz~\emph{et al.}~\cite{horowitz_nonuniform_2004} y Dinámica Molecular Clásica (CMD), utilizado en nuestros trabajos previos~\cite{dorso_topological_2012}.
@@ -222,11 +235,21 @@ Como ejemplo, en la figura~\ref{fig:pasta} mostramos las configuraciones de algu
   \label{fig:pasta}
 \end{figure}
 
+Estas fluctuaciones de densidad tiene una longitud de onda del orden de los neutrinos emitidos ($\lambda \approx 15\,\text{fm}$), de modo de hacer a la corteza de las estrellas de neutrones más opaca a los neutrinos.
+De este modo, la presencia de estas pastas podría afectar sensiblemente los tiempos de enfriamiento de las estrellas.
+
 \section{Choque de Estrellas de Neutrones}
 
 El 17 de agosto de 2017, LIGO observó ondas gravitacionales surgidas de la colisión de dos estrellas de neutrones~\cite{ligo_scientific_collaboration_and_virgo_collaboration_gw170817:_2017}.
 Son consideradas como fuentes posibles de nucleosíntesis generadas por el proceso de captura rápida de neutrones, conocido como \emph{r-process}.
 Su aporte a la abundancia terrestre de núcleos terrestres aún está en discusión, pero se especula que es responsable de más de la mitad de los elementos con masa mayor a la del hierro y la única fuente de elementos más pesados que el plomo.
+
+Este \emph{r-process} se produce a partir de un núcleo pesado llamado \emph{semilla} generalmente cercano al Fe.
+Cuando los núcleos capturan un neutrón, podrían decaer radioactivamente antes de capturar al siguiente.
+Para evitar que esto suceda los núcleos deberían capturar rápidamente el nucleón, de ahí el nombre \emph{r-process}.
+Además, como consecuencia, para poder capturar neutrones rápidamente, es de esperar que el \emph{r-process} se dé en condiciones en las que hay una alta densidad de neutrones libres y donde estas \emph{semillas} sean expulsadas hacia el espacio.
+Estas circunstancias suceden en el caso de la colisión de estrellas de neutrones y tambien en el colapso del núcleo de la supernova.
+
 La simulación con detalle microscópico de la colisión de Estrellas de Neutrones imposible en la práctica, ya que implicaría la simulación de $10^{55}$ partículas sólo en la corteza y la interacción de $10^{110}$ pares de partículas, por lo que usualmente estos estudios se realizan con un enfoque hidrodinámico más característico de las técnicas de campo medio.
 De este modo se intenta emular el comportamiento microscópico en la simulación detallada de la colisión.
 
