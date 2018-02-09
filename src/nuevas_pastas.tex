@@ -98,8 +98,7 @@ En esta figura podemos ver que para una fracción de protones de $x=0.2$ hay muc
     \caption{$x=0.5$}
   \end{subfigure}
   \caption{Distribución de fragmentos para el algoritmo MSTE para temperatura $T = 2.0\,\text{MeV}$, densidad $\rho = 0.04\,\text{fm}^{-3}$ y diferentes fracciones de protones.
-    Para la fracción de protones más baja de las estudiadas, $x = 0.2$, el cluster grande tiene una fracción de protones mayor (aproximadamente $30\%$ más alta) y hay muchos neutrones aislados.
-    Notar que las escalas son distintas para cada gráfico.}
+    Para la fracción de protones más baja de las estudiadas, $x = 0.2$, el cluster grande tiene una fracción de protones mayor (aproximadamente $30\%$ más alta) y hay muchos neutrones aislados.}
   \label{fig:cluster}
 \end{figure}
 
@@ -118,31 +117,10 @@ Todos los fragmentos más grandes contienen más del $50\%$ de la masa total del
 
 \section{Opacidad de neutrinos}\label{sc:opacity}
 
-Las figuras~\ref{fig:gr_sq} y~\ref{fig:gr_sq_gnocchi} muestran la función distribución de pares y el factor de estructura para las fases de \emph{lasagna} y \emph{gnocchi}.
+La figura~\ref{fig:gr_sq_gnocchi} muestra como ejemplo la función distribución de pares y el factor de estructura para la fase \emph{gnocchi}.
 En la función de distribución de pares podemos identificar (marcado con $\color{green} \blacktriangledown$) el pico que pertenece a la estructura cristalina de los neutrones dentro de la pasta (correlación con los vecinos más cercanos) y también una correlación de muy largo rango (marcada con una línea discontinua $\color{red}-\,-$.);
 este rango es el que genera el pico para los bajos momentos en el factor de estructura, relacionado con las estructuras de tipo pasta.
-El factor de estructura muestra un pico en $q_\text{pico} = 0.43\,\text{fm}^{-1}$ para la \emph{lasagna} y $q_\text{pico} = 0.37\,\text{fm}^{-1}$ para los \emph{gnocchi}, con un ancho de alrededor de
-$\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda en las que la estructura es considerablemente opaca.
-
-\begin{figure}  \centering
-  \begin{subfigure}[h!]{0.45\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{nuevas_pastas/rdf}
-    \caption{Función de distribución de pares.}
-      \label{sfig:gr}
-  \end{subfigure}
-  \begin{subfigure}[h!]{0.45\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{nuevas_pastas/ssf}
-    \caption{Factor de estructura.}
-      \label{sfig:ssf}
-  \end{subfigure}
-  \caption{\ref{sfig:gr} Función de distribución de pares y ~\ref{sfig:ssf} factor de estructura para un sistema con fracción de protones $x=0.4$, densidad $\rho=0.04\,\text{fm}^{-3}$ y temperatura $T=0.5\,\text{MeV}$.
-    El primer pico en $g(r)$, debido a las estructuras cristalinas, está marcado con $\color{green} \blacktriangledown$, mientras que el rango muy largo está marcado con una línea discontinua $\color{red}-\,-$.
-    En el factor de estructura podemos ver el pico en $q_\text{pico} = 0.43\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
-    Las ``ondas'' para los bajos momentos se deben a efectos de tamaño finito.}
-  \label{fig:gr_sq}
-\end{figure}
+El factor de estructura muestra un pico en $q_\text{pico} = 0.37\,\text{fm}^{-1}$ para los \emph{gnocchi}, con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda en las que la estructura es considerablemente opaca.
 
 \begin{figure}  \centering
   \begin{subfigure}[h!]{0.4\columnwidth}
@@ -157,8 +135,8 @@ $\text{FWHM} = 0.08\,\text{fm}^{-1}$, definiendo un rango de longitudes de onda 
     \caption{Factor de estructura.}
       \label{sfig:ssf_gnocchi}
   \end{subfigure}
-  \caption{~\ref{sfig:gr_gnocchi} Función de distribución de pares y~\ref{sfig:ssf} factor de estructura para un sistema con fracción de protones $x=0.4$, densidad $\rho=0.01\,\text{fm}^{-3}$ y temperatura $T=0.5\,\text{MeV}$.
-    Como en la figura~\ref{fig:gr_sq}, podemos ver la estructura cristalina y de pasta en la función de distribución de pares, así como el pico de la pasta en el factor de estructura.
+  \caption{~\ref{sfig:gr_gnocchi} Función de distribución de pares y~\ref{sfig:ssf_gnocchi} factor de estructura para un sistema con fracción de protones $x=0.4$, densidad $\rho=0.01\,\text{fm}^{-3}$ y temperatura $T=0.5\,\text{MeV}$.
+    Podemos ver la estructura cristalina y de pasta en la función de distribución de pares, así como el pico de la pasta en el factor de estructura.
     Este pico está localizado en $q_\text{pico} = 0.37\,\text{fm}^{-1}$ con un ancho de alrededor de $\text{FWHM} = 0.08\,\text{fm}^{-1}$.
     Las ``ondas'' para los bajos momentos se deben a efectos de tamaño finito.}
   \label{fig:gr_sq_gnocchi}
@@ -186,12 +164,12 @@ Es interesante notar que la altura del \emph{pico de opacidad} toma su máximo v
 
 \begin{figure}  \centering
   \begin{subfigure}[h!]{0.4\columnwidth}
-    \includegraphics[width=\columnwidth]{nuevas_pastas/{{lambda_density}}}
+    \includegraphics[width=\columnwidth]{nuevas_pastas/{{densidad_lambda}}}
     \caption{Longitud de onda del pico de opacidad}
     \label{sfig:wl}
   \end{subfigure}
   \begin{subfigure}[h!]{0.4\columnwidth}
-    \includegraphics[width=\columnwidth]{nuevas_pastas/{{height_density}}}
+    \includegraphics[width=\columnwidth]{nuevas_pastas/{{densidad_altura}}}
     \caption{Altura del pico de opacidad}
     \label{sfig:ht}
   \end{subfigure}
@@ -218,8 +196,7 @@ Es interesante notar que la altura del \emph{pico de opacidad} toma su máximo v
     \caption{$x=0.5$}
   \end{subfigure}
   \caption{Distribución de fragmentos con el algoritmo MSTE para temperatura $T = 0.5\,\text{MeV}$, densidad $\rho = 0.01\,\text{fm}^{-3}$ y distintas fracciones de protones.
-    Podemos ver que todas tienen distribuciones de masa tipo \emph{gnocchi}.
-    Notar que las escalas son distintas para cada gráfico.}
+    Podemos ver que todas tienen distribuciones de masa tipo \emph{gnocchi}.}
   \label{fig:cluster_gnocchi}
 \end{figure}
 

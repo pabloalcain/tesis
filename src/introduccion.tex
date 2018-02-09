@@ -106,22 +106,22 @@ Más aún, un camino alternativo sería utilizar potenciales dependientes del mo
 A pesar de que ninguna teoría puede arrogarse una descripción perfecta de la materia nuclear, todos los enfoques tienen sus pros y contras y aparentar ser complementarios entre sí.
 
 \subsection{Classical Molecular Dynamics}\label{ssc:cmd}
-A lo largo de este trabajo utilizamos para modelar la dinámica de los nucleones el CMD\footnote{Para ver algunos detalles sobre la implementación de la dinámica molecular, ver el apéndice~\ref{ap:md}.}.
+A lo largo de este trabajo utilizamos para modelar la dinámica de los nucleones el CMD\footnote{Para detalles sobre la implementación de la dinámica molecular, ver el apéndice~\ref{ap:md}.}.
 Ha sido usado en varias reacciones de iones pesados para estudiar datos experimentales~\cite{chernomoretz_quasiclassical_2002}; identificar señales de transiciones de fase y otros fenómenos críticos~\cite{lopez_lectures_2000, barranon_searching_2001, dorso_selection_2001, barranon_critical_2003, barranon_time_2007}; y explorar la curva calórica~\cite{barranon_entropy_2004} y el \emph{isoscaling}~\cite{dorso_dynamical_2006, dorso_isoscaling_2011}.
 CMD usa dos potenciales de dos cuerpos para describir la interacción entre nucleones, que son una combinación de potenciales de Yukawa:
 \begin{align*}
   V^{\text{CMD}}_{np}(r) &=v_{r}\exp(-\mu_{r}r)/{r}-v_{a}\exp(-\mu_{a}r)/{r}\\
   V^{\text{CMD}}_{nn}(r) &=v_{0}\exp(-\mu_{0}r)/{r}
 \end{align*}
-donde $V_{np}$ es el potencial entre un neutron y un protón (que se puede ver en la figura~\ref{fig:vnp}), mientras que $V_{nn}$ es la interacción repulisva tanto entre neutrones como entre protones.
+donde $V_{np}$ es el potencial entre un neutron y un protón, mientras que $V_{nn}$ es la interacción repulisva tanto entre neutrones como entre protones, como se puede ver por ejemplo para la paramtrización Medium en la figura~\ref{fig:medium}.
 El radio de corte es $r_c=5.4\,\text{fm}$, y para $r>r_c$ ambos potenciales se anulan, agregando una corrección constante de $V_c = V(r_c)$ al potencial, para garantizar que sea continuo.
 Los parámetros de Yukawa $\mu_r$, $\mu_a$ y $\mu_0$ fueron determinados para resultar en una densidad de equilibrio de $\rho_0=0.16\,\text{fm}^{-3}$, una energía de ligadora $E(\rho_0)=16\,\text{MeV/nucleon}$ y una compresibilidad $\kappa=250\,\text{MeV}$.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\columnwidth]{introduccion/vnp}
-  \caption{Potencial de interacción entre protón y neutrón para distintas parametrizaciones de CMD.}
-\label{fig:vnp}
+  \includegraphics[width=0.7\columnwidth]{introduccion/medium}
+  \caption{Potencial de interacción para CMD en la parametrización Medium.}
+\label{fig:medium}
 \end{figure}
 
 Para simular un medio infinito, utilizamos este potencial bajo condiciones periódicas de contorno en cajas cúbicas, con distintos valores de fracción de protones, densidades y temperaturas.

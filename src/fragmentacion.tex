@@ -160,22 +160,22 @@ Podemos ver que, más allá de que la configuración inicial muestra una distrib
   \label{fig:morpho_frag}
 \end{figure}
 
-En la figura~\ref{fig:infinite} mostramos la fracción de partículas en la celda principal que forman parte de un cluster infinito (\emph{Fracción de Fragmento Infinito}, FFI).
+En la figura~\ref{fig:infinito} mostramos la fracción de partículas en la celda principal que forman parte de un cluster infinito (\emph{Fracción de Fragmento Infinito}, FFI).
 Podemos ver fácilmente que en las primeras etapas de la evolución, como la temperatura es baja, la mayor parte del sistema en la celda principal pertenece al fragmento infinito.
 Sin embargo, a medida que evoluciona el sistema de acuerdo a la velocidad de expansión, la FFI disminuye y llega a cero rápidamente, implicando que no hay fragmentos infinitos en el sistema.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.75\columnwidth]{fragmentacion/infinite.pdf}
+  \includegraphics[width=0.75\columnwidth]{fragmentacion/infinito.pdf}
   \caption{Fracción de Fragmento Infinito (ver texto) en función de la longitud de la celda principal.
     Para todas las velocidades de expansión mostradas el FFI va a cero en el régimen asintótico.}
-  \label{fig:infinite}
+  \label{fig:infinito}
 \end{figure}
 
 \section{Fragmentos asintóticos}
 
 La figura~\ref{fig:distribution} muestra la distribución de fragmentos asintóticos para cuatro distintas velocidades de expansión.
-En este caso, el algoritmo MSTE fue aplicado sobre la celda principal, considerando las condiciones periódicas de contorno y sabiendo que no hay fragmento infinito, como se ve de la figura~\ref{fig:infinite}.
+En este caso, el algoritmo MSTE fue aplicado sobre la celda principal, considerando las condiciones periódicas de contorno y sabiendo que no hay fragmento infinito, como se ve de la figura~\ref{fig:infinito}.
 Podemos ver que a medida que aumenta la velocidad de expansión, la distribución de fragmentos muestra la típica transición de U-shaped a decaimiento exponencial.
 Entre estas dos, aparece una distribución de tipo ley de potencias.
 En particular, la figura~\ref{subfig:9e-3} muestra que con una expansión de $\eta = 0.009\,\text{fm/c}$ obtenemos una ley de potencias.
@@ -300,32 +300,24 @@ Otra característica relevante de la distribución asintótica de masas (que no 
 \section{Formación de fragmentos}
 \newcommand{\tabfig}[1]{\includegraphics[width=0.25\linewidth]{fragmentacion/#1}}
 
-\begin{table*}
+\begin{figure}
   \centering
-  \begin{tabular}{cccc}
-    \toprule
-    & Lasagna (expansión rápida) & Lasagna (expansión lenta) & Pregnocchi \\
-    \midrule
-    $\rho = 0.05\,\text{fm}^{-3}$ & \tabfig{las_fast_0} & \tabfig{las_slow_0} & \tabfig{pregnocchi_0} \\
-    $\rho = 0.0001\,\text{fm}^{-3}$ & \tabfig{las_fast_100} & \tabfig{las_slow_100} & \tabfig{pregnocchi_100} \\
-    $\rho = 0.00003\,\text{fm}^{-3}$ & \tabfig{las_fast_400} & \tabfig{las_slow_400} & \tabfig{pregnocchi_400} \\
-    \bottomrule
-  \end{tabular}
+  \includegraphics[width=0.9\linewidth]{fragmentacion/expansion}
   \caption{Tres distintas expansiones de materia de estrellas de neutrones: Lasagna (expansión rápida): $x = 0.4$, $\dot{\eta} = 0.01\text{c/fm}$, $T = 0.8\,\text{MeV}$;
     Lasagna (expansión lenta): $x = 0.4$, $\dot{\eta} = 0.0001\text{c/fm}$, $T = 0.8\,\text{MeV}$;
     Pregnocchi: $x = 0.1$, $\dot{\eta} = 0.0001\text{c/fm}$, $T = 0.1\,\text{MeV}$}
-\label{tbl:expansion}
-\end{table*}
+\label{fig:expansion}
+\end{figure}
 
 Ahora nos centramos en el análisis de algunos ejemplos de la evolución del sistema en el tiempo: cuándo y cómo se forman los fragmentos asintóticos.
 Tomemos primero la expansión del sistema con $x = 0.4$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.5\,\text{MeV}$.
-Mostramos en las primeras dos columnas de la tabla~\ref{tbl:expansion} los estados iniciales y asintótico con la expansión rápida y lenta para la \emph{lasagna}.
+Mostramos en las primeras dos columnas de la tabla~\ref{fig:expansion} los estados iniciales y asintótico con la expansión rápida y lenta para la \emph{lasagna}.
 Mientras que la condición inicial es un cluster infinito, en el régimen asintótico tenemos una distribución de fragmentos con muchos fragmentos finitos.
 Es interesante notar que la expansión rápida se parece a una fractura mecánica, en la que los fragmentos se forman dentro de cada hoja de la \emph{lasagna}, mientras que la expansión lenta parece más una expansión térmica en la que el sistema asintótico pierde todo tipo de similitud con la estructura original.
 Los fragmentos se parten en muchos porque su tamaño tan grande no puede soportar la energía asociada con la expansión del sistema.
 
 Un escenario muy interesante es la expansión del sistema con baja fracción de protones: $x = 0.1$, $\rho = 0.05\,\text{fm}^{-3}$ y $T = 0.1\,\text{MeV}$.
-En la tercera columna de la tabla~\ref{tbl:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$.
+En la tercera columna de la tabla~\ref{fig:expansion} mostramos tanto la condición inicial como la configuración asintótica para $\dot{\eta} = 0.0001\,\text{c/fm}$.
 
 A diferencia del escenario anterior, aquí hay una clara estructura de protones: hay agregados de protones inmersos en un mar de neutrones.
 Pueden ser identificados visualmente si dibujamos los protones con un tamaño mucho mayor que el de los neutrones, como se ve en este conjunto de figuras.

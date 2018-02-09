@@ -71,7 +71,7 @@ P=\frac{N\,k_B\,T}{V} + \frac{1}{3}
 donde $N$ es el número de partículas en el sistema y $\mathbf{F}$ la fuera ejercida sobre cada nucleón.
 Los términos en la fórmula del virial se aplican sólo a las interacciones específicas del modelo, sin contemplar la presión del gas de electrones.
 Esta presión no debe ser confundida con la presión real en la corteza de las estrellas de neutrones (ya que los electrones deberían ser considerados explícitamente para calcularla adecuadamente), sino simplemente una prueba de la estabilidad mecánica de las configuraciones obtenidas con este modelo.
-En la figura~\ref{fig:pre} vemos que para todo $\lambda<10\,\text{fm}$ la presión es negativa.
+En la figura~\ref{fig:presion} vemos que para todo $\lambda<10\,\text{fm}$ la presión es negativa.
 
 La presión negativa es una señal de que las estructuras no-homogéneas encontradas son artificiales, y que las estructuras sólo pueden existir bajo condiciones periódicas de contorno (ver~\cite{binder_beyond_2012,gimenez_molinelli_simulations_2014}).
 Podemos pensar al sistema como la celda primitiva de la simulación bajo la tensión causada por sus réplicas periódicas.
@@ -83,10 +83,10 @@ Sin embargo, la forma de las estructuras, caracterizadas a través de las funcio
 
 \begin{figure}[h!]  \centering
 \centering
-\includegraphics[width=0.7\columnwidth]{coulomb/pre.pdf}
+\includegraphics[width=0.7\columnwidth]{coulomb/presion.pdf}
 \caption{Presión como función del apantallamiento $\lambda$ para distintas densidades.
   Podemos ver que para $\lambda<10\,\text{fm}$ la presión es negativa, sugiriendo que las condiciones periódicas de contorno están afectando la morfología de la solución.}
-\label{fig:pre}
+\label{fig:presion}
 \end{figure}
 
 Para clasificar las estructuras de bajas temperaturas ($T=0.001\,\text{MeV}$) para cada valor de $\lambda$, estudiamos su morfología con las herramientas de análisis para la distribución espacial de partículas: las funcionales de Minkowski.
@@ -96,17 +96,17 @@ En las figuras~\ref{fig:minkowski} podemos ver la superficie, curvatura y númer
 \centering
 \begin{subfigure}[h!]{0.45\columnwidth}
   \centering
-  \includegraphics[width=\columnwidth]{coulomb/sup.pdf}
+  \includegraphics[width=\columnwidth]{coulomb/superficie.pdf}
   \caption{Superficie}
 \end{subfigure}
 \begin{subfigure}[h!]{0.45\columnwidth}
   \centering
-  \includegraphics[width=\columnwidth]{coulomb/cur.pdf}
+  \includegraphics[width=\columnwidth]{coulomb/curvatura.pdf}
   \caption{Ancho medio}
 \end{subfigure}
 \begin{subfigure}[h!]{0.45\columnwidth}
   \centering
-  \includegraphics[width=\columnwidth]{coulomb/eul.pdf}
+  \includegraphics[width=\columnwidth]{coulomb/euler.pdf}
   \caption{Número de Euler}
 \end{subfigure}
 \caption{Dependencia de las funcionales de Minkowski con $\lambda$.
@@ -201,12 +201,12 @@ Vemos que obtenemos estructuras exóticas para $\lambda=10\,\text{fm}$ en los tr
 \centering
 \begin{subfigure}[h!]{0.48\columnwidth}
   \centering
-  \includegraphics[width=\columnwidth]{coulomb/gofr-mult.pdf}
+  \includegraphics[width=\columnwidth]{coulomb/gofr_mult.pdf}
   \caption{Múltiples lasagnas}
 \end{subfigure}
 \begin{subfigure}[h!]{0.48\columnwidth}
   \centering
-  \includegraphics[width=\columnwidth]{coulomb/gofr-sing.pdf}
+  \includegraphics[width=\columnwidth]{coulomb/gofr_sing.pdf}
   \caption{Una lasagna}
 \end{subfigure}
 \caption{Ejemplos de la función distribución de pares para $\rho=0.05\,\text{fm}^{-3}$ y dos longitudes de apantallamiento:
@@ -221,14 +221,14 @@ Esto muestra que la estructura de rango corto está gobernada por el potencial n
 
 Para la densidad $\rho=0.005\,\text{fm}^{-3}$, para longitudes de apantallamiento $\lambda<10\,\text{fm}$, hay un solo \emph{gnocchi}.
 Sin embargo, cuando aumentamos de $\lambda=15\,\text{fm}$ a $\lambda=20\,\text{fm}$ para $\rho=0.005\,\text{fm}^{-3}$, aunque cualitativamente vemos el mismo comportamiento (ambos muestran \emph{gnocchi}), el tamaño promedio de los fragmentos varía para estos dos valores; de ahí la diferencia observada en las funcionales de Minkowski.
-Para estudiar este resultado, graficamos el tamaño de los \emph{gnocchi} como función de $\lambda$ en la figura~\ref{fig:gnocchi_mass}.
+Para estudiar este resultado, graficamos el tamaño de los \emph{gnocchi} como función de $\lambda$ en la figura~\ref{fig:masa_gnocchi}.
 Vemos que, cuando tenemos en cuenta la varianza en la distribución de masa, se mantiene estable para $\lambda\geq20\,\text{fm}$.
 
 \begin{figure}[h] %figure 3
 \centering
-\includegraphics[width=0.7\columnwidth]{coulomb/gnocchi_mass}
+\includegraphics[width=0.7\columnwidth]{coulomb/masa_gnocchi}
 \caption{Tamaño promedio de los \emph{gnocchi} dependiendo de la longitud de apantallamiento.}
-\label{fig:gnocchi_mass}
+\label{fig:masa_gnocchi}
 \end{figure}
 
 Podemos ver que aunque todas las estructuras sin Coulomb son alguna de las pastas conocidas, una vez que agregamos la interacción de Coulomb (haciendo $\lambda\neq0$), la \emph{pseudo-pasta} original de $\lambda=0$ se separa: de una estructura por celda a múltiples estructuras por celda.
