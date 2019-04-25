@@ -1,4 +1,4 @@
-# Table of Contents
+# Dependencia en el isospin de la ecuación de estado de la materia nuclear
 
 1. Introducción
  a. Estrellas de Neutrones
